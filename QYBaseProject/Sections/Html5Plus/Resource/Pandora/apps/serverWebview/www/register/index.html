@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>注册</title>
+		<script type="text/javascript" src="../common/js/mui.min.js"></script>
+		<script type="text/javascript" src="../common/js/qytxplugin.js"></script>
+		<script type="text/javascript" src="../common/js/baseData.js"></script>
+		<script type="text/javascript" src="../common/js/common.js"></script>
+		<script type="text/javascript" charset="utf-8">
+	      	mui.init({
+				gestureConfig:{
+					tap:true
+				},
+				beforeback: function(){
+					if(plus.os.name=='iOS'){
+						plus.qytxplugin.goBackDesk();
+					}else{
+						plus.runtime.quit();
+					}
+				}
+			});
+			mui.plusReady(function(){
+				console.log(window.windowCommon.basePath+"reg/goReg.action?regForm=mobile")
+				//转向服务端注册页面
+				window.location.href=window.windowCommon.basePath+"reg/goReg.action?regForm=mobile";
+			});
+
+			</script>
+			</head>
+	<body>	
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>分解任务</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/order.css" />
+    <script src="../../common/js/common.js"></script>
+    <script src="../../common/js/jquery-1.8.1.min.js" ></script>
+    <script src="../../common/js/qytxplugin.js" ></script>
+    <script src="../js/taskApi.js" ></script>
+    <script src="../js/taskDecompose.js"></script>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+	<div class="mui-content split">
+		<p class="content pr b_bor" id="content"></p>
+		<div class="child">
+			<div>日程（1）</div>
+			<ul>
+				<li class="pr b_bor">
+					<span class="title">日程内容</span>
+					<input name="scheduleContent" placeholder="请输入日程内容" type="text"/>
+				</li>
+				<li class="pr b_bor active">
+					<span class="title">完成日期</span>
+					<em class="lg-icon"></em>
+					<span name="time" class="left">请选择</span>
+				</li>
+			</ul>
+		</div>
+		<div class="child">
+			<div>
+				日程（2）
+				<span name="delChild"><em class="del-icon"></em>删除</span>
+			</div>
+			<ul>
+				<li class="pr b_bor">
+					<span class="title">日程内容</span>
+					<input name="scheduleContent" placeholder="请输入日程内容" type="text"/>
+				</li>
+				<li class="pr b_bor active">
+					<span class="title">完成日期</span>
+					<em class="lg-icon"></em>
+					<span name="time" class="left">请选择</span>
+				</li>
+			</ul>
+		</div>
+		<!-- 新增日程区域 -->
+		<div class="add-child pr b_bor active" id="addChild">
+			<span>
+				<em class="add-icon"></em>
+				增加日程
+			</span>
+		</div>
+		<!-- 按钮区 -->
+		<div class="button-area" id="save">
+			保存
+		</div>
+	</div>
+</body>
+</html>

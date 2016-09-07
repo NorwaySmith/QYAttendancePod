@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/crm.css" rel="stylesheet"/>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../common/js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../../common/js/common.js"></script>
+    <script type="text/javascript" src="../../js/contact/addcontact.js"></script>
+    <script type="text/javascript" src="../../js/contact/contactApi.js"></script>
+    <style>
+    	.mui-icon{font-size: 16px;color: #353535 !important;}
+    	.mui-popover li{border-bottom: 1px solid #d9d9d9;}
+    	.mui-backdrop{position: fixed;}
+    	.mui-popover{z-index: 999;}
+    	.mui-content{padding-bottom: 20px;}
+		.mui-scroll-wrapper{top:0px;height: 150px !important;border-radius: 0px !important; }
+		.link{display: block;width: 48px;height: 48px;background: url(../../images/link-ico1_03.png) no-repeat center;position:absolute;background-size:18px;color: #fff;right: 0px !important;border-left: 1px solid #d9d9d9;}
+    </style>
+</head>
+<body class="contact">
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">新增联系人 </h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view add_list">
+			<li class="mui-table-view-cell add_list_one" style="display: none;">
+				<a class="ts">头像</a>
+				<img src="../../images/touxiang_07.png" />
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="ts1">姓名</a>
+				<input type="text" placeholder="请输入联系人姓名(必填)" id="contactName" maxlength="20"/>
+			</li>
+			<li class="mui-table-view-cell special-active">
+					<span class="ts1">单位</span>
+					<input class="contact-input" type="text" placeholder="请输入单位" style="float: right !important;margin-right: 50px;" id="customerName"/>
+					<em class="link"></em>
+					<input type="hidden" id="customerId" />
+					<!--<input type="text" style="width:70%;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" placeholder="请选择单位(必填)" id="customerId" readonly="readonly"/>-->
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="ts1">部门</a>
+				<input type="text" placeholder="请输入联系人部门" id="groupName" maxlength="50"/>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="ts1">职务</a>
+				<input type="text" placeholder="请输入联系人职务" id="jobName" maxlength="50"/>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="ts1">手机</a>
+				<input type="text" placeholder="请输入联系人手机" id="telphone" name="telphone" maxlength="20" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"/>
+			</li>
+			<li class="mui-table-view-cell unit-one-list" id="fs">
+				<span class="mui-icon mui-icon-plus add-fs"style="text-align: center;" id="operate"> 添加联系方式</span>
+			</li>
+			<div id="popover1" class="mui-popover add-popover">
+				<div class="pop-titlebox">
+					<span class="pop-title">添加联系方式</span>							
+				</div>
+				<ul class="mui-table-view nav-second">
+					<li class="mui-table-view-cell">手机</li>
+    				<li class="mui-table-view-cell">座机</li>
+    				<li class="mui-table-view-cell">邮箱</li>
+    				<li class="mui-table-view-cell">QQ</li>
+				</ul>
+			</div>
+			<div id="popover4" class="mui-popover add-popover">
+				<div class="pop-titlebox">
+					<span class="pop-title">性别</span>							
+				</div>
+ 				<ul class="mui-table-view nav-second">
+					<li id="nanLi" class="mui-table-view-cell month-active">男</li>
+					<li id="nvLi" class="mui-table-view-cell">女</li>
+ 				</ul>
+			</div>
+		</ul>
+		<ul class="mui-table-view more">
+			<li class="mui-table-view-cell moreli">
+				<a class="more_t">更多<em class="unit-add-ico1"></em></a>
+			</li>
+			<li class="mui-table-view-cell morething">
+				<ul class="add_list" style="padding: 0px !important;margin: 0px !important;">
+					<li class="mui-table-view-cell unit-three-list">
+						<a class="mui-navigate-right" href="javascript:void(0);" id="operate4">
+							<span class="ts1">性别</span>
+							<span class="unit-one-right order-span-after" id="sexName">男</span>
+							<input type="hidden" value="1" id="sex"/>
+						</a>
+					</li>
+					<li class="mui-table-view-cell" >
+						<a class="mui-navigate-right" onclick="pickDate()">
+							<span class="ts1">生日</span>
+							<input type="text" placeholder=" 请选择生日" id="birthday" readonly="readonly"/>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="ts1">联系地址</a>
+						<input type="text" placeholder="请输入联系地址" id="address" maxlength="100"/>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="ts1">兴趣</a>
+						<input type="text" placeholder="请输入联系人兴趣" id="favorite" maxlength="100"/>
+					</li>
+					<li class="mui-table-view-cell inarea">
+						<a class="ts1">备注</a>
+						<textarea type="text" rows="3" placeholder="请输入备注信息" id="remark" maxlength="500"></textarea>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<a type="button" class="mui-btn unit-btn" id="addcontact">保 存</a>
+	</div>
+	<script>
+		$(function(){
+			$(".more_t").click(function(){
+				$(".morething").show();
+				$(".moreli").hide();
+			})
+		})
+	</script>
+</body>
+</html>

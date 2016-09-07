@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  QYBaseProject
+//
+//  Created by 田 on 16/3/10.
+//  Copyright © 2016年 田. All rights reserved.
+//
+//relese下禁止输出
+//#ifdef DEBUG
+//#   define //NSLog(fmt, ...) //NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#else
+//#   define //NSLog(...)
+//#endif
+#ifdef DEBUG
+#    define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#    define NSLog(...) /* */
+#endif

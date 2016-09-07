@@ -1,0 +1,268 @@
+body{background: #ebebeb;}
+.head-bg-1{background:#47c1a8;}
+.head-bg-2{background:#e3b79a;}
+.head-bg-3{background:#3a7ea5;}
+.head-bg-4{background:#acb0d5;}
+.head-bg-5{background:#f79cad;}
+.head-bg-6{background:#da557c;}
+.head-bg-7{background:#e1c347;}
+.head-bg-8{background:#91adb9;}
+.head-bg-9{background:#38b7ea;}
+.head-bg-10{background:#f26432;}
+.pt48{padding-top: 48px !important;}
+li{list-style: none;}
+/*.qy-head{height: 44px; background-color: #3b3b3b;box-shadow: none;}
+.qy-head .mui-title{color: white;}
+.qy-head .mui-action-back{color: white;}*/
+.qy-head{height:48px; background-color: #99729f;box-shadow: none;padding: 0px;}
+.qy-head .mui-action-back{ margin: 0px; padding: 0px; color: #fff; display: block; width: 80px; height: 48px;background: url(../images/back.png) no-repeat; background-size: 48px; position: absolute; left: 0px; top:0px; z-index: 999;}
+.qy-head .mui-icon-left-nav:before{ content: '';}
+.qy-head .mui-icon-left-nav{color: #fff;}
+.qy-head .mui-title {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 48px;
+	position: absolute;
+	display: block;
+	padding: 0;
+	text-align: center;
+	white-space: nowrap;
+	color: #fff; z-index: 222;
+}
+.indexTop{background:#99729f;height: 125px;}
+.indexTop > div{width:50%; text-align: center; height: 125px; float:left}
+.indexTop > div button{ display:block; margin-top: 24px;padding:0px; text-align: center; width:100%; border: none; background-color: transparent;}
+.indexTop > div button:active{ background-color: transparent;opacity: 0.5;}
+.indexTop > div button em{ display:inline-block;width: 44px; height: 44px; background-size: 100%;}
+.indexTop > div button p{ color: #fff; font-size: 14px; line-height: 35px; text-align: center;margin-bottom: 17px;}
+.indexTop > div button.i01 em{ background-image: url(../images/icon_write.png);}
+.indexTop > div button.i01:active em{opacity: 0.5;}
+.indexTop > div button.i02 em{ background-image: url(../images/icon_get.png);}
+.indexTop > div button.i02:active em{opacity: 0.5;}
+.btnSend{ padding: 0px 50px; margin-top:15px;}
+.btnSend a{ display: block; height: 40px; width: 100%; border-radius: 10px; line-height: 40px; color: #fff; font-size: 14px;text-align: center; background-color: #9972a0;}
+
+
+.mui-table-view-cell:after{left:0}
+.mui-grid-9{background:#efeff4 !important;}
+.mui-grid-9 li{padding: 4px !important;}
+.mui-grid-9 .mui-media-body{color: white !important;}
+.newlog a{background-color: #55a33d;border-radius: 2px;}
+.getlog a{background-color: #eb805b;border-radius: 2px;}
+.givelog a{background-color: #6393dd;border-radius: 2px;}
+.newlog.mui-active a{background-color: #4a8e35 !important;}
+.getlog.mui-active a{background-color: #c66c4d !important;}
+.givelog.mui-active a{background-color: #5178b4 !important;}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell>a:not(.mui-btn){padding: 15px 0 !important;}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell.mui-active{background-color: rgba(0,0,0,0);}
+.mt10{margin-top: 10px;}
+.noclick{background: #26b5ed;color: #aadef6;}
+/*点赞查看*/
+.mui-user .mui-media-body{position: relative;top: 10px;}
+.mui-user .user-head{display: block;width: 42px; height: 42px;text-align: center;color: white;border-radius: 2px;font-size: 14px;line-height: 47px;}
+.mui-user .user-name time{color: #d7d7d7;font-size: 14px;}
+.mui-user li{padding: 10px 15px !important;}
+
+
+.select-time{width:100%;}
+.select-time td{text-align: center;padding:8px 0px;}
+.select-time td:nth-child(1){ padding-left:8px;}
+.select-time td:nth-child(2){color: rgb(134,134,134); width:20px;}
+.select-time td:nth-child(4){padding-left: 10px; width:50px; padding-right:8px}
+.select-time td:nth-child(4) .btn-default{border-color: rgb(217,217,217)}
+.select-time td:nth-child(1) .s-date,.select-time td:nth-child(3) .s-date{background-image:url("../images/calendar.png");background-repeat:no-repeat;background-size:21px 15px;background-position:right center}
+.select-time td .s-date{width:100%; background-color:white;display: block;padding: 0px 2px; height:32px; line-height:32px; padding-right:30px;border: solid 1px rgb(217,217,217);border-radius: 3px; font-size:14px; margin:0px; vertical-align:middle}
+.select-time .btn{ height:32px; line-height:32px; padding:0 13px; text-align:center; vertical-align:middle; margin:0px}
+.editlog,.log,.logDetail{ padding:0px; background:#fff;}
+.editlog .mui-table-view-cell,.log .mui-table-view-cell{padding: 7px 10px;}
+.editlog ul li{ border-bottom:1px solid #d9d9d9}
+.logDetail .content .content-list .state{color:#aaa}
+.log-user{padding: 7px 10px;}
+.log-user.mui-active{background: #fff;}
+.log-user>.mui-media-object{display:block;width: 28px !important;height: 28px;border-radius: 14px !important;margin-top:0px;}
+.mui-media-object{width: 42px !important;height: 42px;border-radius: 21px !important;}
+.log-user>.mui-media-body{position: relative;top: 3px;font-size: 16px;}
+.log-user>.mui-media-body time{color: #25b6eb;font-size: 14px;margin-top:0px;}
+.goods-user{ margin-top:10px}
+.goods-user .mui-table-view-cell{ padding:8px 10px}
+/*2015.12.17修改*/
+.read{float: right;font-size: 14px;color: #aaa;margin-left: 9px;}
+/*日志详情已读样式添加*/
+.read_people{padding: 0px 12px;overflow: hidden;background: #fff;border-bottom:1px solid #d9d9d9;}
+.read_title{width: 100%;height: 34px;line-height: 34px;font-size: 14px;}
+.read_title .title_one{color: #353535;}
+.read_title .title_one .title_num{color: #aaa;}
+.go_in{display: block;width: 9px;height: 17px;float: right;background: url(../images/right_ico_03.png) no-repeat center;background-size: 80%;margin-top: 9px;}
+.people_show{width: 100%;height: 78px;}
+.people_show .show_box:last-child{margin-right: 0px;}
+.show_box{width: 35px;height: 78px;margin-right: 11px;float: left;}
+.show_box img{width: 35px;height: 35px;border-radius: 50%;display: block;margin-top:11px;}
+.show_box span{display:block;width: 35px;font-size: 10px;color: #353535;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;margin-top:10px;}
+/*阅读情况页面*/
+.top_nav{width: 100%;height: 48px;background: #fff;}
+.top_nav span{display:block;width: 50%;line-height:47px;border-bottom:1px solid #d9d9d9;float: left;text-align: center;font-size: 16px;}
+.top_nav span.active{line-height: 44px;border-bottom:4px solid #00b4ff;color: #00b4ff;}
+.people_list{height: 64px;border-bottom: 1px solid #d9d9d9}
+.people_list img{display: block;width: 42px;height: 42px;border-radius: 50%;float: left;margin-top:11px;}
+.people_list .people_text{width: 80%;float: left;overflow: hidden;margin-left: 10px;}
+.people_list .people_name{display:block;width: 100%;margin-top:13px;font-size: 16px;color: #353535;}
+.people_list .people_bumen{display:block;width: 100%;font-size: 14px;color: #aaa;}
+/**/
+.content{width: 100%;margin-top: 15px;position: relative;}
+.content .mui-media-object{font-size: 12px;width: 30px !important;height: 30px;border-radius: 15px !important;}
+.content-list li{padding-left: 40px;font-size: 14px;margin-top: 15px;padding-right: 10px;display: block;width: 100%;}
+.content-list .img-group{padding-left: 0px;font-size: 14px;margin-top: 15px;padding-right: 10px;display: block;width: 100%;}
+.content-list li:last-child{ border-bottom:none}
+.special{display:block;width:90% !important;line-height:21px;height:21px;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
+/*下面一句的定位position:absolute*/
+.content .content-list .state{padding-left:0px;color: #353535;font-size: 14px;position: absolute;display: block;left:10px;}
+.state-1{display: block;width: 7px;height: 7px;background-color: #22ac38;border-radius: 1px;margin-top: 7px;margin-right:6px;float: left;}
+.state-2{display: block;width: 7px;height: 7px;background-color: #ff6243;border-radius: 1px;margin-top: 7px;margin-right:6px;float: left;}
+.state-3{display: block;width: 7px;height: 7px;background-color: #ff9f2d;border-radius: 1px;margin-top: 7px;margin-right:6px;float: left;}
+.state-4{display: block;width: 7px;height: 7px;background-color: #dadada;border-radius: 1px;margin-top: 7px;margin-right:6px;float: left;}
+.attach{color: #888888;background-color: #f2f2f2;display: block;font-size: 12px;text-align: center;padding-left: 18px;width:70px;background-image: url(../images/pic.png);height: 30px;background-repeat:no-repeat;background-position: left;background-size:22px 12px;border-radius: 15px;line-height: 33px;position: relative;left: -60px;}
+
+.log{margin-bottom: 10px;}
+.operate{height: 30px;border-top:1px solid #dcdcdc; margin-top:10px}
+.operate .good{display: block;background-image: url(../images/good.png);background-repeat: no-repeat;background-size: 11px;font-size: 12px;background-position: left center;color: #AAAAAA;padding: 5px 13px 5px 15px;}
+em{font-style: normal;}
+.operate .remind {color: #ff5252;font-style: normal;}
+.operate .comment{display: block;padding-left: 15px;background-image: url(../images/comment.png);background-repeat: no-repeat;background-size: 11px;font-size: 12px;background-position: left center;color: #AAAAAA;padding: 5px 10px 5px 15px;}
+
+
+
+.select-people{width: 100%;background-color: white;}
+.select-people .info-bor    {border-color: #d9d9d9}
+.select-people td{padding: 7px}
+.select-people td:nth-child(1){width: 85%;}
+.select-people td:nth-child(1) .form-control{padding: 6px 0;padding-left:22px;height:auto;line-height:normal;text-align:left;font-size:13px;background-image: url("../images/search.png");background-repeat: no-repeat;background-size: 17px 13px;background-position: left center}
+.select-people td:nth-child(2){padding-left: 0px;}
+.select-people td:nth-child(2) button{width:68px !important;height:29px;font-size: 13px;padding: 4px 0;float: right;margin-left: 0px;margin-right: 0px;}
+.select-people input[type=text]{margin-bottom: 0;}
+.select-people .mui-btn-block{margin-bottom: 0;}
+
+.log .date{font-size: 12px;line-height:33px;text-align:left;padding-left: 10px;background-color: #ebebeb;}
+.log .date:before{height: 0;}
+.log .date:after{height: 0;}
+.log:before,.log:after{height: 0;}
+.row10{margin-top: -10px;}
+
+
+.img-group img{margin-right: 5px;margin-left: -28px;}
+.address{line-height:30px;padding-left: 13px;font-size: 14px;color: #AAAAAA;background-image: url(../images/address.png);background-size: 9px 11px;background-repeat: no-repeat;position: relative;left: 0px; background-position:left center;}
+
+.goods-peo{display: inline-block;font-size: 12px;width: 100px !important;}
+.tgoods{display: inline-table;font-size: 12px;color: #aaaaaa;text-align: right;width: 100%;}
+
+.comment-panel{padding-top: 10px;overflow: hidden;}
+.comment-panel li{margin-bottom:10px;padding: 0 10px;}
+.comment-panel h5{color: #353535;padding-left: 10px;}
+.comment-panel h5 em{color: #aaaaaa;}
+.comment-panel img{width: 30px;height: 30px !important;border-radius: 2px;margin-top: 4px;}
+.comment-panel .mui-table-view li:first-child{padding-top:10px;}
+.comment-panel .mui-table-view:after,.comment-panel .mui-table-view:before{height: 0;}
+.comment-panel .name{font-size: 14px;color: #353535;margin-bottom: 0;}
+.comment-panel time{font-size: 12px;color: #AAAAAA;position: relative;top: -5px;}
+.comment-panel .text{font-size: 14px;color: #353535;margin-bottom: 0;}
+
+
+.fixedBtnArea{display: table;position: fixed;bottom: 0;width: 100%;box-shadow: 1px 0 5px #eee;border-top:1xp solid #d9d9d9;height: 48px;}
+.fixedBtnArea div{display: table-cell;background: white;}
+
+.fixedBtnArea div a{display: block; width: 100%; text-align: center;height:100%;transition: background-color 500ms;padding-top: 4px;}
+.fixedBtnArea div a:active{background: #AAAAAA;transition: background-color 500ms}
+.fixedBtnArea div span{line-height:26px;background-size: 13px 14px;background-repeat: no-repeat;margin: 10px auto;color: #00b4ff;background-position: left ;font-size: 16px;}
+.fixedBtnArea div:nth-child(1) span{width:60px;display: block;padding-left: 0px;background-image: url(../images/log-ico_08.png);}
+.fixedBtnArea div:nth-child(2) span{width:60px;display: block;padding-left: 0px;background-image: url(../images/log-ico1_06.png);}
+.fixedBtnArea div:nth-child(2) .active{background-image: url(../images/log-ico1_03.png);color: #fc6e3c;}
+.fixedBtnArea div:nth-child(3) span{width:60px;display: block;padding-left:0px;background-image: url(../images/log-ico1_14.png);}
+.fixedBtnArea div:nth-child(4) span{width:60px;display: block;padding-left:0px;background-image: url(../images/log-ico_11.png);background-size: 13px;}
+.fixedBtnArea .mui-btn{ background:#25b6ed; color:#fff; border:none}
+
+.btnArea{ padding:5px;width:92%;margin: 20px auto;}
+.btnArea a{ background:#25b6ed; border:none;line-height: 48px;height: 48px;margin: 0px;padding: 0px;}
+.nav-comment{width: 100%;background-color: #ebebeb;border-top: 1px solid #d9d9d9;height: 48px;}
+.nav-comment td{padding: 5px}
+.nav-comment td:nth-child(1){width: 85%;}
+.nav-comment td:nth-child(1) .form-control{height:auto;font-size:15px;}
+.nav-comment td:nth-child(2){padding-left: 0px;}
+.nav-comment td:nth-child(2) button{font-size: 15px;background-color: #25b6ed;border-color:#25b6ed}
+.nav-comment input[type=text]{margin-bottom: 0;height: 20px;padding: 5px 10px;line-height: normal;text-align: left;font-size: 14px;color: #353535;}
+.nav-comment .mui-btn-block{margin: 0;height: 28px;line-height: 28px;padding: 0px;border: none;font-size: 14px;width: 60px;}
+/*下面logo1的样式中背景图名称需更改*/
+.logo1{display: block;width: 36px;height:36px;background-image: url(../images/index.png);background-size: 36px 113px;}
+.edit ul,.edit li{padding: 0;margin: 0;}
+.edit ul li{ padding:0 12px;overflow: hidden;}
+.special-li{height: 156px !important;overflow: hidden;}
+.special-li1{height: 40px !important;margin-top:10px}
+.edit{width: 100%;position: relative;}
+.edit .content-list .state{color: #353535;font-size: 14px;display: block;float: left;margin-top: 10px;text-indent: 12px;}
+.edit .img-group{position: relative;height: 73px;}
+.editLog{padding:10px 0;border: none;font-size: 14px; resize:vertical; max-height:48px; max-width: 96%;margin: 0px;}
+.editLog1{position: relative;top: 10px;left:2%;padding:5px 0;border: none;font-size: 14px; resize:vertical;max-width: 96%;margin-top: 10px;}
+.addimg{position: relative;top: 17px;left: 30px;}
+.eidttime{display:block;color: #25b6eb;font-size: 14px;line-height: 22px;text-align: center left;}
+.img{float: left;position: relative; margin-right:8px; margin-bottom:8px}
+.img-group .img:first-child{margin-left: 42px;}
+.delete{position: absolute;background-image: url(../images/delete.gif);width: 16px;height: 16px;background-size: 16px; right:-4px;top: -8px;}
+.index{width: 100%}
+.index td button{text-align: center;display: block;border-radius: 2px;position: relative;width: 100%;border: none}
+.index tr:first-child td{padding-top: 20px}
+.index tr:first-child td:first-child{padding-left: 5px;padding-right: 2px}
+/*下面logo1的样式中背景图名称需更改*/
+.index tr:first-child td:first-child span{margin:auto;display:block;width: 35px;height: 37px;background-image: url(../images/index-ico.png);background-repeat: no-repeat;background-size: 35px 110px;background-position: 0 0;position: relative;bottom: 11px}
+.index tr:first-child td:first-child button{padding-top: 28px;padding-bottom: 15px;background-color: #6393dd;color: white;font-size: 16px}
+.index tr:first-child td:last-child{padding-left: 2px;padding-right: 5px}
+/*下面logo1的样式中背景图名称需更改*/
+.index tr:first-child td:last-child span{margin:auto;display:block;width: 35px;height: 36px;background-image: url(../images/index-ico.png);background-repeat: no-repeat;background-size: 35px 110px;background-position: 0 -37px;position: relative;bottom: 11px}
+.index tr:first-child td:last-child button{padding-top: 29px;padding-bottom: 16px;background-color: #eb805b;color: white;font-size: 16px}
+.index tr:last-child td{padding: 5px;}
+.index tr:last-child button{padding-top: 26px;padding-bottom: 15px;font-size: 16px;color: white;background-color: #55a33d;}
+/*下面logo1的样式中背景图名称需更改*/
+.index tr:last-child span{margin:auto;display:block;width: 35px;height: 38px;background-image: url(../images/index-ico.png);background-repeat: no-repeat;background-size: 35px 110px;background-position: 0 -74px;position: relative;bottom: 11px}
+.index tr:first-child td:first-child button:active{background-color: #32598F}
+.index tr:first-child td:last-child button:active{background-color: #C84419}
+.index tr:last-child td button:active{background-color: #2D5921 }
+.red-good{display:block;max-width:60%;float:left;font-size:12px;line-height:32px;padding-left: 17px;background-image: url(../images/log-ico1_03.png);background-repeat: no-repeat;background-size:10px;background-position: left center;padding-right: 10px;margin-left: 5px;}
+.think-good{display:block;font-size: 12px;color: #aaaaaa;line-height: 32px;text-align: center;float: left;margin-left: 5px;}
+.mui-scroll-wrapper{top:96px;overflow-y: hidden;}
+body{overflow:-Scroll;overflow-x:hidden}
+.img-group{max-width: 100%;}
+
+.rect{display:block;width: 28px !important;height: 28px;border-radius:14px;line-height:28px;font-size: 12px ;text-align: center;float: left;margin-right: 6px;color: #fff;}
+.rect42{display:block;width: 42px !important;height: 42px;border-radius:21px;line-height:42px;font-size: 14px ;text-align: center;float: left;margin-right: 9px;color: #fff;}
+.round{display: block;width: 40px;height: 40px;border-radius: 20px;line-height: 40px;text-align: center;float: left;color: #fff;font-size: 14px;margin-left:10px;}
+.ico-1{ background:rgb(113,172,223)}
+.ico-2{ background:rgb(131,215,208)}
+.ico-3{ background:rgb(96,187,229)}
+.ico-4{ background:rgb(254,116,211)}
+.ico-5{ background:rgb(243,191,48)}
+.ico-6{ background:rgb(94,109,242)}
+.ico-7{ background:rgb(253,195,98)}
+
+/*未定义的样式*/
+.ico-0{ background:rgb(253,195,98)}
+.ico-8{ background:rgb(253,195,98)}
+.ico-9{ background:rgb(253,195,98)}
+/*新增的返回*/
+.ic-left{display:block;width:48px;height: 48px;background: url(../images/back-ico_02.png) no-repeat center;float: left;background-size: 100%;margin-left:-10px}
+
+.mui-pull {
+	font-weight: normal;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	left: 0;
+	text-align: center;
+	color: #777
+}
+.mui-pull-loading{font-weight: normal;}
+.mui-pull-bottom-tips{
+			background-color:transparent;
+		}
+.listNoData{ padding-top:100px; line-height:20px; color:#888; text-align:center;font-size:14px; background-color:transparent;}
+.mui-content{background-color:transparent;}
+/*2015.12.23.修改距头部高度*/
+.mui-bar-nav~.mui-content{padding-top: 47px;}
+/*2015.12.25修改textarea输入框自适应高度*/
+.change_textarea{ font-size:12px; overflow: hidden; } 

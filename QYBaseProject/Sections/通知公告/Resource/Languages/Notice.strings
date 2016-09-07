@@ -1,0 +1,43 @@
+/* 
+  Notice.strings
+  QYBaseProject
+
+  Created by zhaotengfei on 16/1/7.
+  Copyright © 2016年 田. All rights reserved.
+*/
+//QYNoticeDetailsViewController
+"QYNoticeDetailsViewController_title" = "公告详情";
+"QYNoticeDetailsViewController_navigationItem.rightBarButtonItem" = "更多";
+"QYNoticeDetailsViewController_rightBarButtonItem_range" = "发布范围";
+"QYNoticeDetailsViewController_rightBarButtonItem_record" = "阅览记录";
+
+//QYNoticeDistributionViewController
+"QYNoticeDistributionViewController_title" = "发布范围";
+"QYNoticeDistributionViewController_titleLab_title" = "发布范围";
+
+//QYNoticeListViewController
+"QYNoticeListViewController_title" = "通知公告";
+"QYNoticeListViewController_QYNoticeHeadDataViewController_title" = "公告详情";
+"QYNoticeListViewController_QYNoticeHeadDataViewController_webBundlePath" = "通知公告";
+"QYNoticeListViewController_data_subject" = "Duang!Duang!Duang!乐工作来了!";
+"QYNoticeListViewController_alert_noNet" = "无网络";
+"QYNoticeListViewController_alert_noData" = "无数据";
+
+//QYNoticeReadRecordViewController
+"QYNoticeReadRecordViewController_title" = "阅览记录";
+"QYNoticeReadRecordViewController_read" = "已读";
+"QYNoticeReadRecordViewController_unRead" = "未读";
+"QYNoticeReadRecordViewController_mssage" = "短信嘀";
+"QYNoticeReadRecordViewController_alert_message" = "确定要对未读人员发送短信嘀一下吗？";
+"QYNoticeReadRecordViewController_alert_cancel" = "取消";
+"QYNoticeReadRecordViewController_alert_send" = "发送";
+"QYNoticeReadRecordViewController_di_content" = "【乐工作】你收到一条企业公告，请打开乐工作查看详情";
+"QYNoticeReadRecordViewController_di_succeed" = "发送成功";
+
+//QYNoticeListHelper
+"QYNoticeListHelper_noData" = "无数据";
+"QYNoticeListHelper_parameters_subject" = "Duang!Duang!Duang!乐工作来了!";
+"QYNoticeListHelper_parameters_content" = "随着公司的业务发展和管理需求，结合同事们工作需要，公司为大家开通了移动通讯助理业务，";
+
+//QYNoticeReadingRecordHelper
+"QYNoticeReadingRecordHelper_getData_faliure" = "获取数据失败";

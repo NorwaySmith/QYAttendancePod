@@ -1,0 +1,148 @@
+/*
+ DiDiRemind.strings
+ QYBaseProject
+ 
+ Created by lin on 16/1/13.
+ Copyright (c) 2016年 田. All rights reserved.
+ */
+
+/*   BaseString    */
+"DiDi_OK"                                            = "确定";
+"DiDi_cancle"                                        = "取消";
+"DiDi_phrase"                                        = "[嘀嘀短语]";
+"DiDi_own"                                           = "我";
+
+
+/*    other     */
+// 语音下载失败
+"DiDi_voice_downFaile"                               = "下载失败";
+
+
+
+/*    QYDiDiListViewController      */
+// title
+"QYDiDiListViewController_title"                     = "嘀一下";
+// ActionSheet
+"QYDiDiListViewController_actionSheetTitle"          = "操作";
+"QYDiDiListViewController_actionSheetDelete"         = "删除";
+// 请求失败
+"QYDiDiListViewController_netWorkReplyFaile"         = "请求失败";
+// 删除成功
+"QYDiDiListViewController_didiDeleteSuccess"         = "删除成功";
+// 删除失败
+"QYDiDiListViewController_didiDeleteFaile"           = "删除失败";
+// 该页面暂无信息
+"QYDiDiListViewController_noDataViewString"          = "该页面暂无信息";
+// 点击确认收到
+"QYDiDiListViewController_cell_confirmAction"        = "点击确认收到";
+//  回复
+"QYDiDiListViewController_cell_relpy"                = " 回复";
+//  回复(...) 多于99条
+"QYDiDiListViewController_cell_relpyMore"            = " 回复(...)";
+//  已全部确认
+"QYDiDiListViewController_cell_allConfirm"           = " 已全部确认";
+//  未确认
+"QYDiDiListViewController_cell_notAllConfirm"        = " 未确认";
+
+
+
+/*     QYDiDiReplyDetailViewController   */
+// title
+"QYDiDiReplyDetailViewController_title"              = "查看详情";
+// 查看接收人
+"QYDiDiReplyDetailViewController_headView_look"      = "查看接收人";
+// 回复
+"QYDiDiReplyDetailViewController_headView_relpy"     = "回复";
+// 暂无回复信息
+"QYDiDiReplyDetailViewController_noDataString"       = "暂无回复信息";
+// 我来说两句
+"QYDiDiReplyDetailViewController_toolBar_textViewPlaceHolder"   = "我来说两句";
+
+
+
+/*   QYDiDiDetailsViewController     */
+// title
+"QYDiDiDetailsViewController_title"                  = "确认详情";
+// 再次提醒
+"QYDiDiDetailsViewController_reSendButtonTitle"      = "再次提醒";
+// 确定要再次提醒吗?
+"QYDiDiDetailsViewController_reSendAlertTitle"       = "确定要再次提醒吗?";
+// 提醒过于频繁，每次提醒间隔5分钟
+"QYDiDiDetailsViewController_reSendFrequently"       = "提醒过于频繁，每次提醒间隔5分钟";
+// 再次提醒成功
+"QYDiDiDetailsViewController_reSendSuccess"          = "再次提醒成功";
+// 再次提醒失败
+"QYDiDiDetailsViewController_reSendFaile"            = "再次提醒失败";
+//  已确认
+"QYDiDiListViewController_segmented_confirm"         = "已确认";
+//  未确认
+"QYDiDiListViewController_segmented_unConfirm"       = "未确认";
+// 暂无成员确认收到
+"QYDiDiListViewController_noData_confirmNull"        = "暂无成员确认收到";
+// 全部成员已确认
+"QYDiDiListViewController_noData_unConfirmNull"      = "全部成员已确认";
+// 未呼叫
+"QYDiDiListViewController_cell_notCall"              = "未呼叫";
+// 呼叫中
+"QYDiDiListViewController_cell_calling"              = "呼叫中";
+// 接听中
+"QYDiDiListViewController_cell_called"               = "接听中";
+// 未接听
+"QYDiDiListViewController_cell_notAnswer"            = "未接听";
+// 录音回复中
+"QYDiDiListViewController_cell_relpying"             = "录音回复中";
+// 已发送App内提醒
+"QYDiDiListViewController_cell_sendAppDiDi"          = "已发送App内提醒";
+// 已发送短信提醒
+"QYDiDiListViewController_cell_sendSmsDiDi"          = "已发送短信提醒";
+// 电话确认
+"QYDiDiListViewController_cell_phoneConfirm"         = "电话确认";
+// App内确认
+"QYDiDiListViewController_cell_appConfirm"           = "App内确认";
+
+
+/*     QYDiDiSendTypeViewController     */
+// title
+"QYDiDiSendTypeViewController_title"                 = "提醒方式";
+// 电话
+"QYDiDiSendTypeViewController_phone"                 = "电话";
+// 以电话的形式提醒接收人
+"QYDiDiSendTypeViewController_sendAsPhone"           = "以电话的形式提醒接收人";
+// 短信
+"QYDiDiSendTypeViewController_sms"                   = "短信";
+// 以短信的形式提醒接收人
+"QYDiDiSendTypeViewController_sendAsSMS"             = "以短信的形式提醒接收人";
+// APP内提醒
+"QYDiDiSendTypeViewController_app"                   = "APP内提醒";
+// 仅在APP内提醒接收人
+"QYDiDiSendTypeViewController_sendAsAPP"             = "仅在APP内提醒接收人";
+
+
+/*      QYDiDiNewRemindViewController     */
+// title
+"QYDiDiNewRemindViewController_title"                = "新建提醒";
+// 发送
+"QYDiDiNewRemindViewController_rightBarButtonTitle"  = "发送";
+// 请选择接收人
+"QYDiDiNewRemindViewController_send_noSelectUser"    = "请选择接收人";
+// 请选择短语
+"QYDiDiNewRemindViewController_send_noSelectPhrase"  = "请选择短语";
+// 请输入文字
+"QYDiDiNewRemindViewController_send_noText"          = "请输入文字";
+// 请录制语音
+"QYDiDiNewRemindViewController_send_noVoice"         = "请录制语音";
+// 发送成功
+"QYDiDiNewRemindViewController_sendSuccess"          = "发送成功";
+// 发送失败
+"QYDiDiNewRemindViewController_sendFaile"            = "发送失败";
+// 请输入文字内容...(70个汉字以内)
+"QYDiDiNewRemindViewController_inputTextViewMaxWord" = "请输入文字内容...(70个汉字以内)";
+// 长按录音(60秒)
+"QYDiDiNewRemindViewController_recording"           = "长按录音(60秒)";
+// 说话时间超长
+"QYDiDiNewRemindViewController_recordingMore"       = "说话时间超长";
+// 提醒方式
+"QYDiDiNewRemindViewController_remindType"          = "提醒方式";
+
+
+

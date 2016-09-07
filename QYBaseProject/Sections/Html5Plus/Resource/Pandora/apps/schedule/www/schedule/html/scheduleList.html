@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>日程管理</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <script type="text/javascript" src="../../common/js/jquery-1.8.1.min.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/schedule.css" />
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+      	$(function(){
+      		$(".weeken_btn").click(function(){
+      			$(".focus").parent().parent().siblings().show();
+      			$(".weeken_btn1").removeClass("hide");
+      			$(this).addClass("hide");
+      		})
+      		$(".weeken_btn1").click(function(){
+      			$(".focus").parent().parent().siblings().hide();
+      			$(".weeken_btn").removeClass("hide");
+      			$(this).addClass("hide");
+      		})
+      		
+      		$(".show_hide").live("tap",function(){
+					var obj =$(this).parent(".program_infor").siblings(".program_set");
+      				obj.toggle();
+      				if(obj.is(":hidden")){
+		      			$(this).css("background","url(../images/down.png) no-repeat center");
+		      			$(this).css("backgroundSize","14px")
+		      		}
+		      		else{
+		      			$(this).css("background","url(../images/up.png) no-repeat center");
+		      			$(this).css("backgroundSize","14px")
+		      		}
+      			})
+      		
+      	})
+    </script>
+    <script src="../../common/js/qytxplugin.js"></script>
+    <script src="../../common/js/baseData.js"></script>
+	<script src="../../common/js/common.js"></script>
+    <script src="../js/scheduleApi.js"></script>
+    <script src="../js/scheduleList.js"></script>
+</head>
+<body>
+	<input id="indexCache" type="hidden" value="1"/>
+	<div class="mui-content back_white">
+	    <div class="calendar_box">
+	    	<div class="calendar_top">
+	    		<span class="data_select pr">
+	    			<em class="be_back"></em>
+	    			2016年5月
+	    			<em class="be_go"></em>
+	    		</span>
+	    		<span class="weeken_btn1 hide">日历</span>
+	    		<span class="weeken_btn hide">当周</span>
+	    		<span class="month_btn">月报</span>
+	    	</div>
+	    	<div class="calendar_area">
+	    		<ul class="week_area">
+	    			<li>
+	    				<span class="overdue">
+	    					日
+	    				</span>
+	    			</li>
+	    			<li>
+	    				<span>
+	    					一
+	    				</span>
+	    			</li>
+	    			<li>
+	    				<span>
+	    					二
+	    				</span>
+	    			</li>
+	    			<li>
+	    				<span>
+	    					三
+	    				</span>
+	    			</li>
+	    			<li>
+	    				<span>
+	    					四
+	    				</span>
+	    			</li>
+	    			<li>
+	    				<span>
+	    					五
+	    				</span>
+	    			</li>
+	    			<li>
+	    				<span class="overdue">
+	    					六
+	    				</span>
+	    			</li>
+	    		</ul>
+	    		<div class="month_area Whole_month">
+	    			
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="program_area pr t_bor">
+    		<span class="program_title">
+    			<span class="day_data"></span>
+    			<span class="number_time"></span>
+    			<span class="sort" style="display: none;">排序</span>
+    		</span>
+    		<ul class="program_list" style="margin:0;padding:0;margin-left:10px;">
+    			<!--<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					1、审批模块离职状态设计
+    					<em class="show_hide"></em>
+    				</span>
+    				<div class="program_set">
+    					<div class="set_option">
+    						<span class="dele_btn">删除</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="edit_btn">编辑</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="dont_btn">未完成</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="well_btn">完成</span>
+    					</div>
+    				</div>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					2、<span class="doing_text">[已完成]</span>审批模块离职状态设计
+    					<em class="cancel"></em>
+    				</span>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					3、<span class="not_text">[未完成]</span>审批模块离职状态设计，展示效果如果为两行文本的效果
+    					<em class="cancel"></em>
+    				</span>
+    			</li><li class="pr b_bor">
+    				<span class="program_infor pr">
+    					1、审批模块离职状态设计
+    					<em class="show_hide"></em>
+    				</span>
+    				<div class="program_set">
+    					<div class="set_option">
+    						<span class="dele_btn">删除</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="edit_btn">编辑</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="dont_btn">未完成</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="well_btn">完成</span>
+    					</div>
+    				</div>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					2、<span class="doing_text">[已完成]</span>审批模块离职状态设计
+    					<em class="cancel"></em>
+    				</span>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					3、<span class="not_text">[未完成]</span>审批模块离职状态设计，展示效果如果为两行文本的效果
+    					<em class="cancel"></em>
+    				</span>
+    			</li><li class="pr b_bor">
+    				<span class="program_infor pr">
+    					1、审批模块离职状态设计
+    					<em class="show_hide"></em>
+    				</span>
+    				<div class="program_set">
+    					<div class="set_option">
+    						<span class="dele_btn">删除</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="edit_btn">编辑</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="dont_btn">未完成</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="well_btn">完成</span>
+    					</div>
+    				</div>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					2、<span class="doing_text">[已完成]</span>审批模块离职状态设计
+    					<em class="cancel"></em>
+    				</span>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					3、<span class="not_text">[未完成]</span>审批模块离职状态设计，展示效果如果为两行文本的效果
+    					<em class="cancel"></em>
+    				</span>
+    			</li><li class="pr b_bor">
+    				<span class="program_infor pr">
+    					1、审批模块离职状态设计
+    					<em class="show_hide"></em>
+    				</span>
+    				<div class="program_set">
+    					<div class="set_option">
+    						<span class="dele_btn">删除</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="edit_btn">编辑</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="dont_btn">未完成</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="well_btn">完成</span>
+    					</div>
+    				</div>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					2、<span class="doing_text">[已完成]</span>审批模块离职状态设计
+    					<em class="cancel"></em>
+    				</span>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					3、<span class="not_text">[未完成]</span>审批模块离职状态设计，展示效果如果为两行文本的效果
+    					<em class="cancel"></em>
+    				</span>
+    			</li><li class="pr b_bor">
+    				<span class="program_infor pr">
+    					1、审批模块离职状态设计
+    					<em class="show_hide"></em>
+    				</span>
+    				<div class="program_set">
+    					<div class="set_option">
+    						<span class="dele_btn">删除</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="edit_btn">编辑</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="dont_btn">未完成</span>
+    					</div>
+    					<div class="set_option">
+    						<span class="well_btn">完成</span>
+    					</div>
+    				</div>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					2、<span class="doing_text">[已完成]</span>审批模块离职状态设计
+    					<em class="cancel"></em>
+    				</span>
+    			</li>
+    			<li class="pr b_bor">
+    				<span class="program_infor pr">
+    					3、<span class="not_text">[未完成]</span>审批模块离职状态设计，展示效果如果为两行文本的效果
+    					<em class="cancel"></em>
+    				</span>
+    			</li>-->
+    		</ul>
+    	</div>
+    	<div class="footer pr t_bor active" id="add">
+    		<span>写日程</span>
+    	</div>
+	</div>
+</body>
+</html>

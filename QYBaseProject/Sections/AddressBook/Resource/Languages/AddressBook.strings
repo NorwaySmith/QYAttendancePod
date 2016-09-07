@@ -1,0 +1,268 @@
+/*
+ AddressBook.strings
+ QYBaseProject
+ 
+ Created by 田 on 16/1/5.
+ Copyright © 2016年 田. All rights reserved.
+ */
+//QYABApi
+"QYABApi_noInternetPrompt"                              = "无网络";
+"QYABApi_loadBaseDataPrompt"                            = "更新基础数据...";
+"QYABApi_creatGroupPrompt"                              = "正在新建群组...";
+"QYABApi_addUserPrompt"                                 = "正在添加成员...";
+"QYABApi_deleteUserPrompt"                              = "删除成员...";
+"QYABApi_quitGroupPrompt"                               = "退出群组...";
+"QYABApi_dissolveGroupPrompt"                           = "解散群组...";
+"QYABApi_updataGroupNamePrompt"                         = "修改群组名...";
+"QYABApi_invitationDownloadLgz"                         = "邀请下载乐工作";
+
+//QYABLocalBookSelectViewController
+"QYABLocalBookSelectViewController_title"               = "个人通讯录";
+"QYABLocalBookSelectViewController_cancel"              = "取消";
+"QYABLocalBookSelectViewController_selectAll"           = "全选";
+
+//QYABUnitBookSelectViewController
+"QYABUnitBookSelectViewController_title"                = "单位通讯录";
+"QYABUnitBookSelectViewController_cancel"              = "取消";
+"QYABUnitBookSelectViewController_selectAll"           = "全选";
+//QYABSelectedUserViewController
+"QYABSelectedUserViewController_title"                  = "接收人";
+"QYABSelectedUserViewController_OK"                     = "确定";
+
+//QYABQuickPickerViewController
+"QYABQuickPickerViewController_title"                   = "选择人员";
+"QYABQuickPickerViewController_unitBookButtonTitle"     = "从\"单位通讯录\"选择";
+"QYABQuickPickerViewController_personalBookButtonTitle" = "从\"个人通讯录\"选择";
+"QYABQuickPickerViewController_prompt"                  = "提示";
+"QYABQuickPickerViewController_giveUpMsg"               = "确定放弃本次的选择吗？";
+"QYABQuickPickerViewController_cancel"                  = "取消";
+"QYABQuickPickerViewController_giveUp"                  = "放弃选择";
+
+
+"QYABQuickPickerViewController_personalAddressBook"     = "个人通讯录";
+"QYABQuickPickerViewController_unitAddressBook"         = "单位通讯录";
+
+//QYABViewController
+"QYABViewController_title"                              = "通讯录";
+
+//QYABUnitDetailViewController
+//QYABUnitDetailOtherViewController
+//QYABPersonalDetailViewController
+//QYABUnknowDetailViewController
+"QYABUnitDetailViewController_title"                    = "详细资料";
+"QYABUnitDetailViewController_operation"                = "操作";
+
+"QYABUnitDetailViewController_inPhone"                  = "存入本机";
+"QYABUnitDetailViewController_cardSend"                 = "作为名片发送";
+
+"QYABUnitDetailViewController_applyMessage"             = "邀请您下载乐工作应用，单位通讯录搬到手机上，随时查；手机未存同事号？来电就知他是谁。下载地址： http://101.200.31.143/clientdown.jsp 。首次登陆请点忘记密码。";
+"QYABUnitDetailViewController_phone"                    = "电话";
+"QYABUnitDetailViewController_email"                    = "邮箱";
+"QYABUnitDetailViewController_invite"                   = "邀请他（她）下载乐工作";
+"QYABUnitDetailViewController_recentLogin"              = "最近登录时间：";
+//确定邀请“%@”下载乐工作吗?
+"QYABUnitDetailViewController_inviteFirstMsg"           = "确定邀请";
+"QYABUnitDetailViewController_inviteAfterMsg"           = "下载乐工作吗?";
+"QYABUnitDetailViewController_inviteTitle"              = "提示";
+"QYABUnitDetailViewController_inviteOK"                 = "确定";
+"QYABUnitDetailViewController_inviteCancel"             = "取消";
+//发送名片
+"QYABUnitDetailViewController_name"                     = "姓名";
+"QYABUnitDetailViewController_work"                     = "工作";
+"QYABUnitDetailViewController_house"                    = "住宅";
+
+"QYABUnitDetailViewController_officePhone"              = "办公电话";
+"QYABUnitDetailViewController_job"                      = "职务";
+"QYABUnitDetailViewController_vNum"                     = "V网短号";
+"QYABUnitDetailViewController_smsResultCancel"          = "发送取消";
+"QYABUnitDetailViewController_smsResultSucceed"         = "发送取消";
+"QYABUnitDetailViewController_smsResultFaild"           = "发送失败";
+
+"QYABPersonalDetailViewController_phoneEmpty"           = "手机号不能为空";
+"QYABPersonalDetailViewController_email"                = "电子邮箱";
+
+"QYABUnknowDetailViewController_saveContact"            = "保存联系人";
+"QYABUnknowDetailViewController_mobile"                 = "手机";
+
+
+//QYABSearchViewController
+"QYABSearchViewController_resultTips"                   = "条搜索结果";
+"QYABSearchViewController_contact"                      = "联系人";
+"QYABSearchViewController_group"                        = "部门";
+
+
+//QYABGroupManageViewController
+"QYABGroupManageViewController_title"                   = "群组管理";
+"QYABGroupManageViewController_newGroup"                = "新建群组";
+
+//QYABGroupUserViewController
+"QYABGroupUserViewController_operation"                 = "操作";
+"QYABGroupUserViewController_addUser"                   = "添加成员";
+"QYABGroupUserViewController_deleteUser"                = "删除成员";
+"QYABGroupUserViewController_renameGroup"               = "群组重命名";
+"QYABGroupUserViewController_ungroup"                   = "解散群组";
+"QYABGroupUserViewController_quitGroup"                 = "退出群组";
+"QYABGroupUserViewController_selectAll"                 = "全选";
+"QYABGroupUserViewController_cancel"                    = "取消";
+"QYABGroupUserViewController_delete"                    = "删除";
+"QYABGroupUserViewController_uncheckedPrompt"           = "请选择人员";
+//删除人员二次确认
+"QYABGroupUserViewController_alertTitle"                = "提示";
+"QYABGroupUserViewController_deleteAlertMsg"            = "你确定要删除这些人员吗？";
+"QYABGroupUserViewController_deleteAlertCancel"         = "取消";
+"QYABGroupUserViewController_deleteAlertDone"           = "确定";
+"QYABGroupUserViewController_deleteSuccessPrompt"       = "删除成功";
+//解散群租二次确认
+"QYABGroupUserViewController_dismissAlertMsg"           = "你确定要删除这些人员吗？";
+"QYABGroupUserViewController_dismissAlertOK"            = "确定";
+"QYABGroupUserViewController_dismissAlertCancel"        = "取消";
+"QYABGroupUserViewController_dismissSuccessPrompt"      = "解散群组成功";
+//退出群组二次确认
+"QYABGroupUserViewController_quitAlertMsg"              = "确定要退出该群组吗？";
+"QYABGroupUserViewController_quitAlertOK"               = "确定";
+"QYABGroupUserViewController_quitAlertCancel"           = "确定";
+"QYABGroupUserViewController_quitSuccessPrompt"         = "退出群组成功";
+
+
+//QYABNewGroupViewController
+"QYABNewGroupViewController_title"                      = "群组重命名";
+"QYABNewGroupViewController_ok"                         = "群组重命名";
+"QYABNewGroupViewController_placeholder"                = "请输入群组名称";
+"QYABNewGroupViewController_tipsPrompt"                 = "请输入群组名称";
+"QYABNewGroupViewController_beyondPrompt"               = "最多输入20个字符";
+"QYABNewGroupViewController_newGroupSuccessPrompt"      = "最多输入20个字符";
+
+"QYABNewGroupViewController_renameSuccessPrompt"        = "群组重命名成功";
+
+//QYABSelectViewController
+"QYABSelectViewController_cancel"                       = "取消";
+"QYABSelectViewController_selectAll"                    = "全选";
+"QYABSelectViewController_uncheckedPrompt"              = "请选择人员";
+"QYABSelectViewController_OK"                           = "确定";
+
+//QYSelectGroupViewController
+"QYSelectGroupViewController_title"                     = "选择部门";
+"QYSelectGroupViewController_uncheckedPrompt"           = "请选择部门";
+"QYSelectGroupViewController_uncheckedGroupPrompt"      = "未选择部门";
+"QYSelectGroupViewController_OK"                        = "确定";
+
+//QYABPickerToolbar
+"QYABPickerToolbar_OK"                                  = "确定";
+
+//QYABPickerSearchView
+"QYABPickerSearchView_searchPlaceholder"                = "搜索";
+
+//QYABPickerSearchNoDataView
+"QYABPickerSearchNoDataView_prompt"                     = "暂无人员";
+
+//QYABSelectedUserHeadView
+"QYABSelectedUserHeadView_addUserText"                  = "添加新接收人";
+"QYABSelectedUserHeadView_selectedUser"                 = "已选择的人员";
+"QYABSelectedUserHeadView_selectAll"                    = "全选";
+
+//QYABPickerUnitListView
+"QYABPickerUnitListView_selectAll"                      = "全选";
+"QYABPickerUnitListView_cancel"                         = "取消";
+
+//QYABPickerPrivateView
+"QYABPickerPrivateView_selectAll"                       = "全选";
+"QYABPickerPrivateView_cancel"                          = "取消";
+
+//QYABGroupManageNoDataView
+"QYABGroupManageNoDataView_noData"                      = "暂无群组信息";
+"QYABGroupManageNoDataView_newTips"                     = "请点击右上角“+”新建";
+
+//QYABGroupUserSelectBar
+"QYABGroupUserSelectBar_delete"                         = "删除";
+"QYABGroupUserSelectBar_cancel"                         = "取消";
+
+//QYABUnitDetailHiddenView
+"QYABUnitDetailHiddenView_userHidden"                   = "该人员信息已被隐藏";
+
+//QYABDetailCell
+"QYABDetailCell_mobileNo"                               = "手机号码";
+"QYABDetailCell_homePhone"                              = "家庭电话";
+"QYABDetailCell_officeTel"                              = "单位电话";
+"QYABDetailCell_otherTel"                               = "其他电话";
+"QYABDetailCell_email"                                  = "电子邮箱";
+
+//QYABUnitDetailLoadCell
+"QYABUnitDetailLoadCell_invite"                         = "邀请他（她）下载乐工作";
+
+//QYABPeopleDetailToolBar
+"QYABPeopleDetailToolBar_didi"                          = " 嘀一下";
+"QYABPeopleDetailToolBar_im"                            = " 发消息";
+
+//QYABSearchDefaultView
+"QYABSearchDefaultView_searchTips"                      = "请搜索以下关键字";
+"QYABSearchDefaultView_group"                           = "部门";
+"QYABSearchDefaultView_name"                            = "姓名";
+"QYABSearchDefaultView_phone"                           = "电话";
+
+//QYABPrivateSearchDefaultView
+"QYABPrivateSearchDefaultView_searchTips"               = "请搜索以下关键字";
+"QYABPrivateSearchDefaultView_name"                     = "姓名";
+"QYABPrivateSearchDefaultView_phone"                    = "电话";
+
+//QYABNoDataView
+"QYABNoDataView_result"                                 = "0条搜索结果";
+"QYABNoDataView_tips"                                   = "暂无人员";
+
+//QYABSelectUnitListView
+"QYABSelectUnitListView_cancel"                         = "取消";
+"QYABSelectUnitListView_selectAll"                      = "全选";
+
+//QYABSelectPrivateView
+"QYABSelectPrivateView_cancel"                          = "取消";
+"QYABSelectPrivateView_selectAll"                       = "全选";
+
+
+//QYABSelectGroupListView
+"QYABSelectGroupListView_cancel"                        = "取消";
+"QYABSelectGroupListView_selectAll"                     = "全选";
+
+//QYABSelectBottomView
+"QYABSelectBottomView_cancel"                           = "取消";
+"QYABSelectBottomView_OK"                               = "确定";
+
+//QYABUnitDetailViewModel
+"QYABUnitDetailViewModel_mobileNo"                      = "手机号码";
+"QYABUnitDetailViewModel_extensionPhone"                = "分机号码";
+"QYABUnitDetailViewModel_homePhone"                     = "分机号码";
+"QYABUnitDetailViewModel_unitPhone"                     = "单位电话";
+"QYABUnitDetailViewModel_otherPhone"                    = "其他电话";
+"QYABUnitDetailViewModel_email"                         = "电子邮箱";
+
+//QYABPersonalDetailViewModel
+"QYABPersonalDetailViewModel_mobileNo"                  = "手机号码";
+"QYABPersonalDetailViewModel_email"                     = "电子邮箱";
+"QYABPersonalDetailViewModel_other"                     = "其他";
+"QYABPersonalDetailViewModel_phone"                     = "电话";
+"QYABPersonalDetailViewModel_email1"                    = "邮箱";
+
+//QYABPickerAddUserView
+"QYABPickerAddUserView_receive"                         = "接收人";
+
+//QYABBasicDataHelper
+"QYABBasicDataHelper_outMemoryMsg"                      = "您的存储空间不足，可能会导致更新基础数据失败。确定要更新吗？";
+"QYABBasicDataHelper_outMemoryOK"                       = "是，立即更新";
+"QYABBasicDataHelper_outMemoryCancel"                   = "否，清理空间";
+//检查更新失败
+"QYABBasicDataHelper_checkFaild"                        = "基础数据更新返回格式有误";
+"QYABBasicDataHelper_bigDataDownLoadFaild"              = "下载失败";
+"QYABBasicDataHelper_unzipFaild"                        = "解压失败";
+
+//QYABDownloadBigDataHelper
+"QYABDownloadBigDataHelper_downloadPrompt"              = "正在下载数据库";
+
+//QYABLocalPhoneHelper
+"QYABLocalPhoneHelper_permissionDenied"                 = "无通讯权限";
+"QYABLocalPhoneHelper_depositSuccess"                   = "存入本机成功";
+
+//QYABPickerViewController
+"QYABPickerViewController_outOfMaximumSelectTips"                 = "最多可以选择%lu人";
+
+//QYABSearchNavView
+"QYABSearchNavView_cancel"                 = "取消";
+"QYABSearchNavView_placeholder"                 = "请输入关键字";
+

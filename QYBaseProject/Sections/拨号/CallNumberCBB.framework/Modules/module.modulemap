@@ -1,0 +1,6 @@
+framework module CallNumberCBB {
+  umbrella header "CallNumberCBB.h"
+
+  export *
+  module * { export * }
+}

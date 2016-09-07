@@ -1,0 +1,203 @@
+{
+  "task/html/tabList.html": {
+    "resources": [
+      "task/images/add_03.png",
+      "task/js/taskApi.js",
+      "common/css/mui.min.css",
+      "task/images/arrow_right_03.png",
+      "task/css/order.css",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/mui.min.js",
+      "task/js/tablList.js",
+      "common/js/baseData.js",
+      "common/js/qytxplugin.js",
+      "common/js/common.js",
+      "task/images/renwu.png",
+      "task/images/time_ico_04.png",
+      "task/images/jieshou_03.png",
+      "task/html/addTask.html",
+      "task/html/taskDecompose.html",
+      "task/html/TaskDetail.html",
+      "common/fonts/mui.ttf",
+      "task/html/TransferReason.html",
+      "task/html/OverTask.html"
+    ],
+    "refer": [
+      "task/html/addTask.html",
+      "task/html/taskDecompose.html",
+      "task/html/TaskDetail.html",
+      "task/html/OverTask.html"
+    ]
+  },
+  "task/html/addTask.html": {
+    "resources": [
+      "task/js/addTask.js",
+      "task/html/tabList.html",
+      "task/js/taskApi.js",
+      "common/css/mui.min.css",
+      "task/images/arrow_right_03.png",
+      "task/css/order.css",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/common.js",
+      "common/js/mui.min.js",
+      "common/js/baseData.js",
+      "common/fonts/mui.ttf"
+    ],
+    "refer": [
+      "task/html/tabList.html"
+    ]
+  },
+  "task/html/taskDecompose.html": {
+    "resources": [
+      "common/css/mui.min.css",
+      "task/images/del.png",
+      "task/images/arrow_right_03.png",
+      "task/css/order.css",
+      "common/js/mui.min.js",
+      "task/images/add.png",
+      "task/js/taskDecompose.js",
+      "task/js/taskApi.js",
+      "common/js/qytxplugin.js",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/common.js",
+      "common/js/baseData.js",
+      "task/html/tabList.html",
+      "common/fonts/mui.ttf",
+      "task/html/TaskDetail.html",
+      "task/html/receiveTask.html",
+      "task/html/taskDecomposeSuccess.html"
+    ],
+    "refer": [
+      "task/html/tabList.html",
+      "task/html/receiveTask.html",
+      "task/html/TaskDetail.html",
+      "task/html/taskDecomposeSuccess.html"
+    ]
+  },
+  "task/html/TaskDetail.html": {
+    "resources": [
+      "task/images/cancel_03.png",
+      "task/images/edit_03.png",
+      "task/images/source_ico_03.png",
+      "task/html/tabList.html",
+      "task/images/complete_03.png",
+      "task/images/stop_03.png",
+      "task/js/TaskDetail.js",
+      "common/css/mui.min.css",
+      "common/js/mui.min.js",
+      "common/js/common.js",
+      "common/js/baseData.js",
+      "task/js/taskApi.js",
+      "task/css/order.css",
+      "task/images/time_ico_04.png",
+      "common/js/jquery-1.8.1.min.js",
+      "common/fonts/mui.ttf",
+      "task/html/taskDecompose.html",
+      "task/html/receiveTask.html",
+      "task/html/TransferReason.html",
+      "task/html/UnDoneReason.html",
+      "task/images/jieshou_03.png"
+    ],
+    "refer": [
+      "task/html/tabList.html",
+      "task/html/TransferReason.html",
+      "task/html/receiveTask.html",
+      "task/html/taskDecompose.html",
+      "task/html/UnDoneReason.html"
+    ]
+  },
+  "task/html/OverTask.html": {
+    "resources": [
+      "task/js/overTask.js",
+      "task/js/taskApi.js",
+      "common/css/mui.min.css",
+      "task/css/order.css",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/common.js",
+      "common/js/mui.min.js",
+      "common/js/baseData.js",
+      "common/fonts/mui.ttf",
+      "task/html/tabList.html",
+      "task/images/renwu.png",
+      "task/images/time_ico_04.png",
+      "task/images/complete_flag_03.png",
+      "task/images/stop_flag_03.png",
+      "task/images/un_complete_flag_03.png"
+    ],
+    "refer": [
+      "task/html/tabList.html"
+    ]
+  },
+  "task/html/receiveTask.html": {
+    "resources": [
+      "task/images/order_ico.png",
+      "task/js/receiveTask.js",
+      "task/images/jiantou.png",
+      "task/html/tabList.html",
+      "task/html/taskDecompose.html",
+      "task/html/TaskDetail.html",
+      "common/css/mui.min.css",
+      "task/css/order.css",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/common.js",
+      "common/js/mui.min.js",
+      "common/js/baseData.js"
+    ],
+    "refer": [
+      "task/html/tabList.html",
+      "task/html/taskDecompose.html",
+      "task/html/TaskDetail.html"
+    ]
+  },
+  "task/html/TransferReason.html": {
+    "resources": [
+      "task/js/transferReason.js",
+      "task/html/TaskDetail.html",
+      "task/html/tabList.html",
+      "common/fonts/mui.ttf",
+      "task/js/taskApi.js",
+      "common/css/mui.min.css",
+      "task/images/arrow_right_03.png",
+      "task/css/order.css",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/common.js",
+      "common/js/mui.min.js",
+      "common/js/baseData.js"
+    ],
+    "refer": [
+      "task/html/tabList.html",
+      "task/html/TaskDetail.html"
+    ]
+  },
+  "task/html/UnDoneReason.html": {
+    "resources": [
+      "task/js/unDoneReason.js",
+      "common/fonts/mui.ttf",
+      "task/js/taskApi.js",
+      "common/css/mui.min.css",
+      "task/css/order.css",
+      "common/js/jquery-1.8.1.min.js",
+      "common/js/common.js",
+      "common/js/mui.min.js",
+      "task/html/TaskDetail.html"
+    ],
+    "refer": [
+      "task/html/TaskDetail.html"
+    ]
+  },
+  "task/html/taskDecomposeSuccess.html": {
+    "resources": [
+      "task/js/taskDecomposeSuccess.js",
+      "task/images/order_ico.png",
+      "common/css/mui.min.css",
+      "task/css/order.css",
+      "task/html/tabList.html",
+      "common/js/common.js",
+      "common/js/mui.min.js",
+      "common/js/jquery-1.8.1.min.js"
+    ],
+    "refer": [
+      "task/html/tabList.html"
+    ]
+  }
+}

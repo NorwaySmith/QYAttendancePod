@@ -1,0 +1,93 @@
+@charset "utf-8";
+*{padding: 0px;margin: 0px;}
+li,em,span{display: block;}
+body{background: #f5f5f5;}
+.back_white{background: #fff !important;}
+.mui-content{background: #f5f5f5;}
+.text_hide{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.mui-scroll-wrapper{top:35px;padding-bottom: 49px;}
+.t_bor:before{position: absolute;left: 0px;top:0px;background: #d9d9d9;width:100%;height:1px; transform:scaleY(0.5);   content: '';}
+/*下标线 0.5像素*/
+.pr{position: relative;}
+.b_bor:after{width: 100%;height: 1px;transform: scaleY(0.5);background: #d9d9d9;position: absolute;bottom:0px;left: 0px;content: '';}
+/*隐藏*/
+.hide{display: none !important;}
+
+/*日历列表*/
+.calendar_box{padding: 7px 7px;overflow: hidden;}
+.calendar_top{padding: 0 9px;overflow: hidden;}
+.data_select{float: left;padding: 0 40px;font-size: 16px;line-height: 1.9;text-align: left;}
+.be_back{display: block;width: 50px;height: 30px;background: url(../images/be_back.png) no-repeat center;background-size: 11px;position: absolute;left: 0px;top:0px;}
+.be_go{display: block;width: 50px;height: 30px;background: url(../images/be_going.png) no-repeat center;background-size: 11px;position: absolute;right: 0px;top:0px;}
+.weeken_btn{width:55px;line-height: 1.9;float: left;text-align: center;margin-left: 39px;font-size: 16px;color: #fff;background: #25b6ed;border-radius: 3px;}
+.weeken_btn1{width:55px;line-height: 1.9;float: left;text-align: center;margin-left: 39px;font-size: 16px;color: #fff;background: #25b6ed;border-radius: 3px;}
+.month_btn{width:55px;line-height: 1.9;float: right;text-align: center;font-size: 16px;color: #25b6ed;}
+.calendar_area{overflow: hidden;}
+.week_area{overflow: hidden;margin-top: 3px;}
+.week_area li{float: left;width: 14.2%;overflow: hidden;text-align: center;}
+.week_area li span{display: inline-block;width: 34px;line-height: 34px;text-align: center;border-radius: 50%;}
+/*过期的文字样式*/
+.overdue{color: #aaa;}
+.month_area{overflow: hidden;margin-top: 7px;}
+.month_area li{float: left;width: 14.2%;overflow: hidden;text-align: center;margin-bottom: 7px;}
+.month_area li span{display: inline-block;width: 38px;height:38px;line-height: 38px;font-size:16px;font-weight:bold;text-align: center;border-radius: 50%;}
+.the_day{background: #ff5454;color: #fff;}
+.month_area li span.focus{border:1px solid #ff5454;}
+/*代表任务的小圆点（三种状态）*/
+.dian{display: block;width: 5px;height: 5px;border-radius: 50%;position: absolute;bottom:5px;left: 50%;margin-left: -2px;}
+.future_dian{background: #ff5454;}/*未来任务*/
+.bygone_dian{background: #999;}/*已经过去的任务*/
+.now_dian{background: #fff;}/*今天的任务*/
+/*日程列*/
+.program_area{overflow: hidden;margin-top: 15px;margin-bottom: 49px;}
+.program_title{padding: 0 16px 0 10px;line-height: 2.5;float: left;width: 100%;background: #efeff4;color: #666;}
+.program_title .day_data{float: left;line-height: inherit;text-align: center;}
+.program_title .number_time{float: left;text-align:center;margin-left: 19px;line-height: inherit;}
+.program_title .sort{float: right;line-height: inherit;text-align: left;padding-left: 17px;background: url(../images/sort_ico.png) no-repeat left;background-size: 14px;color: #00b4ff;}
+.program_list{overflow: hidden;width: 100%;}
+.program_list li{overflow: hidden;}
+.program_infor{line-height: 1.2;text-align: left;padding:13px 48px 13px 10px;font-size: 16px;word-break:break-all;}
+.show_hide{width: 60px;height: 100%;position: absolute;top: 0px;right: 10px;background: url(../images/down.png) no-repeat center;background-size: 14px;}
+.cancel{width: 60px;height: 100%;position: absolute;top: 0px;right: 10px;background: url(../images/cancle.png) no-repeat center;background-size: 20px;}
+.program_set{overflow: hidden;border-top: 1px solid #d9d9d9;display: none;}
+.set_option{width: 25%;border-right: 1px solid #d9d9d9;text-align: center;float: left;}
+.set_option span{display: inline-block;}
+.dele_btn{line-height: 2.5;text-align: left;padding-left: 16px;background: url(../images/dele_ico.png) no-repeat left;background-size: 14px;color: #ff5454;}
+.edit_btn{line-height: 2.5;text-align: left;padding-left: 16px;background: url(../images/edit_ico.png) no-repeat left;background-size: 14px;}
+.dont_btn{line-height: 2.5;text-align: left;padding-left: 16px;background: url(../images/nodo_ico.png) no-repeat left;background-size: 14px;}
+.well_btn{line-height: 2.5;text-align: left;padding-left: 16px;background: url(../images/well_ico.png) no-repeat left;background-size: 14px;}
+.footer{width:100%;overflow: hidden;text-align: center;position: fixed;bottom:0;left:0px;background: #fff;}
+.footer span{display: inline-block;text-align: left;padding-left: 21px;font-size: 16px;line-height: 3.1;background: url(../images/add.png) no-repeat left;background-size: 18px;color: #25b6ed;}
+
+/*编辑日程*/
+.in_box{margin-top: 10px;}
+.in_txt{padding: 12px 10px;font-size: 16px;line-height: 1.2;text-align: left;min-height: 88px;border:none;margin: 0;}
+.time_select{margin-top: 10px;background: #fff;padding: 0 12px;}
+.time_box{font-size: 16px;text-align: left;line-height: 2.75;background: url(../images/be_going.png) no-repeat right;background-size: 10px;}
+.time_box span{float: right;margin-right: 14px;color: #aaa;font-size: 14px;line-height: 44px;text-align: left;}
+
+.doing_text{color: #aaa;display: inline-block;margin-right: 5px;}
+.not_text{color: #ff5454;display: inline-block;margin-right: 5px;}
+/**保存按钮*/
+.button-area{margin: 20px 10px;background: #00b4ff;height: 40px;line-height: 2.5;text-align: center;border-radius: 2px;color: #ffffff;}
+.button-area:active{color:#74ccff}
+.active:active{background: #f2f2f2 !important;}
+/**月报**/
+.task{background: #25b6fe;padding: 0 10px;}
+.taskes{width:100%;height:66px;text-align: center;padding-top: 12px;}
+.date{width: 100%;height: 45px;text-align: center;padding: fixed;left: 0px;bottom: 0px;}
+
+.time{display:inline-block; padding: 0 60px;font-size: 16px;line-height: 2.75;text-align: left;color: #ffffff;}
+.num{ display:block; font-size: 18px;color: #ffffff;}
+.t_bor:before{position: absolute;left: 0px;top:0px;background: #57c3f9;width:100%;height:1px; transform:scaleY(0.5);   content: '';}
+.name{display:block;font-size: 14px;color: #c3ebff;}
+.left_ico{display: block;position: absolute;width: 80px;height: 44px;top:0px;left:0; background: url(../images/left.png)no-repeat center;background-size:11px;}
+.rigth_ico{display: block;position: absolute;width: 80px;height: 44px;top:0px;right:0; background: url(../images/rigth.png)no-repeat center;background-size:11px;}
+.task_one{width: 33%; float: left;}
+.bder{border-right:1px solid  #57c3f9;}
+.completeTime{color: #888888; font-size: 14px;line-height: 2.21;background: #efeff4;padding: 0px 10px;}
+.content{background: #FFFFFF;padding: 0px 10px;}
+.content li span{display: block;font-size: 16px;color: #353535;width: 100%;padding: 14px 21px 13px 0;word-break:break-all;}
+.confirm_ico{display: block;position: absolute;width: 21px;height: 21px;top:12px;right:0; background: url(../images/confirm.png)no-repeat center;background-size:21px;}
+.mui-scroll-wrapper{top:111px;padding-bottom: 0px;}
+.delete_ico{display: block;position: absolute;width: 21px;height: 21px;top:12px;right:0; background: url(../images/delete.png)no-repeat center;background-size:21px;}

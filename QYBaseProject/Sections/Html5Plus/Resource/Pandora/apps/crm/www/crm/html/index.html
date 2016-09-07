@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../common/js/mui.js"></script>
+		<script src="../../common/js/qytxplugin.js"></script>
+		<script src="../../common/js/baseData.js"></script>
+		<script src="../../common/js/common.js"></script>
+		<script  type="text/javascript" src="../../common/js/jquery-2.1.4.min.js"></script>
+		<script  type="text/javascript" src="../js/chance/radialIndicator.min.js"></script>
+		<link href="../../common/css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/crm.css"/>
+		<script type="text/javascript" charset="utf-8">
+	      	mui.init({
+				gestureConfig:{
+					tap:true
+				},
+				beforeback: function(){
+					if(plus.os.name=='iOS'){
+						plus.qytxplugin.goBackDesk();
+					}else{
+						plus.runtime.quit();
+					}
+				}
+			});
+			
+			//页面加载完毕方法
+			mui.plusReady(function() {
+				// IOS系统 需要处理太阳花等待问题
+				if(plus.os.name=='iOS'){
+		            plus.navigator.closeSplashscreen();
+		            plus.qytxplugin.appReady();
+	            }
+				//往来单位 绑定方法
+				mui("#customer")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'customer/customerList.html',
+					    id: 'customer',
+					    extras:{
+					    	indexId:plus.webview.currentWebview().id,//首页ID
+						  	callbackFun : 'getIndexPageData(gpic);'
+						}
+					});
+				});
+				
+				//联系人绑定方法
+				mui("#contact")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'contact/contact.html',
+					    id: 'contact'
+
+					});
+				});
+				
+				//销售机会绑定方法
+				mui("#chance")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'chance/chancelist.html',
+					    id: 'chancelist'
+					});
+				});
+				
+				//销售订单绑定方法
+				mui("#order")[0].addEventListener('tap', function(){
+					//console.log(plus.webview.currentWebview().id)
+					mui.openWindow({
+					    url: 'order/orderList.html',
+					    id: 'orderlist',
+					    extras:{
+					    	indexId:plus.webview.currentWebview().id,//首页ID
+						  	callbackFun : 'getIndexPageData(gpic);'
+						}
+					});
+				});
+				
+				//拜访记录绑定方法
+				mui("#visitrecord")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'visit/visitrecordList.html',
+					    id: 'visitrecordList'
+					});
+				});
+				
+				
+				//进入销售绩效列表
+				mui("#saleperformance")[0].addEventListener('tap', function(){
+					//console.log('进入销售绩效列表');
+					mui.openWindow({
+					    url: 'chance/salesperformancelist.html',
+					    id: 'salesperformancelist'
+					});
+				});
+				
+				//进入销售行为
+				mui("#saleBehavior")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'statistics/saleBehavior.html',
+					    id: 'saleBehavior'
+					});
+				});
+				
+				//进入销售报表
+				mui("#statistics")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'statistics.html',
+					    id: 'statistics'
+					});
+				});
+				
+				
+				/* 其它参照上面 */
+				
+				getIndexPageData(gpic);
+				//初始化数据字典
+				initDict();
+			});
+			
+			
+			var getIndexPageData = function(callback){
+					var url = window.windowCommon.basePath + 'crm/chance/getIndexPageData.c';
+					var data = {
+						"_clientType": "wap",
+						"userId": window.windowCommon.approveLoginId,
+						"follower":window.windowCommon.approveLoginId,
+						//"thismonth": thismonth,//这个值在后台取
+						"subordinate": 0
+					};
+					
+					mui.ajax(url, {
+						data: data,
+						dataType: 'json',
+						type: 'post', //HTTP请求类型
+						timeout: 10000, //超时时间设置为10秒；
+						crossDomain: true,
+						success: function(response) {
+						
+							if (response.code == 1) {
+								document.getElementById("salesTarget").innerHTML=response.data.salesTarget;
+								document.getElementById("transactionAmount").innerHTML=response.data.transactionAmount;
+								document.getElementById("paymentAmount").innerHTML=response.data.paymentAmount;
+								if(response.data.transactionAmount=="￥0.00"){
+									document.getElementById("areaPercent").innerHTML="0%";
+								document.getElementById("areaPercentNum").value = 0;
+								}else{
+									document.getElementById("areaPercent").innerHTML=response.data.areaPercent;
+								document.getElementById("areaPercentNum").value = response.data.areaPercentNum;
+								}
+							}
+							if (callback != undefined && callback != null) {
+								callback();
+							}
+						}
+					});
+			}
+			
+			var gpic = function(){
+				$('#indicatorContainer').html('');
+				$('#indicatorContainer').radialIndicator({
+					barColor: '#FDAA06', //单一的颜色
+					radius: 52, //半径
+					barWidth: 8,
+					minValue: 0, //最小值，当前值小于最小值时，不显示。
+					maxValue: 100, //最大值，当前值大于最大值时，显示满。
+					initValue: 0,
+					roundCorner : false, //是否是圆角
+					displayNumber: false //中间是否显示数字
+				});
+				
+				var radialObj = $('#indicatorContainer').data('radialIndicator');
+				radialObj.animate($("#areaPercentNum").val()); 
+			}
+      		function initDict(){
+      			
+					var url = window.windowCommon.basePath + 'crm/index/initDict.c';
+					var data = {
+						"_clientType": "wap",
+						"userId": window.windowCommon.approveLoginId
+					};
+					
+					mui.ajax(url, {
+						data: data,
+						dataType: 'json',
+						type: 'post', //HTTP请求类型
+						timeout: 10000, //超时时间设置为10秒；
+						crossDomain: true,
+						success: function(response) {
+							
+						}
+					});
+			
+      		}
+		</script>
+	<style>
+    	.mui-content>.mui-table-view:first-child{margin-top: 0px;}
+    	.mui-grid-view.mui-grid-9{background: #fff !important;}
+    	.mui-grid-view.mui-grid-9 .mui-table-view-cell.mui-active{background: #d9d9d9;}
+    </style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav qy-head">
+			<a class="mui-action-back ic-left"></a>
+			<h1 class="mui-title">首页</h1>
+		</header>
+	<div class="mui-content">
+		<ul class="mui-table-view index-list-one">
+			<li class="mui-table-view-cell index-listone-li">
+				<a class="mui-navigate-right special-active1" id="saleperformance">
+					<div class="index-listone-left">
+						<input type="hidden" id="areaPercentNum" value="0"/>
+						<div class="index-listone-left-center" id="indicatorContainerWrap">
+							<div style="margin-left:-10px;" class="f30" id="indicatorContainer"></div>
+							<div class="index-ll-text" style="color: #fff;margin-top:10px;">本月完成</div>
+							<div class="index-ll-text1" style="color: #fff;" id="areaPercent">0%</div>
+						</div>
+						<div class="listone_title" style="margin-top: 30px;">
+							<span class="listone_title_left">
+								本月销售目标：
+								<span id="salesTarget">
+									￥0.00
+								</span>
+							</span>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view index_two_list">
+			<li class="mui-table-view-cell special-active">
+				<div class="list_two_left">
+					<span>本月签单成交</span>
+					<span id="transactionAmount">
+						￥0.00
+					</span>
+				</div>
+			</li>
+			<li class="mui-table-view-cell special-active">
+				<div class="list_two_left">
+					<span>本月回款金额</span>
+					<span id="paymentAmount">
+						￥0.00
+					</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="order">
+				<a href="#">
+					<div class="index-list-pic1"></div>
+					<span class="index-lt-text2">销售订单</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="chance">
+				<a href="#">
+					<div class="index-list-pic2"></div>
+					<span class="index-lt-text2">销售机会</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="visitrecord">
+				<a href="#">
+					<div class="index-list-pic3"></div>
+					<span class="index-lt-text2">拜访记录</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="customer">
+				<a href="#">
+					<div class="index-list-pic4"></div>
+					<span class="index-lt-text2">往来单位</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="contact">
+				<a href="#">
+					<div class="index-list-pic5"></div>
+					<span class="index-lt-text2">联系人</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="statistics">
+				<a href="#">
+					<div class="index-list-pic6"></div>
+					<span class="index-lt-text2">销售报表</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="saleBehavior">
+				<a href="#">
+					<div class="index-list-pic7"></div>
+					<span class="index-lt-text2">销售行为</span>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+		
+	</body>
+
+</html>

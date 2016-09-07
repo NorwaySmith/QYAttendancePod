@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  QYBaseProject
+
+  Created by 田 on 16/1/15.
+  Copyright © 2016年 田. All rights reserved.
+*/
+"tab_imTitle"               = "消息";
+"tab_didiTitle"             = "嘀一下";
+"tab_addressBookTitle"      = "通讯录";
+"tab_workTitle"             = "工作";
+"tab_moreTitle"             = "发现";
+
+
+//单点登录账号在其他设备登录提示
+"SSO_alertView_prompt"      = "你的账号已在其他设备登录";
+"SSO_alertView_ok"          = "确定";
+//上传设备id失败提示
+"SSO_alertView_faildPrompt" = "单点登录初始化失败";

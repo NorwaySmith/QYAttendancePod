@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script type="text/javascript" src="../../../common/js/jquery-2.1.4.min.js" ></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../../css/crm.css"/>
+    <style>
+    	.mui-scroll-wrapper{top:0px;height: 250px !important;border-radius: 0px !important; }
+    	.mui-backdrop{position: fixed;}
+    	.mui-popover{z-index: 999;}
+    	
+    	.mui-content>.mui-table-view:first-child{margin-top:12px ;}
+    	.mui-navigate-right:after, .mui-push-right:after{margin-right: 0px;}
+    	.mui-scroll-wrapper{overflow: inherit;}
+    	.mui-backdrop{position: fixed;}
+    	.mui-popover{z-index: 999;}
+    	.no_payment {
+		  background-color: #ffffff;
+		  min-height: 180px;
+		  overflow: auto;
+	      text-align: center;
+	      font-size: 16px;
+	      vertical-align: middle;
+	      line-height: 180px;
+	      color: rgb(217, 217, 217);
+	    }
+	    .order-two{
+	    	background-color: #ffffff;
+	    }
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">销售订单详情</h1>
+	</header>
+	<input type="hidden" name="state" id="state" value="" />
+	<div class="mui-content">
+		<ul class="mui-table-view order-top-list" id="toUpdate">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="javascript:void(0);">
+					<span class="top-list-one" id="orderName"></span>
+					<span class="top-list-two"><em class="order-money"></em><span style="color: #aaa;"><font id="orderMoney" style="color: #aaa;"></font></span></span>
+					<span class="top-list-two" style="margin-top:-8px;"><em class="order-time"></em><span style="color: #aaa;"><font id="beginTime" style="color: #aaa;"></font> 至 <font id="endTime" style="color: #aaa;"></font></span></span>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view order-center-list">
+			<li class="mui-table-view-cell bor-bottom">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="toPopover">
+					<span class="bgtext">订单状态</span>
+					<span class="center-list-two fr mr30" style="margin-right: 30px;color: #aaa;" id="orderState"></span>
+				</a>
+			</li>
+			<div id="popover" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">订单状态</span>							
+						</div>
+						<ul class="mui-table-view nav-second">
+							<li class="mui-table-view-cell" val="0">执行前
+							</li>
+							<li class="mui-table-view-cell" val="1">执行中
+							</li>
+							<li class="mui-table-view-cell" val="2">结束
+							</li>
+							<li class="mui-table-view-cell" val="3">意外中止
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="middlePopover" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">操作</span>							
+						</div>
+						<ul class="mui-table-view nav-second">
+							<li class="mui-table-view-cell" id="editPayment"><a href="javascript:void(0);">编辑</a>
+							</li>
+							<li class="mui-table-view-cell" id="delPayment"><a href="javascript:void(0);">删除</a>
+							</li>
+							<li class="mui-table-view-cell" id="updateInvoice"><a href="javascript:void(0);">设置为已开票</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" id="followUserIdsA">
+					<span class="bgtext">跟进人</span>
+					<span class="center-list-two fr mr30" style="width:60%;float: right !important;margin-right: 30px; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;text-align: right;color: #aaa;" id="followUserNames"></span>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-detail-two unit-clear" style="padding-bottom:0px;">
+			<li class="mui-table-view-cell unit-link-one">
+				<span class="shi-two-ts unit-link bgtext">
+					回款纪录<font id="paymentCount"></font>
+				</span>
+				<a class="mui-btn shi-two-btn" href="javascript:void(0);" id="addpaymentrecords">添加记录</a>
+			</li>
+		</ul>
+		<div id="paymentList" class="order-bottom-list">
+			<div class="no_payment">
+				您还没有添加回款记录
+			</div>
+		</div>
+	</div>
+	<script src="../../../common/js/common.js"></script>
+	<script src="../../js/order/orderAPI.js"></script>
+	<script src="../../js/order/orderDetail.js"></script>
+</body>
+</html>

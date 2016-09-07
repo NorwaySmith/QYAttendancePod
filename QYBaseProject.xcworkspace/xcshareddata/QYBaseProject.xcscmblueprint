@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6797795c-cc25-444f-9cbc-9f8513696b5f++4992",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "6797795c-cc25-444f-9cbc-9f8513696b5f++4992" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6797795c-cc25-444f-9cbc-9f8513696b5f++4992" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BBD49542-803B-4369-87C1-85EC1A54627B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6797795c-cc25-444f-9cbc-9f8513696b5f++4992" : "LeGongZuo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "QYBaseProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "QYBaseProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.10.139:8081\/svn\/IOS3.0",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6797795c-cc25-444f-9cbc-9f8513696b5f++4992"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+   	<script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/qytxplugin.js"></script>
+    <script src="../../../common/js/common.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/chance/chanceApi.js"></script>
+    <script src="../../js/chance/util.js"></script>
+    <script src="../../js/chance/mychance.js"></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../../css/crm.css"/>
+    <!--<link href="../../css/global.css" rel="stylesheet"/>-->
+    <style type="text/css" >
+		.search-one .mui-table-view-cell{padding: 0px 10px;}
+    	.mui-scroll-wrapper{overflow:inherit;top:43px;}
+    	.top_text{margin-top: 1px;}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">我的销售机会</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view search-one">
+			<li class="mui-table-view-cell">
+				<input type="text" class="write mui-input-clear" id="keyword" placeholder="请输入机会名称" />
+			</li>
+		</ul>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+		  <div>
+		    <!--数据列表-->
+		    <ul class="mui-table-view shi-sale-two" id="list">
+		    </ul>
+		    <div class="listNoData" style="display: none;">暂无数据</div>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

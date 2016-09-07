@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/crm.css" rel="stylesheet"/>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../../common/js/headImg.js"></script>
+	<script type="text/javascript" src="../../../common/js/common.js"></script>
+
+    <style>
+
+    	.mui-table-view-cell:after{position: relative !important;}
+    	.mui-row{z-index: 999;}
+    	.mui-scroll-wrapper{overflow:auto;top:43px;}
+    	.search-two li{padding: 0px !important;border: none !important;}
+    	.operate a{height: 30px;}
+    	.content{padding-bottom: 10px;}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">拜访记录</h1>
+	</header>
+	<div class="mui-content">
+			<!--下拉刷新容器-->
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			  <div>
+			    <!--数据列表-->
+					 <div class="mui-table-view mui-table-view-chevron" id="List">
+						
+			
+					</div>
+					<div class="listNoData" style="display: none;">暂无数据</div>
+			  </div>
+			</div>
+	</div>
+	<script type="text/javascript" src="../../js/visit/visitApi.js"></script>
+	<script type="text/javascript" src="../../js/visit/visitCommon.js"></script>
+	<script type="text/javascript" src="../../js/visit/searchVisitRecord.js"></script>
+</body>
+</html>

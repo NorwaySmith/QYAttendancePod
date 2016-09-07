@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/crm.css" rel="stylesheet"/>
+<!--    <script src="../../common/js/mui.min.js"></script>-->
+    <script src="../../common/js/mui.js"></script>
+		<script src="../../common/js/qytxplugin.js"></script>
+		<script src="../../common/js/baseData.js"></script>
+		<script src="../../common/js/common.js"></script>
+		<script  type="text/javascript" src="../../common/js/jquery-2.1.4.min.js"></script>
+			<script  type="text/javascript" src="../../common/js/headImg.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	    mui.init({
+      	    	swipeBack: true, //启用右滑关闭功能
+				gestureConfig:{
+					tap:true
+				}
+			});
+			
+			//页面加载完毕方法
+			mui.plusReady(function() {
+				// IOS系统 需要处理太阳花等待问题
+				if(plus.os.name=='iOS'){
+					plus.qytxplugin.log("plusReady start");
+		            plus.navigator.closeSplashscreen();
+		            plus.qytxplugin.appReady();
+	            }
+				
+				//合同回款金额绑定方法
+				mui("#payMoneyStatistics")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'statistics/payMoneyStatistics.html',
+					    id: 'payMoneyStatistics'
+
+					});
+				});
+				
+				
+				//客户统计报表绑定方法
+				mui("#customerStatisticalReport")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'statistics/customerStatisticalReport.html',
+					    id: 'customerStatisticalReport'
+
+					});
+				});
+				
+				//销售龙虎榜
+				mui("#saleRankingList")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'statistics/saleRankingList.html',
+					    id: 'saleRankingList'
+
+					});
+				});
+		       
+		       init();
+				//销售漏斗绑定方法
+				mui("#saleFunnel")[0].addEventListener('tap', function(){
+					mui.openWindow({
+					    url: 'statistics/saleFunnelStatistics.html',
+					    id: 'saleFunnelStatistics'
+					});
+				});
+				
+			});
+	
+	
+	/**
+ * 把数字转成千分位
+ */
+	function commNum(num) {
+	num = num.toFixed(2) +"";
+	var re=/(-?\d+)(\d{3})/
+	while(re.test(num)){
+		num=num.replace(re,"$1,$2");
+	}
+	return num;
+}
+	
+	/**
+	 * 初始化销售之星
+	 */
+			function init(){
+				    var url = window.windowCommon.basePath + 'crm/order/getSalesStar.c';
+					var data = {
+						"_clientType": "wap",
+						"userId": window.windowCommon.approveLoginId
+	//					"follower":window.windowCommon.approveLoginId,
+						//"thismonth": thismonth,//这个值在后台取
+    //				"subordinate": 0
+					};
+					mui.ajax(url, {
+						data: data,
+						dataType: 'json',
+						type: 'post', //HTTP请求类型
+						timeout: 10000, //超时时间设置为10秒；
+						crossDomain: true,
+						success: function(response) {
+							var html = "	<img src=\"" + window.windowCommon.photoUrl +response.photo + "\" title=\"" + response.userName + "\" onerror=\"headError(this);\" />";
+							$("#userName").before(html);
+							/*$("#photo").attr("title",response.userName);*/
+							$("#userName").text(response.userName);
+							$("#sumorder").text("￥ "+commNum(response.money));
+							$("#targetMoney").text("￥ "+response.targetMoney);
+						}
+					});
+			}
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">销售报表</h1>
+	</header>
+	<div class="mui-content">
+	    <div class="form-top">
+	    	<div class="form-top-left">
+	    	<!--	<img src="" title="" onerror="headError(this);" id="photo"/>-->
+	    		<!--<img src="" id="photo" onerror="headError(this);" title="fdsfs" class='ml12' />-->
+	    		<span class="pername" id="userName"></span>
+	    		<em class="title"></em>
+	    	</div>
+	    	<div class="form-top-right">
+	    		<div class="right-one">
+	    			<span class="cause">上月目标：</span>
+	    			<span class="money" id="targetMoney"></span>
+	    		</div>
+	    		<div class="right-two">
+	    			<span class="cause">上月成交：</span>
+	    			<span class="money" id="sumorder"></span>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="form-two">
+	    	<a class="form-two-one" id="saleRankingList">
+	    		<em></em>
+	    		<span>销售龙虎榜</span>
+	    	</a>
+	    	<a class="form-two-two" id="payMoneyStatistics">
+	    		<em></em>
+	    		<span>合同回款金额</span>
+	    	</a>
+	    	<a class="form-two-two1" id="customerStatisticalReport">
+	    		<em></em>
+	    		<span>客户统计报表</span>
+	    	</a>
+	    	<a class="form-two-three" id="saleFunnel">
+	    		<em></em>
+	    		<span>销售漏斗</span>
+	    	</a>
+	    </div>
+	</div>
+</body>
+</html>

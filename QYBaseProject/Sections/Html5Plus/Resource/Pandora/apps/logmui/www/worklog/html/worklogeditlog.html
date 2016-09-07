@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>新建日志</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <script src="../../common/js/autoTextarea.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/log.css" />
+    <style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+			.state{}
+			.state-1{margin-right:-6px}
+			.state-2{margin-right:-6px;}
+			.state-3{margin-right:-6px;}
+			.state-4{margin-right:-6px;}
+			.editLog{margin-left: 14px;}
+		</style>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init({
+			gestureConfig:{
+				tap:true
+			},
+			beforeback: function(){
+				// 关闭地图定位功能
+				if(plus.os.name=='iOS'){
+					plus.qytxplugin.stopUserLocationService();
+				}
+			}
+		});
+
+    </script>
+</head>
+<body style="padding-bottom: 50px;">
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back"></a>
+		<h1 class="mui-title">新建日志</h1>
+	</header>
+
+	<div class="mui-content">
+		<div class="mui-row editlog">
+		    <ul class="mui-table-view ">
+				<li class="mui-table-view-cell mui-media">
+					<div class="mui-media-body">
+						<time class="eidttime"><span id="dateStr"></span>（星期<span id="weekStr"></span>）<span id="timeStr"></span></time>
+					</div>
+				</li>
+              </ul>
+				<div class="edit">
+					<ul class="content-list">
+						<li>
+							<span class="state"><i class="state-1"></i>已完成</span>
+							<textarea id="successContent" maxlength="300" class="editLog" placeholder="请输入已完成的工作（必填，不少于25个字）"></textarea>
+						</li>
+						<li>
+							<span class="state"><i class="state-2"></i>未完成</span>
+							<textarea id="failContent" maxlength="300" class="editLog" placeholder="请输入未完成的工作"></textarea>
+						</li>
+						<li>
+							<span class="state"><i class="state-3"></i>需协调</span>
+							<textarea id="tieContent" maxlength="300" class="editLog" placeholder="请输入需协调的工作"></textarea>
+						</li>
+						<li>
+							<span class="state"><i class="state-4"></i>备注</span>
+							<textarea id="memo" maxlength="300" class="editLog" placeholder="请输入备注内容（工作心得或其他事项）"></textarea>
+							<div class="img-group" id="fileList">
+								<img class="addimg" id="addimg" src="../images/add.png" alt="" width="35" height="35"/>
+								<div class="mui-clearfix"></div>
+							</div>
+                        </li>
+						<li>
+							
+							<!--<span class="address" id="createAddress">河南省郑州市金水区丰产路街道经三路34</span>-->
+							<span class="address" style="left:10px;" id="output">
+							</span>
+						</li>
+					</ul>
+				</div>
+			
+		</div>
+		<div class="btnArea">
+	    	<a href="javascript:void(0);" id="next" class="mui-btn mui-btn-blue mui-btn-block mt10">下一步</a>
+	    </div>
+	</div>
+    
+    <input type="hidden" id="attachmentIds" />
+    <script type="text/javascript" src="../../common/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../common/js/qytxplugin.js"></script>
+    <script type="text/javascript" src="../../common/js/common.js"></script>
+    <script type="text/javascript" src="../../common/js/mui.zoom.js"></script>
+	<script type="text/javascript" src="../../common/js/mui.previewimage.js"></script>
+    <script src="../js/worklogmapAddress.js"></script>
+    <script src="../js/worklogeditlog.js"></script>
+	<script> 
+	for(var i=0;i<4;i++){
+		var text = document.getElementsByClassName("editLog")[i], 
+		tip = ''; 
+		autoTextarea(text);// 调用 
+		text.value = tip; 
+		text.onfocus = function () { 
+		if (text.value === tip) text.value = ''; 
+		}; 
+		text.onblur = function () { 
+		if (text.value === '') text.value = tip; 
+		}; 
+	}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+/*
+ IM.strings
+ QYBaseProject
+ 
+ Created by lin on 16/1/5.
+ Copyright (c) 2016年 田. All rights reserved.
+ */
+
+/*  BaseString   */
+"QYIM_cancle"                                               = "取消";
+"QYIM_OK"                                                   = "确定";
+"QYIM_picture"                                              = "[图片]";
+"QYIM_voice"                                                = "[语音]";
+"QYIM_file"                                                 = "[文件]";
+"QYIM_position"                                             = "[位置]";
+"QYIM_url"                                                  = "[网址]";
+"QYIM_video"                                                = "[视频]";
+"QYIM_textMessage"                                          = "文本消息";
+"QYIM_voiceMessage"                                         = "语音消息";
+"QYIM_pictureMessage"                                       = "图片消息";
+
+/*  other  */
+// QYIMVoiceManager 语音下载失败
+"IM_QYIMVoiceManager_downFaile"                             = "下载失败";
+
+// QYIMImgManager.m 正在加载...
+"IM_QYIMImgManager_loading"                                 = "正在加载...";
+// QYIMImgManager.m imageData为空
+"IM_QYIMImgManager_imageDataNull"                           = "图片为空";
+// QYIMImgManager.m OK
+"IM_QYIMImgManager_OK"                                      = "确定";
+
+// QYIMInitGroupHelper.m
+"IM_QYIMInitGroupHelper_admin1"                             = "您好，我是";
+"IM_QYIMInitGroupHelper_admin2"                             = "的管理员,在使用过程中有什么问题可以及时与我反馈。";
+
+// QYIMReceiveMsgHelper.m
+"IM_QYIMReceiveMsgHelper_notInGroup"                        = "你已不在该群";
+
+// QYIMSendMsgHelper
+"IM_QYIMSendMsgHelper_thanks"                               = "谢谢您的反馈";
+
+// QYIMOperationMegHelper
+// 未知人员
+"IM_QYIMOperationMegHelper_unKnowUser"                      = "未知人员";
+// addUser
+"IM_QYIMOperationMegHelper_addUser1"                        = "邀请你加入群聊，群聊参与人还有：";
+"IM_QYIMOperationMegHelper_addUser2"                        = "邀请你加入群聊";
+"IM_QYIMOperationMegHelper_addUser3"                        = "加入群聊";
+// removeUser
+"IM_QYIMOperationMegHelper_removeUser1"                     = "你被";
+"IM_QYIMOperationMegHelper_removeUser2"                     = "请出了本群组";
+"IM_QYIMOperationMegHelper_removeUser3"                     = "你被未知人员请出了本群组";
+"IM_QYIMOperationMegHelper_removeUser4"                     = "退出群聊";
+"IM_QYIMOperationMegHelper_removeUser5"                     = "未知人员 退出群聊";
+// updateGroupName
+"IM_QYIMOperationMegHelper_updateGroupName"                 = "修改群名为";
+// 主动操作
+"IM_QYIMOperationMegHelper_ownAdd1"                         = "你邀请";
+"IM_QYIMOperationMegHelper_ownAdd2"                         = "加入群聊";
+"IM_QYIMOperationMegHelper_ownRemove1"                      = "你把";
+"IM_QYIMOperationMegHelper_ownRemove2"                      = "移出了群聊";
+"IM_QYIMOperationMegHelper_ownRemove3"                      = "你把未知人员移出了群聊";
+"IM_QYIMOperationMegHelper_ownUpdateGroupName"              = "你修改群组名为";
+// ShowIsLogin   未登录过乐工作,是否要给他
+"IM_QYIMOperationMegHelper_showIsLogin"                     = "未登录过乐工作,是否要给他";
+
+
+
+
+
+
+
+/*   IMApi   */
+// initGroup
+"QYIMApi_initGroup"                                         = "初始化消息...";
+// addChatUser
+"QYIMApi_addChatUser"                                       = "正在添加...";
+// deleteChatUser
+"QYIMApi_deleteChatUser"                                    = "正在删除...";
+
+
+/*   QYIMListViewController  */
+// 消息VC的标题
+"QYIMListViewController_title"                              = "消息";
+// 标题的loading文字
+"QYIMListViewController_titleLoading"                       = "正在加载…";
+// 无网络
+"QYIMListViewController_noNetWork"                          = "当前网络不可用,请检查你的网络设置";
+// 暂无分享内容
+"QYIMListViewController_noNews"                             = "暂无最新分享内容";
+// 初始化群组失败
+"QYIMListViewController_initGroupFaile"                     = "初始化群组失败";
+// 单位管理员
+"QYIMListViewController_unitAdmin"                          = "单位管理员";
+// 企业内刊、分享号
+"QYIMListViewController_share"                              = "分享号（企业内刊）";
+// 你已不在该群组
+"QYIMListViewController_notInGroup"                         = "你已不在该群";
+// 请选择要聊天的人员
+"QYIMListViewController_selectSomeUsers"                    = "请选择要聊天的人员";
+// 新建群组失败
+"QYIMListViewController_createNewGroupFaile"                = "新建群组失败";
+// actionSheetTitle乐工作
+"QYIMListViewController_actionSheetTitleLgz"                = "乐工作";
+// actionSheet 取消
+"QYIMListViewController_actionSheetCancle"                  = "取消";
+// actionSheet 标为已读
+"QYIMListViewController_actionSheetMarkRead"                = "标为已读";
+// actionSheet 标为未读
+"QYIMListViewController_actionSheetMarkUnRead"              = "标为未读";
+// actionSheet 取消置顶
+"QYIMListViewController_actionSheetUnTop"                   = "取消置顶";
+// actionSheet 置顶聊天
+"QYIMListViewController_actionSheetTop"                     = "置顶聊天";
+// actionSheet 删除该聊天
+"QYIMListViewController_actionSheetDelete"                  = "删除该聊天";
+
+
+/*  QYIMChatViewController  */
+// 图片、拍照
+"QYIMChatViewController_picture"                            = "图片";
+"QYIMChatViewController_takePhoto"                          = "拍照";
+"QYIMChatViewController_location"                           = "位置";
+
+"QYIMChatViewController_canotTakePhoto"                     = "此设备无拍照功能";
+// 此群组图片不存在
+"QYIMChatViewController_thePhotoNotExit"                    = "此群组图片不存在";
+// 完成拍照，正在处理中...
+"QYIMChatViewController_takePhotoDoneLoading"               = "正在处理中...";
+// 完成拍照，保存图片失败
+"QYIMChatViewController_takePhotoDoneSaveFaile"             = "保存图片失败";
+// 不能发送空白消息
+"QYIMChatViewController_canotSendNull"                      = "不能发送空白消息";
+// longPress 复制、转发、删除
+"QYIMChatViewController_longPressCopy"                      = "复制";
+"QYIMChatViewController_longPressTransmit"                  = "转发";
+"QYIMChatViewController_longPressDelete"                    = "删除";
+// 重发消息
+"QYIMChatViewController_reSendMsg_message"                  = "重发该消息？";
+"QYIMChatViewController_reSendMsg_cancle"                   = "取消";
+"QYIMChatViewController_reSendMsg_reSend"                   = "重发";
+// 未知人员
+"QYIMChatViewController_unKnownUser"                        = "未知人员";
+// 录音相关
+"QYIMChatViewController_voice_TouchToRecord"                = "按住 说话";
+"QYIMChatViewController_voice_TouchToFinish"                = "松开 结束";
+"QYIMChatViewController_voice_VoiceStyleTitle"              = "手指上滑，取消发送";
+"QYIMChatViewController_voice_CancelStyleTitle"             = "松开手指，取消发送";
+"QYIMChatViewController_voice_ShortTimeWarningTitle"        = "说话时间太短";
+"QYIMChatViewController_voice_TimeoutWarningTitle"          = "说话时间太长";
+"QYIMChatViewController_voice_WarningSymbol"                = "!";
+// 未知消息
+"QYIMChatViewController_otherMsgCell_send1"                 = "给你发送了一个";
+"QYIMChatViewController_otherMsgCell_send2"                 = "，请更新乐工作至最新版本";
+"QYIMChatViewController_otherMsgCell_cannotSee1"            = "，当前版本无法查看";
+"QYIMChatViewController_otherMsgCell_cannotSee2"            = "当前版本无法查看的消息类型";
+
+
+/*  QYIMSetViewController   */
+// title
+"QYIMSetViewController_title"                               = "聊天信息";
+// 新消息通知
+"QYIMSetViewController_newMsgNotification"                  = "新消息通知";
+// 置顶聊天
+"QYIMSetViewController_topGroup"                            = "置顶聊天";
+// 群组名称
+"QYIMSetViewController_groupName"                           = "群组名称";
+// 未设置
+"QYIMSetViewController_notSetGroupName"                     = "未设置";
+// 清空聊天记录
+"QYIMSetViewController_cleanAllMessage"                     = "清空聊天记录";
+
+//举报
+"QYIMSetViewController_report"                              = "举报";
+//举报ActionSheet取消
+"QYIMSetViewController_report_cancel"                   = "取消";
+//举报类型
+"QYIMSetViewController_report_type1"                   = "色情低俗";
+"QYIMSetViewController_report_type2"                   = "赌博";
+"QYIMSetViewController_report_type3"                   = "政治敏感";
+"QYIMSetViewController_report_type4"                   = "欺诈骗钱";
+"QYIMSetViewController_report_type5"                   = "违法（暴力恐怖、违禁品）";
+//举报成功提示
+"QYIMSetViewController_report_success"                   = "提交成功，我们会尽快处理";
+"QYIMSetViewController_report_faild"                   = "提交失败";
+
+
+// 确定删除此群的聊天记录吗?
+"QYIMSetViewController_sureDeleteMessage"                   = "确定删除此群的聊天记录吗?";
+// 已清空此群组的聊天记录
+"QYIMSetViewController_cleanedAllMessage"                   = "已清空此群组的聊天记录";
+// 删除并退出
+"QYIMSetViewController_quitGroup"                           = "删除并退出";
+// 你没有权限退出此群聊！
+"QYIMSetViewController_canotQuitGroup"                      = "你没有权限退出此群聊！";
+// 删除并退出后，将不再接收此群聊信息
+"QYIMSetViewController_quitGroupAlertMessage"               = "删除并退出后，将不再接收此群聊信息";
+// 删除并退出失败
+"QYIMSetViewController_quitGroupFaile"                      = "删除并退出失败";
+// 单位群
+"QYIMSetViewController_unit"                                = "单位群";
+// 部门群
+"QYIMSetViewController_group"                               = "部门群";
+// unitDescribe
+"QYIMSetViewController_unitDescribe"                        = "单位群仅限内部人员实名沟通,人员离职自动退群,安全放心。";
+// groupDescribe
+"QYIMSetViewController_groupDescribe1"                      = "该部门群已关联";
+"QYIMSetViewController_groupDescribe2"                      = "部门,仅限内部人员实名沟通,人员离职自动退群,安全放心。";
+// headerView
+"QYIMSetViewController_headerView_add"                      = "添加";
+"QYIMSetViewController_headerView_delete"                   = "删除";
+
+/*  QYIMNewGroupNameViewController  */
+// 标题
+"QYIMNewGroupNameViewController_title"                      = "群组名称";
+// rightBarButtonTitle
+"QYIMNewGroupNameViewController_rightBarButtonTitle"        = "完成";
+// textField 的默认提示文字
+"QYIMNewGroupNameViewController_textFieldPlaceStr"          = "请输入群组名称(20字以内)";
+// 群组名称不能为空
+"QYIMNewGroupNameViewController_groupNameNotNull"           = "群组名称不能为空";
+// 命名成功
+"QYIMNewGroupNameViewController_nameSuccess"                = "群组名称命名成功";
+// 命名失败
+"QYIMNewGroupNameViewController_nameFaile"                  = "群组名称命名失败";
+// 修改群组名成功
+"QYIMNewGroupNameViewController_modifySuccess"              = "修改群组名称成功";
+// 修改群组名失败
+"QYIMNewGroupNameViewController_modifyFaile"                = "修改群组名称失败";
+
+
+/*   QYIMChatUserDetailsController   */
+// title
+"QYIMChatUserDetailsController_title"                       = "详细资料";
+// 嘀一下
+"QYIMChatUserDetailsController_didi"                        = "嘀一下";
+// 发消息
+"QYIMChatUserDetailsController_sendIMMsg"                   = "发消息";
+// 其他联系方式
+"QYIMChatUserDetailsController_otherContact"                = "其他联系方式";
+// 个性签名
+"QYIMChatUserDetailsController_sign"                        = "个性签名";
+
+
+/*   QYIMChatUserContactController   */
+// title
+"QYIMChatUserContactController_title"                       = "联系方式";
+// 电话
+"QYIMChatUserContactController_phone"                       = "电话";
+// 邮箱
+"QYIMChatUserContactController_email"                       = "邮箱";
+// 手机号码
+"QYIMChatUserContactController_mobilPhone"                  = "手机号码";
+// 家庭电话
+"QYIMChatUserContactController_homePhone"                   = "家庭电话";
+// 单位电话
+"QYIMChatUserContactController_unitPhone"                   = "单位电话";
+// 其他电话
+"QYIMChatUserContactController_otherPhone"                  = "其他电话";
+// 分机号码   总机分机
+"QYIMChatUserContactController_userNum"                     = "分机号码";
+// 电子邮箱
+"QYIMChatUserContactController_emails"                      = "电子邮箱";
+
+
+/*    QYIMChatTransmitViewController    */
+// title
+"QYIMChatTransmitViewController_title"                      = "转发消息";
+// 创建新聊天
+"QYIMChatTransmitViewController_createGroupTitle"           = "创建新聊天";
+// 最近聊天
+"QYIMChatTransmitViewController_lastestChatTitle"           = "    最近聊天";
+// AlertviewTitle
+"QYIMChatTransmitViewController_AlertviewTitle"             = "确定发送给:";
+
+/*   QYAssetPicker
+ /* 导航控制器中导航的关闭按钮标题 */
+"QYAssetsPickerController_CloseButtonTitle" = "取消";
+
+/* 导航控制器中导航的返回按钮标题 */
+"QYAssetsPickerController_BackButtonTitle" = "返回";
+
+/* 导航控制器中工具条的发送按钮标题 */
+"QYAssetsPickerController_SendButtonTitle" = "发送";
+
+/* 导航控制器中工具条的预览按钮标题 */
+"QYAssetsPickerController_PreviewButtonTitle" = "预览";
+
+/* 导航控制器中工具条的原图按钮标题 */
+"QYAssetsPickerController_OriginButtonTitle" = "原图";
+
+/* 相簿集控制器中导航的标题 */
+"QYAssetsGroupController_NavigationTitle" = "照片";
+
+/* 相簿集控制器中相簿未授权的错误标题 */
+"QYAssetsGroupController_NotAllowedTitle" = "未授权";
+
+/* 相簿集控制器中相簿未授权的错误描述 */
+"QYAssetsGroupController_NotAllowedDescription" = "请您先到隐私设置中开启授权.";
+
+/* 相簿集控制器中相簿无照片的错误标题 */
+"QYAssetsGroupController_NoAssetsTitle" = "无照片";
+
+/* 相簿集控制器中相簿无照片的错误描述 */
+"QYAssetsGroupController_NoAssetsDescription" = "请您先使用iTunes同步照片到本地设备.";
+
+/* 导航控制器中超过最大选择数的错误标题 */
+"QYAssetsPickerController_MaxLimitTitle" = "提示";
+
+/* 导航控制器中超过最大选择数的错误内容 */
+"QYAssetsPickerController_MaxLimitContent" = "图片最多只能选择9张";
+
+/* 导航控制器中超过最大选择数的按钮标题 */
+"QYAssetsPickerController_MaxLimitCancelButtonTitle" = "确定";
+
+/* 默认的相簿名称(非ios8.0默认相簿) */
+"QYAssetsGroupDefaultName" = "相机胶卷";
+
+/* 最近添加的相簿名称(ios8.0默认相簿) */
+"QYAssetsGroupRecentlyName" = "最近添加";
+
+/* 未找到任何相簿时的消息提示 */
+"QYAssetsGroupCannotFindMessage" = "未找到相簿";
+
+//imageBrowser
+ // 取消
+ "ImageBrowser_baseString_cancle"                             = "取消";
+ 
+ 
+ /*    QYIBDetailViewController   */
+// 发送给朋友
+"ImageBrowser_QYIBDetailViewController_sendToFriend"         = "发送给朋友";
+// 保存图片
+"ImageBrowser_QYIBDetailViewController_savePicture"          = "保存到本机";
+// 保存图片失败
+"ImageBrowser_QYIBDetailViewController_savePictureFaile"     = "保存图片失败";
+// 保存图片成功
+"ImageBrowser_QYIBDetailViewController_savePictureSuccess"   = "保存图片成功";
+
+
+/*    QYIBGridViewController   */
+//title
+"ImageBrowser_QYIBGridViewController_title"                 = "聊天图片";

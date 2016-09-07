@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+   
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../../css/crm.css"/>
+    <style type="text/css">
+    	#pullrefresh
+		{
+			margin-top: 44px;
+		}
+		.search-one
+		{
+			z-index:10;
+			position: fixed;
+			left: 0px;
+			top: 44px;
+			width: 100%;
+			background-color: #d9d9d9;
+		}
+		.search-one input{
+			margin:0px;
+			border: none;
+			background-color: #fff;
+		}
+    	.mui-scroll-wrapper{overflow:inherit;top:43px;}
+    	.mui-table-view-cell{padding: 8px 12px;}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">选择单位</h1>
+		<a class="ic-right" id="toAdd" href="javascript:void(0);"></a>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view search-one">
+			<li class="mui-table-view-cell">
+				<input type="text" class="write mui-input-clear" id="keyword" placeholder="请输入单位名称" />
+			</li>
+		</ul>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+		  <div>
+		    <!--数据列表-->
+		    <ul class="mui-table-view search-two" id="list">
+		    </ul>
+		    <div class="listNoData" style="display: none;">暂无数据</div>
+		  </div>
+		</div>
+	</div>
+	 <script src="../../../common/js/mui.min.js"></script>
+	 <script src="../../../common/js/common.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/customer/customerApi.js"></script>
+    <script src="../../js/customer/selectCustomer.js"></script>
+</body>
+</html>

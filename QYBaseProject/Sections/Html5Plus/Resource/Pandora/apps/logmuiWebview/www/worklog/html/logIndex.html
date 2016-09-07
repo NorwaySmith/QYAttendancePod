@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>日志</title>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/log.css" />
+    <script src="../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../common/js/mui.min.js"></script>
+    <style>
+    	.btnMore{ line-height: 40px; text-align: center; background: #fff; border-top:1px solid #dcdcdc}
+    	.btnMore a{ font-size: 14px; color: #888; display: block;}
+    	.mui-table-view:before{height: 0px;}
+    	.mui-bar-nav~.mui-content{padding-top: 47px;}
+    </style>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init({
+			gestureConfig:{
+				tap:true
+			},
+			beforeback: function(){//关闭前触发方法
+				if(plus.os.name=='iOS'){
+					//调用手机端IOSd的关闭方法
+					plus.qytxplugin.goBackDesk();
+				}else{
+					plus.runtime.quit();
+				}
+			}
+		});
+    </script>
+    
+
+</head>
+<body>
+	<input type="hidden" value="1" id="indexCache" />
+	<div class="mui-content">
+		<div class="indexTop">
+		 	<div><button id="logAdd" class="i01"><em></em><p>新建日志</p></button></div>
+		 	<div><button id="myReceive" class="i02"><em></em><p>我收到的</p></button></div>
+		</div>
+	
+		<!--数据列表-->
+		<ul id="worklogreleaseIndex" class="mui-table-view mui-table-view-chevron" style="background:none;">
+			
+		</ul>
+		<div class="btnMore" style="display: none;" id="myPublish"><a href="javascript:;" >更多我发布的日志</a></div>
+		<div class="listNoData" style="display: none;">暂无数据</div>
+	</div>
+ 
+	<script type="text/javascript" src="../../common/js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../common/js/map.js"></script>
+    <script type="text/javascript" src="../../common/js/baseData.js"></script>
+    <script type="text/javascript" src="../../common/js/common.js"></script>
+    <script type="text/javascript" src="../js/headImg.js"></script>
+    <script type="text/javascript" src="../../common/js/updateVersion.js"></script>
+    <script type="text/javascript" src="../js/logIndex.js"></script>
+
+</body>
+</html>

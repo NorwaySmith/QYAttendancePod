@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/crm.css" rel="stylesheet"/>
+      <style type="text/css">
+        #popover2{width: 100%;border-radius: 0px;}
+        .mui-backdrop{position: fixed;}
+        #popover2 ul li{border-bottom: 1px solid #d9d9d9;}
+    	.mui-icon-search:before{font-size: 20px;}
+    	.mui-scroll-wrapper{overflow:inherit;margin-top:52px;top: 43px;}
+    	.unit-pop{width: 100%;left: 0px !important;top:50px !important;}
+    	.unit-pop ul li a{font-size: 16px;}
+    	.mui-navigate-right:after, .mui-push-right:after{font-size: 24px;}
+    	.top_text{margin-top: 1px;}
+    </style>
+
+</head>
+<body class="contact">
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">联系人</h1>
+		<a class="ic-right" id="add"></a>
+	</header>
+	<div class="mui-content">
+		<div class="select">
+			<div class="search" id="search"><em class="search-ico"></em>搜索</div>
+			<div id="toPopover2"><a class="btn1 tex" href="javascript:void(0);"></a></div>
+			<div id="popover2" class="mui-popover unit-pop">
+				<ul class="mui-table-view qy-head-pop">
+					<li class="mui-table-view-cell month-active" id="myName"></li>
+					<li class="mui-table-view-cell" id="allFollower">全部下属</li>
+					<li class="mui-table-view-cell" id="chooseFollower"><a class="mui-navigate-right" href="javascript:void(0);">下属成员</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper" >
+				<div>
+					<!--数据列表-->
+					<ul class="mui-table-view select-one" id="aa" >
+						
+					</ul>
+					<div class="listNoData" style="display: none;">暂无数据</div>
+				</div>
+			</div>
+	</div>
+	
+</body>
+</html>
+<script src="../../../common/js/mui.js"></script>
+<script src="../../../common/js/jquery.min.js"></script>
+<script src="../../../common/js/headImg.js"></script>
+<script type="text/javascript" src="../../../common/js/qytxplugin.js"></script>
+<script type="text/javascript" src="../../../common/js/common.js"></script>
+<script type="text/javascript" src="../../js/contact/contactApi.js"></script>
+<script type="text/javascript" src="../../js/contact/contact.js"></script>

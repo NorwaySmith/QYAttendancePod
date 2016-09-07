@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery.min.js"></script>
+    <script src="../../../common/js/qytxplugin.js"></script>
+	<script src="../../../common/js/common.js"></script>
+	<script src="../../js/chance/chanceApi.js"></script>
+    <script src="../../js/chance/util.js"></script>
+    <script src="../../../common/js/headImg.js"></script>
+    <script src="../../js/chance/followUserIds.js"></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <script>
+		$(function(){
+			$(".unit-follow-del").hide();
+			$(".unit-dele img").on("tap",function(){
+				if($(".unit-follow-del").is(":hidden")){
+	       			$(".unit-follow-del").show();   //如果元素为隐藏,则将它显现
+				}else{
+				      $(".unit-follow-del").hide();     //如果元素为显现,则将其隐藏
+				}						
+				
+			});
+		})
+	</script>
+    <style>
+    	.mui-bar-nav~.mui-content{padding-top: 48px;}
+    	.mui-content>.mui-table-view:first-child{margin-top: 6px;}
+    	.followuser-li{background: #d9d9d9;}
+    	.unit-followuser-text{display:block;line-height: 48px;text-align:left;font-size: 14px; color: #353535;}
+    </style>
+</head>
+<body>
+	<!-- 隐藏域：负责人ID -->
+    <input type="hidden" id="ownerid" />
+	<!-- 隐藏域：跟进人ID集合 -->
+    <input type="hidden" id="followerids" />
+    
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">跟进人</h1>
+	</header>
+	<div class="mui-content">
+		<div class="unit-tab1">
+			<ul class="mui-table-view unit-follow-up">
+				<li class="mui-table-view-cell followuser-li">
+					<div class="unit-per-subbox">
+						<a class="unit-followuser-text">负责人</a>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="unit-per-subbox">
+						<div class="unit-img-box ml12" id="owner">
+							<img class="ml10" src="../../images/unit-per_19.png" />
+							<a></a>
+						</div>
+						<div class="unit-img-box ml12" id="changeowner">
+							<img class="ml10" src="../../images/unit-follow-ico_03.png" id="changeownerIMG"/>
+							<a>变更</a>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell followuser-li">
+					<div class="unit-per-subbox">
+						<a class="unit-followuser-text">跟进人</a>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="unit-per-subbox1" id="followers">
+						<div class="unit-img-box ml12" id="addfollower">
+							<img class="ml10" src="../../images/unit-follow-ico_10.png" id="addfollowerIMG"/>
+							<a>添加</a>
+						</div>
+						<div class="unit-img-box unit-dele ml12" id="delfollower">
+							<img class="ml10" src="../../images/unit-follow-ico_07.png" />
+							<a>移除</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>	

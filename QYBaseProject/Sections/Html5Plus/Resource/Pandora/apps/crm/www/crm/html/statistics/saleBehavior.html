@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/crm.css" rel="stylesheet"/>
+    <script src="../../../common/js/mui.js"></script>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../../../common/js/common.js"></script>
+	<script type="text/javascript" src="../../js/statistics/saleBehavior.js"></script>
+	<script src="../../../common/js/echarts/echarts.js"></script>
+	<script type="text/javascript" src="../../js/visit/visitApi.js" ></script>
+	<script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: '../../../common/js/echarts'
+            }
+        });
+         // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/line', // 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+            	echarts = ec;
+            }
+        );
+        
+    </script>
+	<style>
+		.mui-content-padded
+		{
+			margin-top: 63px;
+			font-size: 16px;
+			line-height: 30px;
+			text-align: center left;
+		}
+		.mui-content-padded div{
+			margin-top: -25px;
+		}
+		.mui-popover{left: 0px !important;width: 100%;border-radius: 0px;position: fixed;}
+    	.mui-popover{top:94px !important;}
+    	.mui-table-view-cell:after{position: relative !important;}
+    	.mui-scroll-wrapper{overflow:auto;top:43px;}
+    	.mui-scroll-wrapper1{height: 240px;overflow: hidden;}
+    	.mui-scroll-wrapper1 .mui-scroll{position: relative;}
+    	.content{padding-bottom: 10px;}
+    	.qy-head-pop li{font-size: 16px;}
+    	.qy-head-pop li a{font-size: 16px;}
+    	.top-nav div a {font-size: 16px;}
+    	.top-nav div a font{font-size: 16px;}
+	</style>
+	<style>
+		.chart {
+			height: 220px;
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+	
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">销售行为记录</h1>
+	</header>
+	<div class="mui-content">
+			<div class="top-nav">
+				<div class="top-nav-one"><a class="unit-ps" href="javascript:void(0);" id="fullYear"><font></font><em class="unit-filter-r1"></em></a></div>
+				<div class="top-nav-two"><a class="unit-ps" href="javascript:void(0);" id="fullMouth"><font></font><em class="unit-filter-r1"></em></a></div>
+				<div class="top-nav-three" id="toPopover2"><a href="javascript:void(0);"><font></font><em class="unit-filter-r1"></em></a></div>
+			</div>
+			<div id="popover3" class="mui-popover">
+				<div class="mui-scroll-wrapper1">
+					<div class="mui-scroll">
+						<ul class="mui-table-view qy-head-pop" id="expectedYearUL">
+							
+						</ul>
+					</div>
+				</div>	
+			</div>
+			<div id="popover1" class="mui-popover">
+				<div class="mui-scroll-wrapper1">
+					<div class="mui-scroll">
+						<ul class="mui-table-view qy-head-pop" id="expectedMouthUL">
+							<li class="mui-table-view-cell" mouthValue="12">12月</li>
+							<li class="mui-table-view-cell" mouthValue="11">11月</li>
+							<li class="mui-table-view-cell" mouthValue="10">10月</li>
+							<li class="mui-table-view-cell" mouthValue="09">9月</li>
+							<li class="mui-table-view-cell" mouthValue="08">8月</li>
+							<li class="mui-table-view-cell" mouthValue="07">7月</li>
+							<li class="mui-table-view-cell" mouthValue="06">6月</li>
+							<li class="mui-table-view-cell" mouthValue="05">5月</li>
+							<li class="mui-table-view-cell" mouthValue="04">4月</li>
+							<li class="mui-table-view-cell" mouthValue="03">3月</li>
+							<li class="mui-table-view-cell" mouthValue="02">2月</li>
+							<li class="mui-table-view-cell" mouthValue="01">1月</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+			<div id="popover2" class="mui-popover"  >
+				<ul class="mui-table-view qy-head-pop">
+					<li class="mui-table-view-cell month-active" id="myName"></li>
+					<li class="mui-table-view-cell" id="allFollower">全部下属</li>
+					<li class="mui-table-view-cell" id="chooseFollower"><a class="mui-navigate-right" href="javascript:void(0);">下属成员</a></li>
+				</ul>
+			</div>
+					
+			<div class="mui-content-padded">
+				现场拜访：<span id="localeNum"></span>
+				<div class="chart" id="locale"></div>
+				电话沟通：<span id="phoneNum"></span>
+				<div class="chart" id="phone"></div>
+				邮件沟通：<span id="emailNum"></span>
+				<div class="chart" id="email"></div>
+				QQ/微信沟通：<span id="qqNum"></span>
+				<div class="chart" id="qq"></div>
+			</div>
+			
+	</div>
+</body>
+</html>

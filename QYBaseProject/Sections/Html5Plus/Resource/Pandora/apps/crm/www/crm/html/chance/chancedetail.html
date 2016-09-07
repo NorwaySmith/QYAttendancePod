@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../../common/js/common.js"></script>
+    <script src="../../../common/js/headImg.js"></script>
+    <script src="../../js/chance/util.js"></script>
+    <script type="text/javascript" src="../../js/visit/visitApi.js"></script>
+	<script type="text/javascript" src="../../js/visit/visitCommon.js"></script>
+    <script src="../../js/chance/chanceApi.js"></script>
+    <script src="../../js/chance/chancedetail.js"></script>
+    <script src="../../js/customer/customerApi.js"></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../../css/crm.css"/>
+    <style>
+    	.mui-content>.mui-table-view:first-child{margin-top:12px}
+    	.shi-ppic{margin-left: 12px;}
+    	.mui-backdrop{position: fixed;z-index: 997;}
+    	.content{padding-bottom: 10px;padding-top: 10px;}
+    	/*#recordList{margin-top: -35px;}*/
+    	.add-popover{z-index: 998;}
+    	.mui-scroll-wrapper{top:0px;height: 350px !important;border-radius: 0px !important;}
+    	.no_visit {
+		  background-color: #ffffff;
+		  min-height: 180px;
+		  overflow: auto;
+	      text-align: center;
+	      font-size: 16px;
+	      vertical-align: middle;
+	      line-height: 180px;
+	      color: rgb(217, 217, 217);
+	    }
+	    .shi-sale-one-li span {font-size: 16px;}
+    </style>
+</head>
+<body>
+	<!-- 隐藏域：主键值 -->
+    <input type="hidden" id="cid" />
+	<!-- 隐藏域：销售阶段值 -->
+    <input type="hidden" id="sellStage" />
+	<!-- 隐藏域：负责人值 -->
+    <input type="hidden" id="ownerId" />
+	<!-- 隐藏域：负责人姓名 -->
+    <input type="hidden" id="ownerName" />
+    
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">销售机会详情</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell shi-sale-one-li">
+				<a class="mui-navigate-right" id="toupdate">
+					<div><span class="shi-sale-one-li-span" id="chanceName"></span></div>
+					<div class="shi-floor2 shi-floor2-name unit-ps">
+						<em class="shi-two-img1 ml12"></em>
+						<span class="shi-cn" id="customerName"></span>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-detail-one  shi-sale-one">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" id="sellStageA">
+					<span>销售阶段</span>
+					<span style="float: right !important;margin-right: 30px;color: #aaa;" id="sellStageSPAN"></span>
+					<!--<input placeholder="初期沟通(10%)" />-->
+				</a>
+			</li>
+			<div id="popover1" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">销售阶段</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="sellStageUL"></ul>
+					</div>
+				</div>
+			</div>
+			<div id="addpopover" class="mui-popover add-popover">
+				<div class="pop-titlebox">
+					<span class="pop-title">添加记录</span>							
+				</div>
+				<ul class="mui-table-view nav-second"">
+					 <li class="mui-table-view-cell" id="addpopoverXCBF">
+					 	<span>现场拜访</span>
+					 </li>
+					 <li class="mui-table-view-cell" id="addpopoverOTHER">
+					 	<span>电话、邮件、QQ/微信</span>
+					 </li>
+				</ul>
+			</div>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" id="followUserIdsA" href="javascript:void(0);">
+					<span>跟进人</span>
+					<span style="float: right !important;margin-right: 30px;color: #aaa; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" id="followUserIds"></span>
+					<!--<input placeholder="赵亚伟" />-->
+				</a>
+			</li>
+			<li class="mui-table-view-cell special-active">
+				<!--<a class="mui-navigate-right">-->
+					<span>预计金额</span>
+					<span style="float: right !important;margin-right: 30px;color: #aaa;" id="chanceMoney"></span>
+				<!--</a>-->
+			</li>
+			<li class="mui-table-view-cell special-active">
+				<!--<a class="mui-navigate-right">-->
+					<span>预计成交时间</span>
+					<span style="float: right !important;margin-right: 30px;color: #aaa;" id="expectedTime"></span>
+				<!--</a>-->
+			</li>
+			<li class="mui-table-view-cell" style="display: none;" id="remarkLI">
+				<span>备注</span>
+				<span style="float: right !important;margin-right: 30px;color: #aaa;" id="remark">备注内容</span>
+				<!--<input type="text" class="fs14" placeholder="请输入备注信息" maxlength="250" id="remark" />-->
+			</li>
+		</ul>
+		<!--<ul class="mui-table-view shi-sale-one1">
+			<li class="mui-table-view-cell">
+				<span>备注</span>
+				<input type="text" class="fs14" placeholder="请输入备注信息" maxlength="250" id="remark" />
+			</li>
+		</ul>-->
+		<ul class="mui-table-view shi-detail-two unit-clear" style="padding-bottom:0px;">
+			<li class="mui-table-view-cell unit-link-one">
+				<span class="shi-two-ts unit-link">
+					联系记录
+				</span>
+				<a class="mui-btn shi-two-btn" href="javascript:void(0);" id="addRecord">
+					添加记录
+				</a>
+			</li>
+		</ul>
+		<div id="recordList">
+			<div class="no_visit">
+				您还没有添加联系记录
+			</div>
+		</div>
+		<span class="nolink" style="display: none;" id="nodata">您还没有添加联系记录</span>
+	</div>
+</body>
+</html>

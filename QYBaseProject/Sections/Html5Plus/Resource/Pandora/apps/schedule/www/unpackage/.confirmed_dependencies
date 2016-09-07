@@ -1,0 +1,84 @@
+{
+	"schedule/html/scheduleList.html": {
+		"resources": [
+			"schedule/images/sort_ico.png",
+			"schedule/images/add.png",
+			"schedule/images/be_back.png",
+			"common/css/mui.min.css",
+			"schedule/images/be_going.png",
+			"schedule/css/schedule.css",
+			"common/js/jquery-1.8.1.min.js",
+			"common/js/mui.min.js",
+			"schedule/images/down.png",
+			"schedule/images/well_ico.png",
+			"schedule/images/nodo_ico.png",
+			"schedule/images/edit_ico.png",
+			"schedule/images/dele_ico.png",
+			"schedule/js/scheduleApi.js",
+			"schedule/js/scheduleList.js",
+			"common/js/baseData.js",
+			"common/js/common.js",
+			"schedule/images/up.png",
+			"schedule/html/unDoneReason.html",
+			"schedule/html/addSchedule.html",
+			"schedule/images/cancle.png",
+			"schedule/html/monthReport.html",
+			"common/js/qytxplugin.js"
+		],
+		"refer": [
+			"schedule/html/unDoneReason.html",
+			"schedule/html/addSchedule.html",
+			"schedule/html/monthReport.html"
+		]
+	},
+	"schedule/html/unDoneReason.html": {
+		"resources": [
+			"schedule/html/scheduleList.html",
+			"schedule/js/unDoneReason.js",
+			"schedule/css/order.css",
+			"common/css/mui.min.css",
+			"schedule/js/scheduleApi.js",
+			"common/js/jquery-1.8.1.min.js",
+			"common/js/common.js",
+			"common/js/mui.min.js"
+		],
+		"refer": [
+			"schedule/html/scheduleList.html"
+		]
+	},
+	"schedule/html/addSchedule.html": {
+		"resources": [
+			"schedule/js/addSchedule.js",
+			"schedule/html/scheduleList.html",
+			"common/css/mui.min.css",
+			"schedule/js/scheduleApi.js",
+			"schedule/images/be_going.png",
+			"schedule/css/schedule.css",
+			"common/js/jquery-1.8.1.min.js",
+			"common/js/common.js",
+			"common/js/mui.min.js",
+			"common/js/baseData.js",
+			"common/js/qytxplugin.js"
+		],
+		"refer": [
+			"schedule/html/scheduleList.html"
+		]
+	},
+	"schedule/html/monthReport.html": {
+		"resources": [
+			"schedule/images/left.png",
+			"schedule/images/rigth.png",
+			"schedule/js/monthReport.js",
+			"schedule/html/scheduleList.html",
+			"common/css/mui.min.css",
+			"schedule/js/scheduleApi.js",
+			"schedule/css/schedule.css",
+			"common/js/jquery-1.8.1.min.js",
+			"common/js/common.js",
+			"common/js/mui.min.js"
+		],
+		"refer": [
+			"schedule/html/scheduleList.html"
+		]
+	}
+}

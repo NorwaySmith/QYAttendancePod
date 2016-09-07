@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>客户列表</title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <style type="text/css" >
+    	#pullrefresh
+		{
+			margin-top: 50px;
+		}
+		.top-nav
+		{
+			z-index:1000;
+			position: fixed;
+			left: 0px;
+			top: 48px;
+		}
+		.mui-popover
+		{
+			position: fixed;
+			left: 0px;
+			top: 48px;
+		}
+    	.mui-scroll-wrapper{overflow:inherit;top:43px;}
+    	.scroll-warper1{top:49px;height: 360px;border-radius: 0px !important;}
+    	.scroll-warper1{position: relative;height: 245px;margin:0px !important;overflow: hidden;position: inherit;}
+    	.scroll-warper1 .mui-scroll{width: 50%;position: absolute;}
+    	.mui-navigate-right:after, .mui-push-right:after{margin-right: 0px;}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">往来单位</h1>
+		<a class="ic-right" id="toAdd" href="javascript:void(0);"></a>
+	</header>
+	<div class="mui-content">
+		<div class="top-nav">
+			<div class="top-nav-one" id="toSearch"><a class="clearbg unit-ps" href="javascript:void(0);"><em class="unir-search"></em>搜索</a></div>
+			<div class="top-nav-two" id="toPopover1"><a class="clearbg unit-ps" href="javascript:void(0);"><em class="unir-filter"></em>条件筛选<em class="unit-filter-r"></em></a></div>
+			<div class="top-nav-three" id="toPopover2"><a href="javascript:void(0);"><font style="font-size: 16px;"></font><em class="unit-filter-r1"></em></a></div>
+		</div>
+		<div id="popover2" class="mui-popover unit-pop">
+			<ul class="mui-table-view qy-head-pop">
+				<li class="mui-table-view-cell month-active" id="myName"></li>
+				<li class="mui-table-view-cell" id="allFollower">全部下属</li>
+				<li class="mui-table-view-cell" id="chooseFollower"><a style="font-size: 16px;" class="mui-navigate-right" href="javascript:void(0);">下属成员</a></li>
+			</ul>
+		</div>
+		
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+		  <div>
+		    <!--数据列表-->
+		    <ul class="mui-table-view search-two"" id="list">
+		    </ul>
+		    <div class="listNoData" style="display: none;">暂无数据</div>
+		  </div>
+		</div>
+	</div>
+	<!-- 弹层 -->
+	<div id="popover1" class="mui-popover unit-pop">
+			<ul class="mui-table-view unit-second">
+				<div class="unit-pop-left">
+					<span class=" unit-focus">客户状态</span>
+					<span class="">客户等级</span>
+					<span class="">客户归属</span>
+					<span class="">&nbsp;</span>
+					<span class="">&nbsp;</span>
+				</div>
+			    <div class="unit-pop-right" id="selectCustomerState">
+					<div class="mui-scroll-wrapper scroll-warper1">
+						<div class="mui-scroll">
+							<span val="0" class="unit-focus unit-focusright">不限</span>
+						</div>
+					</div>
+				</div>
+			    <div class="unit-pop-right unit-hide" id="selectCustomerLevel">
+					<div class="mui-scroll-wrapper scroll-warper1">
+						<div class="mui-scroll">
+							<span val="0" class="unit-focus unit-focusright">不限</span>
+						</div>
+					</div>
+				</div>
+				<div class="unit-pop-right unit-hide" id="selectCustomerOwner">
+					<span val="0" class="unit-focus unit-focusright">不限</span>
+					<span val="1">我负责的</span>
+					<span val="2">我跟进的</span>
+					<span>&nbsp;</span>
+					<span>&nbsp;</span>
+				</div>
+				<li class="mui-table-view-cell  unit-again">
+					<span class="unit-left" id="resetType">重置</span>
+					<span class="unit-right1" id="confirmType">确定</span>
+				</li>
+			</ul>
+		</div>
+    <script src="../../../common/js/mui.js"></script>
+    <script src="../../../common/js/common.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/customer/customerList.js"></script>
+    <script src="../../js/customer/customerApi.js"></script>
+    <script>
+    	mui('.scroll-warper1').scroll();
+    </script>
+</body>
+</html>

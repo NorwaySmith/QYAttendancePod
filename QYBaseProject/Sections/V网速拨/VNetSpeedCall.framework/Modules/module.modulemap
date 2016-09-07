@@ -1,0 +1,6 @@
+framework module VNetSpeedCall {
+  umbrella header "VNetSpeedCall.h"
+
+  export *
+  module * { export * }
+}

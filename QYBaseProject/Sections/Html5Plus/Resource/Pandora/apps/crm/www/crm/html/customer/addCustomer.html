@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <script type="text/javascript" src="../../../common/js/jquery-2.1.4.min.js" ></script>
+    <script type="text/javascript" src="../../../common/js/mui.min.js"></script>
+    <script type="text/javascript" src="../../../common/js/common.js"></script>
+    <script type="text/javascript" src="../../../common/js/qytxplugin.js"></script>
+    <script type="text/javascript" src="../../../common/js/headImg.js"></script>
+    <style>
+    	.mui-scroll-wrapper{top:0px;height: 350px !important;border-radius: 0px !important; }
+    	.mui-backdrop{position: fixed;}
+    	.mui-popover{z-index: 999;}
+    	.mui-btn, button, input[type=button], input[type=reset], input[type=submit]{border-radius: 0px;}
+    	.unit-one-right{margin-right: 28px;}
+    	/*.unit-two li input{max-width: 70%;font-size: 16px;color: #353535;padding: 10px;margin: 0px !important;}*/
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">新增往来单位</h1>
+	</header>
+	<input type="hidden" name="customerLocationLongitude" id="customerLocationLongitude" value="" />
+	<input type="hidden" name="customerLocationLatitude" id="customerLocationLatitude" value="" />
+	<input type="hidden" name="h_customerState" id="h_customerState" value="" />
+	<input type="hidden" name="h_customerProfession" id="h_customerProfession" value="" />
+	<input type="hidden" name="h_customerLevel" id="h_customerLevel" value="" />
+	<input type="hidden" name="h_customerSource" id="h_customerSource" value="" />
+	<input type="hidden" name="h_customerFeeling" id="h_customerFeeling" value="" />
+	<input type="hidden" name="h_customerProperty" id="h_customerProperty" value="" />
+	<input type="hidden" name="followUserIds" id="followUserIds" value="" />
+	<div class="mui-content">
+		<ul class="mui-table-view unit-one">
+			<li class="mui-table-view-cell unit-one-list special-active">
+				<span class=" addcolor">单位名称</span>
+				<input class="unit-input-one" type="text" id="customerName" placeholder="请输入单位名称(必填)" maxlength="50"/>
+			</li>
+			<li class="mui-table-view-cell unit-special">
+					<span class="ml12 addcolor">单位地址</span>
+					<a class="mui-btn unit-right-btn" href="javascript:void(0);" id="getLocation"></a>
+					<input class="unit-input-two" type="text" id="customerLocation" placeholder="请输入单位地址" maxlength="100" />
+			</li>
+			<li class="mui-table-view-cell unit-one-list">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="popover">
+					<span class=" addcolor">客户状态</span>
+					<span class="unit-one-right order-span">请选择客户状态(必选)</span>
+				</a>
+			</li>
+			<div id="c_popover" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">客户状态</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="customerState">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</ul>
+		<div class="unit-more-box">
+			<a class="unit-more-thing unit-ps" href="javascript:void(0);">
+				点击展开更多<em class="unit-add-ico1"></em>
+			</a>
+		</div>
+		<ul class="mui-table-view unit-three">
+			<li class="mui-table-view-cell unit-three-list">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="popover5">
+					<span class="unit-title">所属行业</span>
+					<span class="unit-one-right order-span">请选择所属行业</span>
+				</a>
+			</li>
+			<div id="c_popover5" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">所属行业</span>							
+						</div>
+		 				<ul class="mui-table-view nav-second" id="customerProfession">
+		  					<li class="mui-table-view-cell month-active" val="0" msg="请选择所属行业">
+								无
+							</li>
+		 				</ul>
+  					</div>
+  				</div>
+			</div>
+			<li class="mui-table-view-cell unit-three-list">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="popover1">
+					<span class="unit-title">客户等级</span>
+					<span class="unit-one-right order-span">请选择客户等级</span>
+				</a>
+			</li>
+			<div id="c_popover1" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">客户等级</span>							
+						</div>
+		 				<ul class="mui-table-view nav-second" id="customerLevel">
+		  					<li class="mui-table-view-cell month-active" val="0" msg="请选择客户等级">
+								无
+							</li>
+		 				</ul>
+  					</div>
+  				</div>
+			</div>
+			<li class="mui-table-view-cell unit-three-list">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="popover2">
+					<span class="unit-title">客户来源</span>
+					<span class="unit-one-right order-span">请选择客户来源</span>
+				</a>
+			</li>
+			<div id="c_popover2" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">客户来源</span>							
+						</div>
+		 				<ul class="mui-table-view nav-second" id="customerSource">
+		 					<li class="mui-table-view-cell month-active" val="0" msg="请选择客户来源">
+								无
+							</li>
+		  				</ul>
+		  			</div>
+		  		</div>
+			</div>
+			<li class="mui-table-view-cell unit-three-list">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="popover3">
+					<span class="unit-title">交易印象</span>
+					<span class="unit-one-right order-span">请选择交易印象</span>
+				</a>
+			</li>
+			<div id="c_popover3" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">交易印象</span>							
+						</div>
+		 				<ul class="mui-table-view nav-second" id="customerFeeling">
+		 					<li class="mui-table-view-cell month-active" val="0" msg="请选择交易印象">
+								无
+							</li>
+		  				</ul>
+	  				</div>
+	  			</div>
+			</div>
+			<li class="mui-table-view-cell unit-three-list">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="popover4">
+					<span class="unit-title">企业性质</span>
+					<span class="unit-one-right order-span">请选择企业性质</span>
+				</a>
+			</li>
+			<div id="c_popover4" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">企业性质</span>							
+						</div>
+		 				<ul class="mui-table-view nav-second" id="customerProperty">
+		 					<li class="mui-table-view-cell month-active" val="0" msg="请选择企业性质">
+								无
+							</li>
+		  				</ul>
+		  			</div>
+	  			</div>
+			</div>
+		</ul>
+		<div id="contacts">
+			<ul class="mui-table-view unit-two">
+				<li class="mui-table-view-cell unit-twoe-list unit-ps">
+						<em class="unit-wrong"></em>
+						<span class="unit-two-left">姓名</span>
+						<input class="unit-two-right" placeholder="请输入联系人姓名" type="text" name="contactName" maxlength="20">
+				</li>
+				<li class="mui-table-view-cell unit-twoe-list unit-ps">
+						<span class="unit-two-left">手机</span>
+						<input class="unit-two-right" placeholder="请输入联系人手机" type="text" name="telphone" maxlength="20" onkeyup="regNumber(this);"  onafterpaste="regNumber(this);">
+				</li>
+				<li class="mui-table-view-cell unit-twoe-list unit-ps">
+						<span class="unit-two-left">座机</span>
+						<input class="unit-two-right" placeholder="请输入联系人座机" type="text" name="phone" maxlength="20" onkeyup="regNumber(this);"  onafterpaste="regNumber(this);">
+				</li>
+				<li class="mui-table-view-cell unit-twoe-list unit-ps">
+						<span class="unit-two-left">职务</span>
+						<input class="unit-two-right" placeholder="请输入联系人职务" type="text" name="jobName" maxlength="50">
+				</li>
+				<li class="mui-table-view-cell unit-twoe-list unit-ps">
+						<span class="unit-two-left">邮箱</span>
+						<input class="unit-two-right" placeholder="请输入联系人邮箱" type="text" name="email" maxlength="100">
+				</li>
+				<li class="mui-table-view-cell unit-twoe-list unit-ps">
+						<span class="unit-two-left">备注</span>
+						<input class="unit-two-right" placeholder="请输入联系人备注" type="text" name="remark" maxlength="500">
+				</li>
+			</ul>
+		</div>
+		<div class="unit-btn-box">
+			<a class="mui-btn unit-btn1 unit-add-per unit-ps">
+				<em class="unit-add-ico"></em>添加联系人
+			</a>
+		</div>
+		<div class="unit-per-box" style="display: none;">
+			<a>
+				<span class="unit-per-tit">跟进人</span>
+				<span class="unit-per-tit1">(点击头像可删除)</span>
+			</a>
+			<div class="unit-per-subbox">
+				<div class="unit-img-box" id="chooseFollower">
+					<img class="ml10" src="../../images/unit-add_23.png" />
+					<a href="javascript:void(0);" style="color: #aaa;">请选择</a>
+				</div>
+			</div>
+		</div>
+		<a class="mui-btn unit-btn" href="javascript:void(0);" onclick="saveCustomer();">
+				保 存
+		</a>
+	</div>
+    <script type="text/javascript" src="../../js/customer/customerApi.js"></script>
+    <script type="text/javascript" src="../../js/customer/addCustomer.js"></script>
+</body>
+</html>

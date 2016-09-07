@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>月报</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <script src="../../common/js/jquery-1.8.1.min.js" ></script>
+    <script src="../../common/js/common.js"></script>
+    <script src="../js/monthReport.js"></script>
+    <script src="../js/scheduleApi.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/schedule.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+    <script>
+
+	</script>
+</head> 
+<body>
+	<div class="mui-content">
+	    <div class="task">
+	    	<div class="date">
+	    		<span class="time pr" id="time"><em class="left_ico"></em><em class="rigth_ico"></em></span>
+	    	</div>
+	    	<div class="taskes pr t_bor">
+		    	<div class="task_one bder">
+		    		<span class="num" id="totalCount"></span>
+		    		<span class="name">总日程</span>
+		    	</div>
+		    	<div class="task_one bder">
+		    		<span class="num" id="doneCount"></span>
+		    		<span class="name">已完成</span>
+		    	</div>
+		    	<div class="task_one">
+		    		<span class="num" id="percent"></span>
+		    		<span class="name">完成率</span>
+		    	</div>
+	    	</div>
+	    </div>	 
+	    <div class="mui-scroll-wrapper">
+		    <div class="child" id="list">
+		    	
+		    </div>
+	    </div>
+	</div>
+<script>
+	mui('.mui-scroll-wrapper').scroll({
+         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+</script>
+</body>
+</html>

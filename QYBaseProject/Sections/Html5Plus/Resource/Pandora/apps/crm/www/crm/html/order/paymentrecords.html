@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/qytxplugin.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../../common/js/common.js"></script>
+    <script src="../../js/chance/util.js"></script>
+    <script type="text/javascript" src="../../js/order/paymentrecords.js"></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	.mui-content>.mui-table-view:first-child{margin-top: 6px;}
+    	.mui-table-view:before{position: relative;}
+    	.mui-navigate-right:after, .mui-push-right:after{margin-right: 6px;}
+    	.img-group{margin:0px;margin-top: 10px;margin-right: 12px;overflow: hidden;margin-left: 10px;}
+    	.img-group .img{margin-top: 8px;}
+    	.mui-scroll-wrapper{top:0px;height: 360px !important;border-radius: 0px !important; }
+    	.mui-navigate-right{font-size: 16px;}
+    </style>
+</head>
+<body>
+	<!-- 隐藏域：主键ID -->
+	<input type="hidden" id="pid" />
+	<!-- 隐藏域：回款期次ID -->
+	<input type="hidden" id="payTimes" value="1"/>
+	<!-- 隐藏域：付款方式ID -->
+	<input type="hidden" id="payType" value="1"/>
+	<!-- 隐藏域：是否开票ID -->
+	<input type="hidden" id="isInvoice" value="0"/>
+	<!-- 隐藏域：收款人ID -->
+	<input type="hidden" id="ownerId" />
+	<!-- 隐藏域：订单ID -->
+	<input type="hidden" id="orderId" />
+	<!-- 隐藏域：客户ID -->
+	<input type="hidden" id="customerId" />
+	
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">新增回款记录</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view communication-one" style="margin-top: 12px;">
+			<li class="mui-table-view-cell" id="payTimeLI">
+				<a class="mui-navigate-right">回款日期<span class="order-span unit-one-right " id="payTime">请选择回款日期(必选)</span></a>
+			</li>
+			<li class="mui-table-view-cell" id="payTimesLI">
+				<a class="mui-navigate-right">回款期次<span class="unit-one-right order-span-after"></span></a>
+			</li>
+			<div id="payTimesDIV" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">回款期次</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="payTimesUL"></ul>
+					</div>
+				</div>
+			</div>
+			<li class="mui-table-view-cell" id="isInvoiceLI">
+				<a class="mui-navigate-right">是否开票<span class="unit-one-right order-span-after"></span></a>
+			</li>
+			<div id="isInvoiceDIV" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">是否开票</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="isInvoiceUL"></ul>
+					</div>
+				</div>
+			</div>
+			<li class="mui-table-view-cell" id="payTypeLI">
+				<a class="mui-navigate-right">付款方式<span class="unit-one-right order-span-after"></span></a>
+			</li>
+			<div id="payTypeDIV" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">付款方式</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="payTypeUL"></ul>
+					</div>
+				</div>
+			</div>
+			<li class="mui-table-view-cell pay-money special-active" style="padding: 0px 12px;">
+				<!--<a class="mui-navigate-right">付款金额<span class="shi-rs">请选择付款金额（必选）</span></a>-->
+				<span>付款金额</span>
+				<input type="text" placeholder="输入金额(必填)" style="text-align: right;line-height: normal;" maxlength="10" id="payMoney" />
+			</li>
+			<li class="mui-table-view-cell" id="ownerIdLI">
+				<a class="mui-navigate-right">收款人<span class="shi-rs order-span-after" id="ownerIdSPAN"></span></a>
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-sale-one1">
+			<li class="mui-table-view-cell special-active beizhu">
+				<span>备注</span>
+				<textarea maxlength="500" class="fs14" id="memo" rows="3" placeholder="请输入备注信息"></textarea>
+			</li>
+		</ul>
+		<a class="mui-btn payment-btn" id="submitBtn">
+			保 存
+		</a>
+	</div>
+</body>
+</html>

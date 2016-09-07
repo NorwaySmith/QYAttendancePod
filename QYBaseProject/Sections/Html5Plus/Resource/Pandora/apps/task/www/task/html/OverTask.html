@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>已结束任务</title>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/order.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../common/js/jquery-1.8.1.min.js" ></script>
+    <script src="../../common/js/mui.min.js"></script>
+    <script type="text/javascript" src="../../common/js/common.js" ></script>
+    <script type="text/javascript" src="../js/taskApi.js" ></script>
+    <script type="text/javascript" src="../js/overTask.js" ></script>
+</head>
+<body>
+	<div class="mui-content">
+		<div id="pullrefresh" class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="list">
+			   		<ul id="overTaskUL">
+			   			
+			   			<!--<li>
+			   				<div class="list_li">
+				   				<span class="list_title text_hide">乐工作离职人员各模块</span>
+				   				<span class="list_one pr"><em class="time_ico"></em>完成日期：04月28日</span>
+				   				<span class="list_one pr"><em class="renwu_ico"></em>任务来源：乔佳</span>
+				   				<span class="list_one pr"><em class="jieshou_ico"></em>接受人员：乔佳</span> 
+		                    </div>
+		                    <div class="div_one pr t_bor">
+				        	        <p class="finish" style="display: inline-block;">子任务：3</p>
+				        	        <p class="finish" style="display: inline-block;">已完成：1</p>
+				        	        <p class="finish" style="display: inline-block;">未完成：0</p>
+			                </div>
+			   			</li>-->
+			   		</ul>
+			   		
+			   	</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		});
+	</script>
+</body>
+
+</html>

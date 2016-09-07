@@ -1,0 +1,6 @@
+framework module NewIM {
+  umbrella header "NewIM.h"
+
+  export *
+  module * { export * }
+}

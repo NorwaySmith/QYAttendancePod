@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/&#x65b0;&#x8003;&#x52e4;&#x6253;&#x5361;/AVC/Controller/QYAttendanceLocationSelection.m"
+            timestampString = "487849475.941584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "-trackButtonTouchUpInside:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/H5/AVC/Controller/QYH5ViewController.m"
+            timestampString = "488109903.220285"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "-configJsBridge"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/Html5Plus/API/PGCustomPlugin.m"
+            timestampString = "488181314.330653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-showDateTimeHalf:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/Html5Plus/API/PGCustomPlugin.m"
+            timestampString = "488182373.978426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "-personSelectTime:andcbId:format:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/&#x65b0;&#x8003;&#x52e4;&#x6253;&#x5361;/AVC/View/QYAttendanceListHeaderView.m"
+            timestampString = "494299011.661356"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "timeLabel"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[QYAttendanceListHeaderView timeLabel]"
+                  moduleName = "QYBaseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaotengfei/Desktop/%E4%B9%90%E5%B7%A5%E4%BD%9CCBB/%E6%96%B0%E8%80%83%E5%8B%A4%E6%89%93%E5%8D%A1/LeGongZuo/QYBaseProject/Sections/%E6%96%B0%E8%80%83%E5%8B%A4%E6%89%93%E5%8D%A1/AVC/View/QYAttendanceListHeaderView.m"
+                  timestampString = "494852833.092518"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[QYAttendanceListHeaderView setTimeLabel:]"
+                  moduleName = "QYBaseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaotengfei/Desktop/%E4%B9%90%E5%B7%A5%E4%BD%9CCBB/%E6%96%B0%E8%80%83%E5%8B%A4%E6%89%93%E5%8D%A1/LeGongZuo/QYBaseProject/Sections/%E6%96%B0%E8%80%83%E5%8B%A4%E6%89%93%E5%8D%A1/AVC/View/QYAttendanceListHeaderView.m"
+                  timestampString = "494852833.092665"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/&#x65b0;&#x8003;&#x52e4;&#x6253;&#x5361;/AVC/Widget/QYCircularProgressView/QYCircularProgressView.m"
+            timestampString = "494850782.39756"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-dealloc"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QYBaseProject/Sections/&#x65b0;&#x8003;&#x52e4;&#x6253;&#x5361;/AVC/Controller/QYAttendanceListViewController.m"
+            timestampString = "494852832.162269"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
+            landmarkName = "-citySearch"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

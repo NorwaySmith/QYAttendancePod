@@ -1,0 +1,6 @@
+framework module QYCommonNumber {
+  umbrella header "QYCommonNumber.h"
+
+  export *
+  module * { export * }
+}

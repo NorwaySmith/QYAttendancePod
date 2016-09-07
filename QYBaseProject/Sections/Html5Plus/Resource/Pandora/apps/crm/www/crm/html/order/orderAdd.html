@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>订单新增</title>
+    <link href="../../../common/css/mui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <style>
+    	.mui-backdrop{position: fixed !important;}
+    	.mui-content .mui-table-view:first-child{margin-top:12px}
+    	.mui-scroll-wrapper{top:0px;height: 255px !important;border-radius: 0px !important; }
+    	.mui-backdrop{position: fixed;}
+    	.mui-popover{z-index: 999;}
+    	.mui-content{padding-bottom: 20px;}
+    	.unit-one-right{font-size: 16px;}
+    	.mui-navigate-right:after, .mui-push-right:after{right: -8px !important;}
+    </style>
+</head>
+<body>
+<input type="hidden" id="orderId" />
+<input type="hidden" id="ownerId" />
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title" id="orderTitle">新增销售订单</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view shi-default">
+			<li class="mui-table-view-cell">
+				<a class="shi-ts">订单名称</a>
+				<input maxlength="50" class="shi-in" type="text" placeholder="请输入订单名称(必填)" id="orderName"/>
+			</li>
+			<li class="mui-table-view-cell" id="add_customer">
+				<a class="mui-navigate-right">
+					<span class="shi-ts">单位名称</span>
+					<span class="order-span" style="float: right !important;margin-right: 22px;" id="customerName">请选择单位名称(必选)</span>
+					<input type="hidden" name="customerId" id="customerId" value="" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell" id="edit_customer" style="display: none;">
+				<a class="shi-ts">单位名称</a>
+				<input class="shi-in" type="text" readonly="readonly"/>
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-default1">
+			<li class="mui-table-view-cell">
+				<a class="shi-ts">全款金额</a>
+				<input maxlength="10" class="shi-in" type="text" placeholder="请输入总金额(必填)" id="orderMoney"/>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="toOrderType">
+					<span class="shi-ts">订单类型</span>
+					<span class="unit-one-right order-span" id="orderTypeStr">订单类型(必填)</span>
+					<input type="hidden" name="orderTypeV" id="orderTypeV" value="" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="javascript:void(0);" id="toPayType">
+					<span class="shi-ts">付款方式</span>
+					<span class="unit-one-right order-span" id="payTypeStr">付款方式(必填)</span>
+					<input type="hidden" name="payTypeV" id="payTypeV" value="" />
+				</a>
+			</li>
+		</ul>
+		<div class="mui-popover add-popover" id="o_popover">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="pop-titlebox">
+						<span class="pop-title">订单类型</span>							
+					</div>
+	  				<ul class="mui-table-view nav-second" id="orderType">
+	  				</ul>
+				</div>
+	  		</div>
+		</div>
+		<div class="mui-popover add-popover" id="p_popover">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="pop-titlebox">
+						<span class="pop-title">付款方式</span>							
+					</div>
+					<ul class="mui-table-view nav-second" id="payType"></ul>
+				</div>
+			</div>
+		</div>
+		<ul class="mui-table-view shi-default1">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					<span class="shi-ts">签单日期</span>
+					<span class="order-span" style="float: right !important;margin-right: 22px;" id="dealTime">请选择签单日期(必选)</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					<span class="shi-ts">开始日期</span>
+					<span class="order-span" style="float: right !important;margin-right: 22px;" id="startTime">请选择开始日期(必选)</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					<span class="shi-ts">结束日期</span>
+					<span class="order-span" style="float: right !important;margin-right: 22px;" id="endTime">请选择结束日期(必选)</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-default1" id="selectOwner">
+			
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					<span class="shi-ts">订单负责人</span>
+					<span class="order-span-after" style="float: right !important;margin-right: 22px;" id="ownerName"></span>
+				</a>
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-default1">
+			
+			<li class="mui-table-view-cell special-active">
+				<span class="shi-ts">备注</span>
+				<textarea maxlength="500" class="fs14" id="memo" rows="3" placeholder="请输入备注信息"></textarea>
+			</li>
+		</ul>
+		<a id="saveOrder" class="mui-btn unit-btn">保 存</a>
+	</div>
+</body>
+</html>
+<script src="../../../common/js/mui.js"></script>
+<script src="../../../common/js/jquery-2.1.4.min.js"></script>
+<script src="../../../common/js/qytxplugin.js" ></script>
+<script src="../../../common/js/common.js"></script>
+<script src="../../js/chance/util.js"></script>
+<script src="../../js/order/orderAPI.js"></script>
+<script src="../../js/order/orderAdd.js"></script>
+<script type="text/javascript">
+	mui.init({
+		swipeBack: true //启用右滑关闭功能
+	});
+	mui('.mui-scroll-wrapper').scroll();
+</script>

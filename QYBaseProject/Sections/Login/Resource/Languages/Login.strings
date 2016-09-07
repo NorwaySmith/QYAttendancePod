@@ -1,0 +1,61 @@
+/*
+  Login.strings
+  QYBaseProject
+
+  Created by 田 on 16/1/14.
+  Copyright © 2016年 田. All rights reserved.
+*/
+//QYLoginNetworkApi
+"QYLoginNetworkApi_loginPrompt"                          = "登录中...";
+//QYLoginViewController
+"QYLoginViewController_register"                         = "注册";
+
+//QYLoginSwitchUnitViewController
+"QYLoginSwitchUnitViewController_title"                  = "选择企业";
+"QYLoginSwitchUnitViewController_currUnitPrompt"         = "所选的是当前单位";
+
+//QYResetPasswordViewController
+"QYResetPasswordViewController_title"                    = "找回密码";
+"QYResetPasswordViewController_done"                     = "完成";
+
+//QYLoginView
+"QYLoginView_usernameTextFieldPlaceholder"               = "请输入手机号码";
+"QYLoginView_passwordTextFieldPlaceholder"               = "请输入密码";
+"QYLoginView_login"                                      = "登 录";
+"QYLoginView_forgetPassword"                             = "忘记密码?";
+"QYLoginView_register"                                   = "注册";
+"QYLoginView_extension"                                  = "申请体验";
+
+//QYLoginSwitchUnitCell
+"QYLoginSwitchUnitCell_now"                              = "当前";
+"QYLoginSwitchUnitCell_halt"                             = "已停机";
+
+//QYLoginViewModel
+"QYLoginSwitchUnitCell_userNamePrompt"                   = "用户名不能为空！";
+"QYLoginSwitchUnitCell_passwordPrompt"                   = "密码不能为空！";
+
+"QYLoginSwitchUnitCell_loginFailurePrompt"               = "无登录信息";
+
+//QYResetPasswordViewModel
+"QYLoginSwitchUnitCell_vercodePrompt"                    = "请输入验证码！";
+"QYLoginSwitchUnitCell_passwordPrompt"                   = "请输入新密码！";
+"QYLoginSwitchUnitCell_verPasswordPrompt"                = "请输入确认密码！";
+"QYLoginSwitchUnitCell_passwordFormatPrompt"             = "请确保密码长度大于6小于20";
+"QYLoginSwitchUnitCell_passwordDisagreePrompt"           = "新密码和确认新密码不一致！";
+"QYLoginSwitchUnitCell_successPrompt"                    = "密码重置成功，请重新登录！";
+
+"QYLoginSwitchUnitCell_phonePrompt"                      = "请输入手机号！";
+"QYLoginSwitchUnitCell_vercodeSucessPrompt"              = "验证码已发送到您手机，请注意查收";
+
+//QYForgetPasswordViewController
+"QYForgetPasswordViewController_title"                   = "找回密码";
+"QYForgetPasswordViewController_nextStep"                = "下一步";
+"QYForgetPasswordViewController_phoneNumberFormatPrompt" = "请输入格式正确的手机号！";
+
+
+
+
+
+
+
+

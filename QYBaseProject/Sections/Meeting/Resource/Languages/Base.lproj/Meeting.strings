@@ -1,0 +1,211 @@
+/*
+ Meeting.strings
+ QYBaseProject
+ 
+ Created by quanya on 16/1/5.
+ Copyright © 2016年 田. All rights reserved.
+ */
+
+"QYMeetingListViewController_NavigationTitle"                   = "电话会议";
+
+"QYMeetingListViewController_NoDataAlert"                       = "多方电话会议  让沟通更方便";
+
+"QYMeetingListViewController_ImmedicatelyStartSuccess"          = "会议发起成功";
+
+"QYMeetingListViewController_ImmedicatelyStartFail"             = "会议发起失败";
+
+
+"QYMeetingListCell_StateNotStart"                               = "未开始";
+
+"QYMeetingListCell_StateEnd"                                    = "已结束";
+
+"QYMeetingListCell_StateCancel"                                 = "已取消";
+
+"QYMeetingListCell_StateProgress"                               = "进行中";
+
+"QYMeetingListCell_DescriptionStartFail"                        = "发起失败";
+
+"QYMeetingListCell_DescriptionNotJoin"                          = "未参会";
+
+"QYMeetingListCell_NumberPeoplePrefix"                          = "共";
+
+"QYMeetingListCell_NumberPeopleSuffix"                          = "人";
+
+
+"QYMeetingListHeadView_PropmptlyTitle"                          = "立即会议";
+
+"QYMeetingListHeadView_AppointTitle"                            = "预约会议";
+
+
+"QYMeetingAppointController_NavigationTitle"                    = "预约会议";
+
+"QYMeetingAppointController_InvalidAppointDatetime"             = "预约时间不能晚于当前时间";
+
+"QYMeetingAppointController_InvalidRemindDatetime"              = "距离预约时间不足%ld分钟，设定无效";
+
+"QYMeetingAppointController_InvalidParticipants"                = "请选择参会人员";
+
+"QYMeetingAppointController_InvalidMobile"                      = "请输入正确的手机号码";
+
+"QYMeetingAppointController_AppointSuccess"                     = "会议预约成功";
+
+"QYMeetingAppointController_AppointFail"                        = "会议预约失败";
+
+"QYMeetingAppointController_MeetingDateTitle"                   = "会议时间";
+
+"QYMeetingAppointController_MeetingSendMessageTitle"            = "短信通知";
+
+"QYMeetingAppointController_MeetingSendAlarmTitle"              = "会前短信提醒";
+
+"QYMeetingAppointController_MeetingRecordTitle"                 = "会议录音";
+
+"QYMeetingAppointController_MeetingUseOtherPhoneTitle"          = "使用其他号码参会";
+
+"QYMeetingAppointController_MeetingOtherPhoneTitle"             = "输入框";
+
+"QYMeetingAppointController_AlertViewContent"                   = "确定发起预约会议?";
+
+"QYMeetingAppointController_AlertViewConfirmText"               = "确定";
+
+"QYMeetingAppointController_AlertViewCancelText"                = "取消";
+
+"QYRemindPickerView_DefaultAlarmValue"                          = "不提醒";
+
+"QYRemindPickerView_AlarmValue"                                 = "会前%ld分钟";
+
+"QYRemindPickerView_DoneButton_Text"                            = "完成";
+
+"QYRemindPickerView_CancelButton_Text"                          = "取消";
+
+"QYDatePickerView_DoneButton_Text"                              = "完成";
+
+"QYDatePickerView_CancelButton_Text"                            = "取消";
+
+"QYAppointMeetingInputCell_TextField_Placeholder"               = "请输入参会号码";
+
+"QYAppointMeetingFooterView_SendButton_Text"                    = "发起";
+
+"QYMeetingDetailViewController_NavigationTitle"                 = "会议详情";
+
+"QYMeetingDetailViewController_Request_Success"                 = "操作成功";
+
+"QYMeetingDetailViewController_Request_Fail"                    = "操作失败";
+
+"QYMeetingDetailViewController_CancelMeeting_Fail"              = "会议取消失败";
+
+"QYMeetingDetailFooterView_LeftLabel_Title"                     = "会议成员";
+
+"QYMeetingDetailFooterView_RightLabel_Title"                    = "(%lu人)";
+
+"QYMeetingBottomAppointView_CancelButton_Title"                 = "取消会议";
+
+"QYMeetingBottomAppointView_CancelAlert_Content"                = "确定要取消会议吗?";
+
+"QYMeetingBottomAppointView_StartNowButton_Title"               = "立即发起";
+
+"QYMeetingBottomAppointView_StartNowAlert_Content"              = "确定要立即发起会议吗?";
+
+"QYMeetingBottomAppointView_AlertViewConfirmText"               = "确定";
+
+"QYMeetingBottomAppointView_AlertViewCancelText"                = "取消";
+
+"QYMeetingBottomCancelView_ReSendButton_Title"                  = "重新发起";
+
+"QYMeetingBottomCancelView_ReSendAlert_Content"                 = "确定要重新发起会议吗?";
+
+"QYMeetingBottomCancelView_AlertViewConfirmText"                = "确定";
+
+"QYMeetingBottomCancelView_AlertViewCancelText"                 = "取消";
+
+"QYMeetingMoreUserViewController_NavigationTitle"               = "会议成员";
+
+"QYMeetingMoreUserViewController_DurationLabel_ErrorTitle"      = "未接通";
+
+"QYMeetingMonitorNoNetworkAlertView_TitleLabel_Title"           = "当前无移动网络";
+
+"QYMeetingMonitorNoNetworkAlertView_ContentLabel_Title"         = "你的手机有可能受到运营商限制，在电话接通后导致移动网络不可用，挂断电话即恢复移动网络";
+
+"QYMeetingMonitorAvatarView_AvatarStatusCall"                   = "呼叫中...";
+
+"QYMeetingMonitorAvatarView_AvatarStatusGoAway"                 = "已离开";
+
+"QYMeetingMonitorAvatarView_AvatarStatusBlockCall"              = "未接通";
+
+"QYMeetingMonitorAvatarView_AvatarStatusHangUp"                 = "已挂断";
+
+"QYMeetingMonitorAvatarView_OperationMute_Title"                = "禁言";
+
+"QYMeetingMonitorAvatarView_OperationSpeak_Title"               = "发言";
+
+"QYMeetingMonitorAvatarView_OperationPerson_Title"              = "查看";
+
+"QYMeetingMonitorAvatarView_OperationHangup_Title"              = "挂断";
+
+"QYMeetingMonitorAvatarView_OperationOut_Title"                 = "请出";
+
+"QYMeetingMonitorAvatarView_OperationPhone_Title"               = "呼叫";
+
+"QYMeetingMonitorCell_TitleLabel_TitleSuffix"                   = "我";
+
+"QYMeetingMonitorAddCell_AddButton_Title"                       = "";
+
+"QYMeetingMonitorTopView_DurationLabel_PrefixTitle"             = "开会时长: ";
+
+"QYMeetingMonitorTopView_CompereLabel_PrefixTitle"              = "主持人: ";
+
+"QYMeetingMonitorViewController_NavigationTitle"                = "会议现场";
+
+"QYMeetingMonitorViewController_OperationEnterMeeting"          = "进入会场";
+
+"QYMeetingMonitorViewController_OperationMute"                  = "全场静音";
+
+"QYMeetingMonitorViewController_OperationMute_Message"          = "确定要全场静音（只有主持人可以发言，其他人旁听）吗?";
+
+"QYMeetingMonitorViewController_OperationAllCall"               = "一键重呼";
+
+"QYMeetingMonitorViewController_OperationAllCall_Message"       = "确定要呼叫所有未到会的人员?";
+
+"QYMeetingMonitorViewController_OperationEnd"                   = "结束会议";
+
+"QYMeetingMonitorViewController_OperationEnd_Message"           = "确定要结束电话会议?";
+
+"QYMeetingMonitorViewController_OperationUnmute"                = "恢复通话";
+
+"QYMeetingMonitorViewController_OperationUnmute_Message"        = "恢复通话状态?";
+
+"QYMeetingMonitorViewController_OperationOut"                   = "离开会议";
+
+"QYMeetingMonitorViewController_OperationOut_Message"           = "确定要离开电话会议吗?";
+
+"QYMeetingMonitorViewController_AlertView_End_Message"          = "会议已结束";
+
+"QYMeetingMonitorViewController_AlertView_Out_Message"          = "确定要请出该人员名单吗?";
+
+"QYMeetingMonitorViewController_AlertView_Confirm"              = "确认";
+
+"QYMeetingMonitorViewController_AlertView_Cancel"               = "取消";
+
+
+"QYMeetingMonitorViewController_Dialog_Fail"                    = "操作失败";
+
+"QYMeetingMonitorViewController_Dialog_Mute_Fail"               = "静音模式下，不允许自我发言";
+
+"QYMeetingMonitorViewController_Dialog_Success"                 = "操作成功";
+
+"QYMeetingMonitorViewController_Dialog_AddUser_Success"         = "添加参会人成功";
+
+"QYMeetingMonitorViewController_Dialog_Speak_Success"           = "设置发言中...";
+
+"QYMeetingMonitorViewController_Dialog_Mute_Success"            = "设置禁言中...";
+
+"QYMeetingMonitorViewController_Dialog_HangUp_Success"          = "强制挂断中...";
+
+"QYMeetingMonitorViewController_Dialog_Call_Success"            = "已呼叫";
+
+"QYMeetingMonitorViewController_Dialog_PleaseOut_Success"       = "请出人员成功";
+
+"QYMeetingMonitorViewController_Dialog_Simplex_Success"         = "会场转入静音模式";
+
+"QYMeetingMonitorViewController_Dialog_Duplex_Success"          = "会场转入发言模式";
+
+"QYMeetingMonitorViewController_Dialog_GroupCalls_Success"      = "群呼已发起";

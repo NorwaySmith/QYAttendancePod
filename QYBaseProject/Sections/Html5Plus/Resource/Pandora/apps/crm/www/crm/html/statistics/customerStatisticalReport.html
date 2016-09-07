@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/qytxplugin.js"></script>
+    <script src="../../../common/js/common.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/chance/chanceApi.js"></script>
+    <script src="../../js/statistics/customerStatisticalReportAPI.js"></script>
+    <script src="../../../common/js/echarts/echarts.js"></script>
+	<script src="../../js/statistics/customerStatisticalReport.js"></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <style>
+    	.mui-popover{left: 0px !important;width: 100%;border-radius: 0px;}
+    	.mui-popover{top:93px !important;}
+    	.mui-table-view-cell:after{position: relative !important;}
+    	.shi-sale-two{margin-top: 50px;}
+    	#dataUL2{margin-top: 12px;}
+		.mui-popover
+		{
+			z-index:999;
+			position: fixed;
+			left: 0px;
+			top: 44px;
+		}
+    	.mui-scroll-wrapper{overflow:inherit;top:43px;}
+    	.mui-scroll-wrapper1{height: 240px;overflow: hidden;}
+    	.mui-scroll-wrapper1 .mui-scroll{position: relative;}
+    	.shi-two-img1{left: 0px;}
+    	.mui-backdrop{position: fixed;}
+    	.qy-head-pop li a{font-size: 16px;}
+    	.shi-sale-two li{height: 48px;}
+    	.lh48{line-height: 48px;}
+    	/*点击变白色高亮*/
+		.mui-table-view-cell.mui-active{
+			background-color: #FFFFFF;
+		}
+		.top-nav-two {
+			font-size: 16px;
+			color: #353535;
+			text-align: center;
+			width: 95%;
+			display: block;
+			line-height: 48px;
+		}
+		.top-nav-three {
+			font-size: 16px;
+			color: #353535;
+			text-align: center;
+			width: 95%;
+			display: block;
+			line-height: 48px;
+		}
+		.mt56{margin-top: 56px;text-align: center;}
+    </style>
+</head>
+<body>
+	<!-- 隐藏域：年 -->
+	<input type="hidden" id="year" value=""/>
+	<!-- 隐藏域：月 -->
+	<input type="hidden" id="month" value=""/>
+	<!-- 隐藏域：是否下属值 -->
+	<input type="hidden" id="subordinate" value="0"/>
+	
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">客户统计报表</h1>
+		<!--<a class="ic-right" id="addchance"></a>-->
+	</header>
+	<div class="mui-content">
+		<div class="top-nav">
+			<div class="top-nav-one"><a class="unit-ps" href="javascript:void(0);">年<em class="unit-filter-r1"></em></a></div>
+			<div class="top-nav-two">新增客户</div>
+			<div class="top-nav-three"><a class="unit-ps" href="javascript:void(0);"><em class="unit-filter-r1"></em></a></div>
+		</div>
+		<div id="popover3" class="mui-popover" >
+			<div class="mui-scroll-wrapper1">
+				<div class="mui-scroll">
+					<ul class="mui-table-view qy-head-pop" id="yearUL"></ul>
+				</div>
+			</div>
+		</div>
+		<!--<div id="popover1" class="mui-popover">
+			<div class="mui-scroll-wrapper1">
+				<div class="mui-scroll">
+					<ul class="mui-table-view qy-head-pop" id="monthUL"></ul>
+				</div>
+			</div>
+		</div>-->
+		<div id="popover2" class="mui-popover">
+			<ul class="mui-table-view qy-head-pop" id="memberUL">
+				<!--<li class="mui-table-view-cell month-active">赵亚伟</li>
+				<li class="mui-table-view-cell">全部属下</li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单个成员</a></li>-->
+			</ul>
+		</div>
+		<div class="mui-content">
+			<div class="mt56" id="statisticsMsg"></div>
+			<div id="locale" style="height:500px;border:1px solid #ccc;padding:10px;"></div>
+			<script type="text/javascript">
+				var myChart = undefined;
+                // 基于准备好的dom，初始化echarts图表
+                
+                var option = {
+                    tooltip: {
+                        show: false/*,
+                        trigger: 'axis',//鼠标点击显示数据*/
+                    },
+                    legend: {
+                        data:['客户','联系人']
+                    },
+                    grid: {
+						x: 35,
+						x2: 10,
+						y: 30,
+						y2: 25
+					},
+					calculable: false,
+                    xAxis : [
+                        {
+	                        type : 'category',
+	                        data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+	                    }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            splitArea : {show : true}
+                        }
+                    ],
+                    series : [
+                        {
+                            "name":"客户",
+                            "type":"line",
+                            "data":seriesCustomerData
+                        },
+                            {
+                            "name":"联系人",
+                            "type":"line",
+                            "data":seriesContactData
+                        }
+                    ]
+                };
+        
+                // 为echarts对象加载数据 
+           /*     myChart.setOption(option); */
+          
+			    // Step:3 conifg ECharts's path, link to echarts.js from current page.
+			    // Step:3 为模块加载器配置echarts的路径，从当前页面链接到echarts.js，定义所需图表路径
+			    require.config({
+			        paths: {
+			            echarts: '../../../common/js/echarts'
+			        }
+			    });
+			    
+			    // Step:4 require echarts and use it in the callback.
+			    // Step:4 动态加载echarts然后在回调函数中开始使用，注意保持按需加载结构定义图表路径
+			    require(
+			        [
+			            'echarts',
+			            'echarts/chart/line'
+			        ],
+			            function (ec) {
+			            myChart = ec.init(document.getElementById('locale'));
+			            myChart.showLoading({
+						    text: '正在努力的读取数据中...',    //loading话术
+						});
+			            myChart.setOption(option);
+			            myChart.hideLoading();
+			        }
+			    );
+			    
+			    
+			    
+			    function updateData(){
+					myChart.showLoading({
+					    text: '正在努力的读取数据中...',    //loading话术
+					});
+					// 修改数据
+					option.series[0].data = seriesCustomerData;
+					option.series[1].data = seriesContactData;
+					myChart.clear();
+					myChart.setOption(option);
+					myChart.refresh();
+					myChart.hideLoading();
+				}
+			    </script>
+		</div>
+	</div>
+</body>
+</html>

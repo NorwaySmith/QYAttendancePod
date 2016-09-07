@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>任务详情</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <script src="../../common/js/common.js"></script>
+    <script src="../../common/js/jquery-1.8.1.min.js"></script>
+    <script src="../js/TaskDetail.js"></script>
+    <script src="../js/taskApi.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/order.css"/>
+    
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<div class="mui-content">
+	    <div class="detail_body">
+			<div class="detail_body_content pr b_bor">
+	    		<span id="taskContent"></span>
+	    	</div>
+	    	<span class="complete_time pr" id="finshTime"></span>
+	    	<span class="task_source pr" id="fromTask"></span>
+	    	<span class="accept_people pr" id="accept"></span>
+	    	<span class="accept_people pr" id="jieshouren"></span>
+	    	<!--<span class="reasones" id="reason"></span>
+	    	<span class="reasones" id="notFinshReason"><span>-->
+	    </div>
+	    <div class="comefrom" id="reason">
+        	<span class="from pr t_bor">转交原因</span>
+        	<p id="tranReason"></p>
+        </div>
+        <div class="comefrom" id="notFinshReason">
+        	<span class="from pr t_bor">未完成原因</span>
+        	<p id="completeReason"></p>
+        </div>
+	    <div class="complete_count pr b_bor t_bor" id="finshNum" >
+	    	<span id="completeCount">已完成：1/3</span>
+	    </div>
+	    <div class="schedule_list" id="schedule" >
+	    	
+	    </div>
+	    <div class="detail_button_area pr t_bor" id="fourButton">
+	    	<div class="detail_button" id="cancelButton">
+	    		<span class="pr"><em class="cancel_ico"></em>撤销</span>	
+	    	</div>
+	    	<div class="detail_button" id="decompose">
+	    		<span class="pr"><em class="edit_ico"></em>分解</span>
+	    	</div>
+	    	<div class="detail_button" id="stopButton">
+	    		<span class="pr"><em class="stop_ico"></em>未完成</span>
+	    	</div>
+	    	<div class="detail_button" id="completeButton">
+	    		<span class="pr"><em class="complete_ico"></em>完成</span>
+	    	</div>
+	    	
+	    </div>
+	     <div class="detail_button_area pr t_bor" id="twoButton">
+		    	<div class="operation" id="transferButton">
+		    		<span class="pr">转交</span>
+		    	</div>
+		    	<div class="operation" id="receive">
+		    		<span class="pr">领取</span>
+		    	</div>
+	    	</div>
+	    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>新任务</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/order.css" />   
+    <script src="../../common/js/common.js"></script>
+    <script src="../../common/js/jquery-1.8.1.min.js"></script>
+    <script src="../../common/js/qytxplugin.js"></script>
+    <script src="../js/addTask.js"></script>
+    <script src="../js/taskApi.js"></script>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+    
+</head>
+<body>
+	<div class="mui-content addtask">
+		<ul>
+			<li class="pr b_bor">
+				<span class="title">任务内容</span>
+				<input type="text" placeholder="请输入任务内容" id="content"/>
+			</li>
+			<li class="pr b_bor active" id="finshDate">
+				<span class="title">完成日期</span>
+				<em class="lg-icon"></em>
+				<span class="left" id="date">请选择</span>
+			</li>
+			<li class="pr b_bor active" id="person">
+				<span class="title">承办人员</span>
+				<em class="lg-icon"></em>
+				<input type="hidden" id="personId" />
+				<span class="left" id="name">请选择（必选）</span>
+			</li>
+		</ul>
+		<!--<ul>
+			<li class="pr b_bor active">
+				<span class="title">提醒设置</span>
+				<em class="lg-icon"></em>
+				<span class="left">提前3天</span>
+			</li>
+			<li class="pr b_bor active">
+				<span class="title">提醒时间</span>
+				<em class="lg-icon"></em>
+				<span class="left">09:00</span>
+			</li>
+		</ul>-->
+		<div class="button-area" id="saveTask">
+			发布
+		</div>
+	</div>
+</body>
+</html>

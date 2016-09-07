@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>日志评论</title>
+		<script src="../../common/js/mui.min.js"></script>
+		<link href="../../common/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/log.css" />
+		
+		<script type="text/javascript" src="../../common/js/common.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				beforeback: function(){
+					console.log('关闭评论页面前的调用方法');
+					//获得列表界面的webview
+					var worklogDetail = plus.webview.getWebviewById('worklogDetail');
+					console.log('获取前一个详情页面');
+					//触发列表界面的自定义事件（refresh）,从而进行数据刷新
+					mui.fire(worklogDetail,'getLogInfo');
+					console.log('刷新详情页面');
+					//返回true，继续页面关闭逻辑
+					return true;
+				}
+			});
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var logid = self.logid;
+				var logUserId = self.logUserId;
+				
+				//绑定评论方法
+				document.getElementById("publish").addEventListener('tap', function(){
+					//console.log('发表评论操作开始');
+					var content = document.getElementById("content").value;
+					if(content != '' && content != null && content != undefined){
+						var url = window.windowCommon.basePath + 'worklog/publishComment.c';
+						
+						var data = {
+							"userId": window.windowCommon.approveLoginId,
+							"worklogId": logid,
+							"content":content
+						};
+						
+						mui.ajax(url, {
+							data: data, 
+							dataType: 'json',
+							type:'post',//HTTP请求类型
+							timeout: 10000, //超时时间设置为10秒；
+							crossDomain: true,
+							success: function(response){
+								if(response.code != 0){
+									//plus.webview.getWebviewById('worklogDetail').reload();
+									plus.webview.getWebviewById('worklogDetail').evalJS("getLogInfo('"+logid+"', 1)");
+									plus.webview.close("worklogpublishcomment");
+									
+								}
+							}	
+						});
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body style="padding-bottom: 50px;">
+		<!--评论-->
+		<div class="fixedBtnArea">
+			<table class="nav-comment">
+				<tr>
+					<td>
+						<input type="text" placeholder="我来说两句" class="form-control" id="content" maxlength="300"/>
+					</td>
+					<td><a href="javascript:;" class="mui-btn  mui-btn-block" id="publish">发表</a></td>
+				</tr>
+			</table>
+		</div>
+
+	</body>
+
+</html>

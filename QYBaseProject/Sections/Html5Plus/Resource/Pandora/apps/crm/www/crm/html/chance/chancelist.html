@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="../../../common/js/mui.js"></script>
+    <script src="../../../common/js/qytxplugin.js"></script>
+    <script src="../../../common/js/common.js"></script>
+    <script src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/chance/chanceApi.js"></script>
+    <script src="../../js/chance/chancelist.js"></script>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <style>
+    	.mui-popover{left: 0px !important;width: 100%;border-radius: 0px;}
+    	.mui-popover{top:93px !important;}
+    	.mui-table-view-cell:after{position: relative !important;}
+    	.shi-sale-two
+		{
+			margin-top: 50px;
+		}
+		.mui-popover
+		{
+			z-index:999;
+			position: fixed;
+			left: 0px;
+			top: 44px;
+		}
+    	.mui-scroll-wrapper{overflow:inherit;top:43px;}
+    	.mui-scroll-wrapper1{height: 240px;overflow: hidden;}
+    	.mui-scroll-wrapper1 .mui-scroll{position: relative;}
+    	.shi-two-img1{left: 0px;}
+    	.mui-backdrop{position: fixed;}
+    	.qy-head-pop li a{font-size: 16px;}
+    </style>
+</head>
+<body>
+	<!-- 隐藏域：客户ID -->
+	<input type="hidden" id="customerId" value=""/>
+	<!-- 隐藏域：成交时间值 -->
+	<input type="hidden" id="expectedTime" value=""/>
+	<!-- 隐藏域：销售阶段值 -->
+	<input type="hidden" id="sellStage" value=""/>
+	<!-- 隐藏域：是否下属值 -->
+	<input type="hidden" id="subordinate" value=""/>
+	
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">销售机会</h1>
+		<a class="ic-right" id="addchance"></a>
+	</header>
+	<div class="mui-content">
+		<div class="top-nav">
+			<div class="top-nav-one"><a class="unit-ps" href="javascript:void(0);">成交时间<em class="unit-filter-r1"></em></a></div>
+			<div class="top-nav-two"><a class="unit-ps" href="javascript:void(0);">销售阶段<em class="unit-filter-r1"></em></a></div>
+			<div class="top-nav-three"><a class="unit-ps" href="javascript:void(0);"><em class="unit-filter-r1"></em></a></div>
+		</div>
+		<div id="popover3" class="mui-popover" >
+			<div class="mui-scroll-wrapper1">
+				<div class="mui-scroll">
+					<ul class="mui-table-view qy-head-pop" id="expectedTimeUL"></ul>
+				</div>
+			</div>
+		</div>
+		<div id="popover1" class="mui-popover">
+			<div class="mui-scroll-wrapper1">
+				<div class="mui-scroll">
+					<ul class="mui-table-view qy-head-pop" id="sellStageUL"></ul>
+				</div>
+			</div>
+		</div>
+		<div id="popover2" class="mui-popover">
+			<ul class="mui-table-view qy-head-pop" id="memberUL">
+				<!--<li class="mui-table-view-cell month-active">赵亚伟</li>
+				<li class="mui-table-view-cell">全部属下</li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单个成员</a></li>-->
+			</ul>
+		</div>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper" >
+			<div>
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron shi-sale-two" style="background:none;">
+				</ul>
+				<div class="listNoData" style="display: none;">暂无数据</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

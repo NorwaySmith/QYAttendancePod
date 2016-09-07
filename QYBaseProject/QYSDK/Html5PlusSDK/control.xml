@@ -1,0 +1,6 @@
+
+<msc debug="true"  version="0.1.0.0" >
+    <apps>
+        <app  appid="crm"  appver="1.0" />
+    </apps>
+</msc>

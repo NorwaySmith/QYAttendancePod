@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>任务</title>
+    <script src="../../common/js/mui.min.js"></script>
+    <link href="../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/order.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+    <script src="../../common/js/jquery-1.8.1.min.js" ></script>
+    <script src="../../common/js/qytxplugin.js"></script>
+  	<script src="../../common/js/baseData.js" ></script>
+  	<script src="../../common/js/common.js"></script>
+    <script src="../js/taskApi.js" ></script>
+    <script src="../js/tablList.js" ></script>
+    <style>
+    	.mui-scroll-wrapper{top: 35px;}
+    </style>
+</head>
+<body>
+	<input id="indexCache" type="hidden" value="1"/>
+	<div class="mui-content">
+		<div class="top_tap pr b_bor">
+			<span class="active">我承办的</span>
+			<span>我发起的</span>
+			<span>我转交的</span>
+		</div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll" id="mui-scroll">
+				<div class="list">
+			   		<ul>
+			   			<!--<li>
+			   				<div class="list_li">
+				   				<span class="list_title text_hide">乐工作离职人员各模块状态处理如果过长的...</span>
+				   				<span class="list_one pr"><em class="time_ico"></em>完成日期：04月28日</span>
+				   				<span class="list_one pr"><em class="renwu_ico"></em>任务来源：王心卫</span>
+	                            <span class="list_one pr"><em class="jieshou_ico"></em>接受人员：乔佳</span>
+			   			    </div>
+			   			</li>
+			   			<li>
+			   				<div class="list_li">
+				   				<span class="list_title text_hide">乐工作离职人员各模块</span>
+				   				<span class="list_one pr"><em class="time_ico"></em>完成日期：04月28日</span>
+				   				<span class="list_one pr"><em class="renwu_ico"></em>任务来源：乔佳</span>
+				   			    <span class="list_one pr"><em class="jieshou_ico"></em>接受人员：乔佳</span>
+			   			    </div>
+			   			</li>
+			   			<li>
+			   				<div class="list_li">
+				   				<span class="list_title text_hide">乐工作离职人员各模块</span>
+				   				<span class="list_one pr"><em class="time_ico"></em>完成日期：04月28日</span>
+				   				<span class="list_one pr"><em class="renwu_ico"></em>任务来源：乔佳</span>
+				   				<span class="list_one pr"><em class="jieshou_ico"></em>接受人员：乔佳</span> 
+		                    </div>
+		                    <div class="div_one pr t_bor">
+				        	        <p class="finish">已完成：1/3</p>
+			                </div>
+			   			</li>-->
+			   			
+		                <div class="div_two">
+			               <span class="list_font ">查看已结束任务 </span>
+			              <em class="zhishi_ico"></em>
+		        	    </div>
+			   		</ul>
+			   		
+			   	</div>
+			</div>
+		</div>
+	   	
+	   	<div class="add_order t_bor">
+	   		<span class="pr"><em class="add_ico"></em>新增任务</span>
+	   	</div>
+	</div>
+	<script>
+		mui('.mui-scroll-wrapper').scroll({
+	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
+	</script>
+</body>
+</html>

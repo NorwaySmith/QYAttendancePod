@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>往来单位详情</title>
+    <link href="../../../common/css/mui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/crm.css" />
+    <style>
+    	.mui-content>.mui-table-view:first-child{margin-top: 12px;}
+    	.mui-scroll-wrapper{top:0px;height: 350px !important;border-radius: 0px !important; }
+    	.mui-backdrop{position: fixed;z-index: 998;}
+    	.mui-popover{z-index: 999;}
+    	.shi-ppic{margin-left: 0px;}
+    	.content{padding-bottom: 10px;padding-top: 10px;}
+    	.unit-per-subbox{width: 100%;}
+    	@media only screen and (max-width:330px ) {
+    		.unit-inline{width: 200px;}
+    	}
+    	.no-text{display:block;width: 100%;color: #aaa;font-size: 16px;text-align: center;margin-top:40px;}
+    	.no_visit {
+		  background-color: #ffffff;
+		  min-height: 180px;
+		  overflow: auto;
+	      text-align: center;
+	      font-size: 16px;
+	      vertical-align: middle;
+	      line-height: 180px;
+	      color: rgb(217, 217, 217);
+	    }
+	    /*订单列表点击变白色高亮*/
+		#orderList .mui-table-view-cell.mui-active{
+			background-color: #FFFFFF;
+		}
+    </style>
+</head>
+<body>
+<input type="hidden" name="followUserId" id="followUserId" value="" />
+<input type="hidden" name="ownerId" id="ownerId"/>
+<input type="hidden" name="cState" id="cState" />
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">往来单位详情</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view unit-default-one">
+			<li class="mui-table-view-cell" id="detailhead">
+				<a class="mui-navigate-right unit-default-box">
+					<span class="unit-name" id="customerName">
+						
+					</span>
+					<span class="unit-address unit-ps">
+						<em class="unit-location"></em>
+						&nbsp;<span style="color: #aaa;" id="address"></span>
+					</span>
+				</a>
+			</li>
+			<div id="popover1" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">销售阶段</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="sellStageUL"></ul>
+					</div>
+				</div>
+			</div>
+			<div id="addpopover" class="mui-popover add-popover">
+				<div class="pop-titlebox">
+					<span class="pop-title">添加记录</span>							
+				</div>
+				<ul class="mui-table-view nav-second">
+					 <li class="mui-table-view-cell" id="addpopoverXCBF">
+					 	<span >现场拜访</span>
+					 </li>
+					 <li class="mui-table-view-cell" id="addpopoverOTHER">
+					 	<span >电话、邮件、QQ/微信</span>
+					 </li>
+				</ul>
+			</div>
+			<div class="unit-default-floor">
+				<span class="unit-default-ascription" id="customerState">
+				</span>
+				<div class="unit-default-part">
+					<div class="unit-default-right unit-ps">
+						<span class="unit-number" id="chanceCount">0</span>
+						<span class="unit-bottom unit-bottomactive">机会</span>
+						<em class="unit-bottom-action"></em>
+					</div>
+					<div class="unit-default-right unit-ps">
+						<span class="unit-number" id="orderCount">0</span>
+						<span class="unit-bottom">订单</span>
+						<em class="unit-bottom-action unit-hide"></em>
+					</div>
+					<div class="unit-default-right unit-ps">
+						<span class="unit-number" id="relateCount">0</span>
+						<span class="unit-bottom">联系人</span>
+						<em class="unit-bottom-action unit-hide"></em>
+					</div>
+					<div class="unit-default-right mr6 unit-ps">
+						<span class="unit-number" id="followCount">0</span>
+						<span class="unit-bottom">跟进人</span>
+						<em class="unit-bottom-action unit-hide"></em>
+					</div>
+			</div>
+		</ul>
+		<div class="unit-tab">
+			<ul class="mui-table-view unit-default-two" id="chanceList">
+				<span class="no-text">无</span>
+			</ul>
+			<ul class="mui-table-view shi-order-one cleartop unit-hide" id="orderList">
+				<span class="no-text">无</span>
+			</ul>
+			<ul class="mui-table-view unit-contact unit-hide" id="contactList">
+				<span class="no-text">无</span>
+			</ul>
+			<ul class="mui-table-view unit-follow-up unit-hide unit-people" >
+				<li class="mui-table-view-cell">
+					<div class="unit-per-subbox">
+						<a class="unit-follow-text">负责人</a>
+						<div class="unit-img-box" id="ownerDiv">
+							
+						</div>
+						<div class="unit-img-box" id="chooseOwner">
+							<img class="ml10" src="../../images/unit-follow-ico_03.png" />
+							<a style="color: #aaa;">变更</a>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="unit-per-subbox">
+						<a class="unit-follow-text">跟进人</a>
+						<div id="followUserDiv" class="unit-inline">
+							<div class="unit-img-box" id="chooseFollower">
+								<img class="ml10" src="../../images/unit-follow-ico_10.png" />
+								<a style="color: #aaa;">添加</a>
+							</div>
+							<div class="unit-img-box unit-dele">
+								<img class="ml10" src="../../images/unit-follow-ico_07.png" />
+								<a style="color: #aaa;">移除</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<ul class="mui-table-view shi-detail-two unit-clear" style="padding-bottom:0px;">
+			<li class="mui-table-view-cell unit-link-one">
+				<span class="shi-two-ts unit-link">
+					联系记录
+				</span>
+				<a class="mui-btn shi-two-btn" href="javascript:void(0);" id="addRecord">
+					添加记录
+				</a>
+			</li>
+		</ul>
+		<div id="recordList">
+			<div class="no_visit">
+				您还没有添加联系记录
+			</div>
+		</div>
+	</div>
+	<!--客户状态弹层-->
+	<div id="statePopover" class="mui-popover add-popover">
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="pop-titlebox">
+					<span class="pop-title">客户状态</span>							
+				</div>
+				<ul class="mui-table-view nav-second" id="statePopoverUl">
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="../../../common/js/mui.js"></script>
+<script src="../../../common/js/jquery-2.1.4.min.js"></script>
+<script src="../../../common/js/common.js"></script>
+<script src="../../../common/js/headImg.js"></script>
+<script type="text/javascript" src="../../../common/js/qytxplugin.js"></script>
+<script type="text/javascript" src="../../js/visit/visitApi.js"></script>
+<script type="text/javascript" src="../../js/visit/visitCommon.js"></script>
+<script src="../../js/customer/customerApi.js"></script>
+<script src="../../js/customer/customerDetail.js"></script>
+<script type="text/javascript" charset="utf-8">
+			$(function(){
+				$(".unit-to-down").hide();
+				$(".unit-to-top").click(function(){
+					$(".unit-will-hide").hide();
+					$(".unit-to-down").show();
+				})
+				$(".unit-to-down").click(function(){
+					$(".unit-will-hide").show();
+					$(".unit-to-down").hide();
+				})
+				$(".unit-default-part div").click(function(){
+					var index = $(this).index();
+					$(this).siblings().find("span").removeClass("unit-bottomactive");
+					$(this).find("span.unit-bottom").addClass("unit-bottomactive");
+					$('.unit-default-part div').eq(index).find('em').removeClass('unit-hide');
+					$('.unit-default-part div').eq(index).siblings('div').find('em').addClass('unit-hide');
+					$(".unit-tab ul").eq(index).show();
+					$(".unit-tab ul").eq(index).siblings('ul').hide();
+				})
+				$(".unit-follow-del").hide();
+				$(".unit-dele img").on("tap",function(){
+					if($(".unit-follow-del").is(":hidden")){
+		       			$(".unit-follow-del").show();   //如果元素为隐藏,则将它显现
+					}else{
+					      $(".unit-follow-del").hide();     //如果元素为显现,则将其隐藏
+					}						
+					
+				});
+			})
+		</script>

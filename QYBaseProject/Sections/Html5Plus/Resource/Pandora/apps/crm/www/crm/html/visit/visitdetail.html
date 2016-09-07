@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/crm.css" rel="stylesheet"/>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery.min.js"></script>
+    <script src="../../../common/js/headImg.js"></script>
+    <script type="text/javascript" src="../../../common/js/mui.zoom.js"></script>
+    <script type="text/javascript" src="../../../common/js/mui.previewimage.js" ></script>
+	<script type="text/javascript" src="../../../common/js/common.js"></script>
+	<script type="text/javascript" src="../../js/visit/visitApi.js"></script>
+	<script type="text/javascript" src="../../js/visit/visitdetail.js"></script>
+    <style>
+    	.mui-popover{width: 30%;border-radius: 0px;}
+    	.mui-popover ul{padding: 0 !important;margin: 0px !important;}
+    	#popover2 ul li{border-bottom: 1px solid #d9d9d9;}
+    	#popover3{top:48px !important;}
+    	.content{padding-bottom: 20px;}
+    	.content-list .quan{;overflow: hidden;line-height: 21px;}
+    	.log{padding-top: 3px;}
+    </style>
+    <style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+			.set:active{color:#ccc;}
+		</style>
+</head>
+<body style="padding-bottom: 50px;">
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title">客户拜访详情</h1>
+		<a class="mui-pull-right set" href="javascript:void(0);" id="operate">操作</a>
+	</header>
+	<div id="popover3" class="mui-popover tc" style="right: 0px !important;">
+		<ul>
+			<li id="edit">编辑</li>
+			<li id="del">删除</li>
+		</ul>
+	</div>
+	<div class="mui-content">
+		<div class="mui-row">
+		    <ul class="mui-table-view log">
+				<li class="mui-table-view-cell shi-time unit-ps">
+					<em class="time-ico"></em>
+					<span id="visitTime"></span>
+				</li>
+				<li class="mui-table-view-cell mui-media log-user">
+					<img class="mui-media-object mui-pull-left shi-ppic" id="headImg" onerror="headError(this);">
+					<div class="mui-media-body" id="userName">
+					</div>
+				</li>
+				<div class="content">
+					<ul class="content-list" id="xiangqing">
+						<li class="mui-ellipsis-2 quan">
+							<span class="shi-tit" id="visitType"></span><p class="shi-txt2" id="visitTypeVo"></p> 
+						</li>
+						<li class="mui-ellipsis-2">
+							<span class="shi-tit" id="customerType"></span><p class="shi-txt2" id="customerName"></p> 
+						</li>
+						<li class="mui-ellipsis-2">
+							<span class="shi-tit">沟通内容：</span><p class="shi-txt2" id="visitContent"></p> 
+						</li>
+						<li class="mui-ellipsis-2">
+							<span class="shi-tit">双方异议：</span><p class="shi-txt2" id="visitDiffence"></p> 
+						</li>
+						<li class="mui-ellipsis-2">
+							<span class="shi-tit shi-txt-active">下次沟通：</span><p class="shi-txt shi-txt-active" id="nextVisitTime"></p> 
+						</li>
+						<li class="mui-ellipsis-2">
+							<span class="shi-tit shi-txt-active">跟进要点：</span><p class="shi-txt shi-txt-active" id="nextVisitMaincontent"></p> 
+						</li>
+					</ul>
+					<!--
+						图片域
+                    -->
+					<div class="imgarea">
+						
+					</div>
+					<div class="operate" id="praiseAndComment" >
+					</div>
+					<ul class="shi-comment" id="comment">
+					</ul>
+				</div>
+			</ul>
+	</div>
+	<div class="fixedBtnArea mui-input-row">
+		<table class="nav-comment">
+            <tr>
+                <td><input type="text" placeholder="我来说两句" class="form-control" id="content"></td>
+                <td><a href="javascript:void(0);" style="width: 50px;"class="mui-btn  mui-btn-block" id="fabiao">发表</a></td>
+            </tr>
+        </table>
+	</div>
+</body>
+</html>

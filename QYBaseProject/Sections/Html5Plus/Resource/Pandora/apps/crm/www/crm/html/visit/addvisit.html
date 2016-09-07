@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    
+    <link href="../../../common/css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/crm.css" rel="stylesheet"/>
+    <script src="../../../common/js/mui.min.js"></script>
+    <script src="../../../common/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../common/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../../common/js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../../common/js/common.js"></script>
+    <script type="text/javascript" src="../../../common/js/mui.zoom.js"></script>
+    <script type="text/javascript" src="../../../common/js/mui.previewimage.js"></script>
+    <script type="text/javascript" src="../../../common/js/autoTextarea.js"></script>
+    <script type="text/javascript" src="../../js/visit/uploadImg.js"></script>
+    <script type="text/javascript" src="../../js/visit/visitApi.js"></script>
+	<script type="text/javascript" src="../../js/visit/addvisit.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init({
+			gestureConfig:{
+				tap:true
+			}
+		});
+    </script>
+    
+     <style>
+    	.mui-table-view:before{position: relative;}
+    	.img-group{margin:0px;margin-top: 10px;margin-right: 12px;overflow: hidden;margin-left: 10px;}
+    	.img-group .img{margin-top: 8px;}
+    	.mui-content>.mui-table-view:first-child{margin-top: 0px;}
+    	.mui-popover li{border-bottom: 1px solid #d9d9d9;}
+    	.mui-backdrop{position: fixed;}
+    	.mui-popover{z-index: 999;}
+    	.mui-scroll-wrapper{top:0px;height: 200px !important;border-radius: 0px !important;}
+    </style>
+    <style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back ic-left"></a>
+		<h1 class="mui-title" id="header"></h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view shi-add-three" style="margin-top:12px;" id="goutongDiv">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" id="toselectDiv1" href="javascript:void(0);">
+					沟通方式
+					<span class="shi-rs" id="communicationModeName">请选择沟通方式(必选)</span>
+					<input type="hidden" id="communicationMode" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" id="sellStageA" href="javascript:void(0);">
+					沟通对象
+					<span class="shi-rs" id="communicationUserName">请选择沟通对象(必选)</span>
+					<input type="hidden" id="communicationUserId" value=""/>
+				</a>
+			</li>
+			<div id="selectDiv1" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">沟通方式</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="communicationModeUL">
+						</ul>
+					</div>
+				</div>	
+			</div>
+			<div id="popover1" class="mui-popover add-popover">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="pop-titlebox">
+							<span class="pop-title">沟通对象</span>							
+						</div>
+						<ul class="mui-table-view nav-second" id="contactUL">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</ul>
+		<ul class="mui-table-view shi-add-one">
+			<li class="mui-table-view-cell shi-toptit visit-loca-one">
+				<span id="visitTime"></span><span id="visitPoistion">正在获取位置信息...</span>
+				<em class="replay"></em>
+			</li>
+			
+			<li class="mui-table-view-cell shi-add-one-tit">
+				<span><i class="state-1 shi-ico"></i>沟通内容</span>
+				<textarea id="visitContent" maxlength="500" class="change_textarea" placeholder="请输入沟通内容(必填)"></textarea>
+				<!--<input type="text" placeholder="请输入沟通内容(必填)" id="visitContent" maxlength="500"/>-->
+			</li>
+			<li class="mui-table-view-cell shi-add-one-tit">
+				<span><i class="state-2 shi-ico"></i>双方异议</span>
+				<textarea id="visitDiffence" maxlength="500" class="change_textarea" placeholder="请输入异议点"></textarea>
+				<!--<input type="text" placeholder="请输入异议点" id="visitDiffence" maxlength="500"/>-->
+			</li>
+			<div class="img-group" id="fileList">
+				<img class="addimg" id="addimg" src="../../images/add.gif" alt="" width="35" height="35"/>
+                <div class="mui-clearfix"></div>
+			</div>
+		</ul>
+		<ul class="mui-table-view shi-add-two">
+			<li class="mui-table-view-cell  shi-add-two-t1">
+				<a class="mui-navigate-right" id="pickDate">下次沟通<span class="shi-rs" id="nextVisitTimeStr">请选择下次沟通时间</span></a>
+				<input type="hidden" id="nextVisitTime"/>
+			</li>
+			<li class="mui-table-view-cell shi-add-one-tit shi-add-two-t2 special-active">
+				<span><i class="state-3 shi-ico"></i>跟进要点</span>
+				<textarea id="nextVisitMaincontent" maxlength="500" class="change_textarea" placeholder="请输入跟进要点"></textarea>
+				<!--<input type="text" placeholder="请输入跟进要点" id="nextVisitMaincontent" maxlength="500"/>-->
+			</li>
+		</ul>
+		<ul class="mui-table-view shi-add-three" >
+			<li class="mui-table-view-cell" id="bfdw">
+				<a class="mui-navigate-right" id="getdanwei">
+					拜访单位
+					<span class="shi-rs" id="danwei">请选择拜访单位(必选)</span>
+					<input type="hidden" id="customerId" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell clearborder" id="xgjh">
+				<a class="mui-navigate-right" id="getChance">
+					相关机会<span class="shi-rs" id="jihui">请选择相关机会</span>
+					<input type="hidden" id="chanceId" />
+				</a>
+			</li>
+		</ul>
+	</div>
+    <a id="submit" href="javascript:void(0);" class="mui-btn unit-btn">保 存</a>
+</body>
+	<script> 
+		for(var i=0;i<4;i++){
+			var text = document.getElementsByClassName("change_textarea")[i], 
+			tip = ''; 
+			autoTextarea(text);// 调用 
+			text.value = tip; 
+			text.onfocus = function () { 
+			if (text.value === tip) text.value = ''; 
+			}; 
+			text.onblur = function () { 
+			if (text.value === '') text.value = tip; 
+			}; 
+		}
+			
+	</script>
+</html>
